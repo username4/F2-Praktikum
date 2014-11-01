@@ -1,3 +1,17 @@
+##########################################################################################################
+### Eigene ignores, vom f1-Praktikum kopiert:
+# emacs autosave:
+*~
+\#*\#
+.\#*
+auto
+auto/*
+*\#
+.~*
+#texmaker
+*.orig
+
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
