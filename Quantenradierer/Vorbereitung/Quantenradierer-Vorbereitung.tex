@@ -40,7 +40,7 @@
 \subsection{Interferenz von Wellen, klassisch und quantenmechanisch}
 \label{sec:interferenz}
 
-\paragraph{Klassisch Betrachtung:}
+\paragraph{Klassische Betrachtung:}
 \label{par:klass}
 In der klassischen Elektrodynamik werden Lichtstrahlen als elektromagnetische Wellen beschrieben, also Wellen im elektromagnetischen Feld,
 und sind Lösungen der Maxwellschen Gleichungen. Das elektrische Feld $\vec{E}$ einer ebenen elektromagnetischen Welle breitet sich gemäß der
@@ -199,16 +199,77 @@ Hier verschwindet der Interferenzterm offensichtlich nicht und das Muster wird w
 I(z,t) = \frac{|\vec{E_0}|^2}{2} \ (1+\cos(k_z\Delta z) ).
 \end{equation}
 
-Man sieht also deutlich die Signifikanz der "Welcher-Weg"-Information aus \ref{sec:welcher-weg}.
+Man sieht deutlich die Signifikanz der "'Welcher-Weg"'-Information aus \ref{sec:welcher-weg} und die Herkunft des Namens "'Quantenradierer"'.
 
 
 \section{Versuchsdurchführung}
 \label{sec:versuchsdurchfuhrung}
 
+\subsection{Aufgabe 1: Aufbau}
+\label{ssec:aufbau}
+
+Der Aufbau des Arbeitsplatzes ist in Abbildung \ref{fig:aufbau} gezeigt. Der Strahlengang erfolgt wie in Abbildung \ref{fig:mach-zehnder}. Im folgenden erden folgende Beschreibungen verwendet:
+\[
+\begin{matrix}
+\textbf{BS 1/2}	&	Stahlteiler 1/2 \\
+\textbf{M 1/2}	&	Spiegel 1/2 \\
+\textbf{Pol 1/2}	&	Polarisator 1/2 \\
+\textbf{S 1/2}	&	Schirm 1/2 \\
+\end{matrix}
+\]
+
+\begin{figure}
+\includegraphics[width=\textwidth]{aufbau.png}
+\caption{Aufbau des Arbeitsplatzes [\ref{ref:mappe}]}
+\label{fig:aufbau}
+\end{figure}
 
 
+\paragraph{Ausrichtung des Lasers}
+Der Laser wird an einer Ecke des stabilisiertem "'Kinematic VGroove"'-Steckbrettes montiert. 
+Auf einem Papier wird die vertikale Position des Lasers markiert. 
+Mit dem Papier wird die Position des Strahles auf gegenüberliegenden Seite verglichen und mit dessen Hilfe die vertikale Ausrichtung eingestellt.  
+
+\paragraph{Linsenausrichtung}
+Mit einem Schirm wird der Laser abgebildet. Die Linse wird in den Laser gehalten und so justiert, das die Position des Punktes der ohne Linse entspricht.
+
+\paragraph{Ausrichtung des ersten Strahlteilers (BS1)}
+Der Strahlteiler wird in den Pfad Lasers gestellt, sodass der Laser in die Mitte trifft. 
+Der horizontale Winkel wird so justiert, das der reflektierte Strahl parallel zu dem Steckbrett ist. 
+Die vertikale Einstellung erfolgt analog zur Linse.
+
+\paragraph{Ausrichtung der Spiegel (M1/2)}
+Die Spiegel werden wie in Abbildung \ref{fig:aufbau} montiert, sodass der Laser sie zentral trifft. 
+Mithilfe des Abbildungsschirms werden sie justiert, das sich die Teilstrahlen an der künftigen Postion des zweiten Strahlteilers bündeln. 
+
+\paragraph{Ausrichtung des zweiten Strahlteilers (BS2)}
+Der Strahlteiler wird nun mit seinem Zentrum möglichst genau an die im letzten Schritt ermittelte Position montiert. Mit vertikalen Justierungen werden die heraustretenden Strahlen mit dem Steckbrett parallelisiert.
+
+Die Abbildungsschirme werden positioniert. BS2 wird so eingestellt, das die Strahlen auf den Schirmen gespiegelt sind. Dies bedeutet, das, falls Strahl A auf S1 links unten zu B ist, muss B auf S2 im gleichen Maß links unten zu A sein.
 
 
+\paragraph{Beam Walk anwenden}
+Mit folgendem iterativem Verfahren werden die Feineinstellungen vorgenommen.
+\subparagraph{1.}
+Erster Spiegel wird eingestellt, sodass der Strahl den ersten erwünschten Punkte trifft
+\subparagraph{2.}
+Zweiter Spiegel wird eingestellt, sodass der Strahl den zweiten erwünschten Punkte trifft
+
+Mit diesem Verfahren wird erst BS1 und M1 fein justiert. Strahlen B und A sollen sich an BS2 im Zentrum treffen.
+Sollten auf S1 die Strahlen nicht aufeinander treffen, wird die Ausrichtung des zweiten Strahlteilers wiederholt.
+
+Ist kein Ringmuster erkennbar, sonder lediglich ein Streifenmuster, sind die Strahlen nicht korrekt eingestellt. Bei horizontalen Streifen müssen M1 und M2 vertikal eingestellt werden und umgekehrt.
+
+\subsection{Aufgabe 2}
+Die Polarisatoren werden in den Strahlengang gebracht. Die Muster werden bei unterschiedlicher Polarisation, realisiert durch Drehen der Polarisatoren, beobachtet. Dies wird mit den Erkenntnissen aus Kapitel \ref{sec:welcher-weg} erklärt.
+
+\subsection{Aufgabe 3}
+
+Mit einem dritten Polarisator wird einer der beiden Strahl aus dem zweitem Strahlteiler (BS2) polarisiert und mit dem anderem Abbild verglichen. Es werden die Winkel $\pm 45^\circ$ gegenüber der anderen Polarisatoren verwendet. Die Erwartungen  sind in Kapitel \ref{ssec:quantenradierer} erläutert.
+
+\subsection{Aufgabe 4}
+
+In diesem Gedankenexperiment wird überlegt, was sich ändert, wenn der Laser durch eine Ein-Photonen-Quelle ersetzt wird. Über eine hohe Zeit gemittelt wäre es klassisch zu erwarten, dass sich kein Interferenzmuster bildet. Quantenmechanisch jedoch bleibt es erhalten.
 
 
 
