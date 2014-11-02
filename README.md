@@ -1,7 +1,7 @@
-F2-Praktikum
+F2-Praktikum, vom F1-Praktikum kopiert
 ==========
 
-Protokolle und Vorbereitungen für das Fortgeschrittenen-Praktikum in der Physik (P3) am KIT
+Protokolle und Vorbereitungen für das Fortgeschrittenen-Praktikum in der Physik (P4) am KIT
 
 Für jeden Versuch sollte ein eigener Ordner erstellt werden. Leerzeichen sind zu vermeiden und am besten ist Kleinschreibung und kurze Ordnernamen, um die Arbeit von der Kommandozeile aus zu erleichtern. Für die Versuchsvorbereitung kann ein eigener Unterordner erstellt werden.
 
@@ -31,8 +31,8 @@ Wichtige git-Befehle:
 
 - git add remote "remote-alias" "url": 
 Füge ein remote repository zu deinem Projekt hinzu. Ganz konkret ist das hier das github-Repository, das halt online   auf einem server ist, parallel zu deinem eigenen Repository auf deinem Computer. Die URL ist folgende:
-"https://github.com/elimik31/fpraktikum.git". Man kann z.B. schreiben:
-"git add remote fpraktikum@github https://github.com/elimik31/fpraktikum.git"
+"https://github.com/username4/F2-Praktikum/". Man kann z.B. schreiben:
+"git add remote fpraktikum@github https://github.com/username4/F2-Praktikum/"
 
 - git remote: zeige alle remote repositories zum lokalen repo an
 - git fetch "remote-alias": Lade Daten von einem remote repo herunter. Kann dann mit "git merge" zur aktuellen branch gemerged werden. Einfacher ist die Benutzung von git pull.
