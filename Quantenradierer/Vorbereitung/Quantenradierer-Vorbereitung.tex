@@ -40,6 +40,8 @@
 \subsection{Interferenz von Wellen, klassisch und quantenmechanisch}
 \label{sec:interferenz}
 
+\paragraph{Klassisch Betrachtung:}
+\label{par:klass}
 In der klassischen Elektrodynamik werden Lichtstrahlen als elektromagnetische Wellen beschrieben, also Wellen im elektromagnetischen Feld,
 und sind Lösungen der Maxwellschen Gleichungen. Das elektrische Feld $\vec{E}$ einer ebenen elektromagnetischen Welle breitet sich gemäß der
 Gleichung
@@ -63,10 +65,59 @@ Da einzelne Photonen die Energie $E_\gamma = \hbar \omega$ haben, ist die Photon
   \eta_{ph}(\vec{x},t) = \frac{I(\vec{x},t)}{\hbar \omega} = \frac{|\vec{E}(\vec{x},t)|^2}{\hbar \omega}
 \end{equation}
 
-Wenn sich zwei Wellen überlagern, ist die entstehende Welle die Superposition beider Teilwellen.\\
+Wenn sich zwei Wellen überlagern, ist die entstehende Welle die Superposition beider Teilwellen.
+Wir nehmen nun an, dass sich die Wellen in z-Richtung ausbreiten.
+Im Interferometer wird eine ebene Welle mit einem Strahlteiler in zwei Teilwellen geteilt, die dann mit einem Strahlteiler wieder
+zusammengeführt werden. Dabei erfährt eine der Wellen eine Laufzeitdifferenz $\Delta z$, was bei der Superposition zu
+einem Phasenunterschied $\Delta z k_z$ führt. Aus der Superposition von zwei Wellen mit einem solchen Phasenunterschied
+folgt eine Photonendichte
 
-Im Interferometer wird eine ebene Welle in zwei Teilwellen geteilt, wobei es 
+\begin{equation}
+  \eta_{ph}(\vec{x},t) = \frac{1}{2} \vec{E}_0 \left( e^{i k_z z} + e^{i k_z (z + \Delta z)} \right) e^{i\omega t},
+\end{equation}
 
+was quadratisch zu einer Intensität von 
+
+\begin{equation}
+  \begin{split}
+    I(z,t) &= \frac{|\vec{E_0}|^2 }{4} \left(e^{i k_z z} + e^{i k_z (z + \Delta z)} \right) \left(e^{-i k_z z} + e^{-i k_z (z + \Delta z)} \right)\\
+    &= \frac{|\vec{E_0}|^2}{2}(1+\cos(k_z\Delta z)\\
+  \end{split}
+\end{equation}
+
+und einer entsprechenden Photonendichte $\eta_{ph}(z,t) = \frac{I(z,t)}{\hbar \omega}$ führt. Der vom Phasenunterschied abhängige
+Kosinusterm wird als Interferenzterm bezeichnet, da ohne die Interferenz die Intensität nach der Vereinigung konstant $\frac{|\vec{E_0}|^2}{2}$
+wäre. Da am Mach-Zehnder-Interferomter der Phasenunterschied durch die Divergenz an einer Linse entsteht, also vom der Position des Durchgangs
+durch die Linse abhängt, sieht man an einem Schirm hinter dem zweiten Strahlteiler konzentrische Ringe, die durch diesen Interferenzterm
+entstehen. Diese Ringe sind nur durch die Welleneigenschaften von Licht erklärbar.
+
+\paragraph{Quantenmechanische Betrachtung:}
+In der Quantenmechanik betrachtet man Licht zwar als Teilchen, da die Energie und Information gequantelt in Form von Photenen
+transportiert, aber schreibt ihnen auch Welleneigenschaften zu. Das liegt daran, dass quantenmechanische Teilchen keine definite
+Position haben. Stattdessen werden sie durch eine komplexe Wellenfunktion $\Psi(\vec{x})$ beschrieben, die eine Lösung der
+komplexen Schrödingergleichung 
+\begin{equation}
+  i \hbar \frac{\del}{\del t} \Psi(\vec{x},t) = H \Psi(\vec{x},t),
+\end{equation}
+ist.
+
+Deren Betragsquadrat gibt für jeden Ort im Raum die Aufenthaltswahrscheinlichkeit des Teilchens an:
+\begin{equation}
+  \rho(\vec{x},t) = |\Psi(\vec{x},t)|^2 = \Psi(\vec{x},t) \cdot \Psi^*(\vec{x},t).
+\end{equation}
+
+Bei Photonen ist die Aufenthaltswahrscheinlichkeit proportional zu der Photonendichte $\eta_{ph}$ aus der klassischen Betrachtung von elektromagnetischen Wellen. Die Lösungen der Schrödingergleichung für freie Photonen sind wie in der Elektrodynamik ebene Wellen der Form
+
+\begin{equation}
+  \Psi(\vec{x},t) = \Psi_0 e^{i(\vec{k}\vec{x}-\omega t)}.
+\end{equation}
+
+Somit lassen sich dir konzentrischen Ringe am Schirm vom Interferometer quantenmechanisch völlig äquivalent zur Elektrodynamik erklären,
+mit einem identischen Interferenzterm der durch den Phasenunterschied zustandekommt,
+nur dass man statt elektromagnetische Wellen die Wellenfunktion verwendet. \\
+
+Interessant ist, dass auch einzelne Photonen durch eine Wellenfunktion beschrieben werden und es daher auch zu Interferenzeffekton kommt,
+wenn man einzelne Teilchen in ein Interferometer schickt.
 
 
 \subsection{"`Welcher-Weg"'-Information}
