@@ -79,9 +79,10 @@ folgt eine Photonendichte
 was quadratisch zu einer Intensität von 
 
 \begin{equation}
+\label{eqn:intensitaet}
   \begin{split}
     I(z,t) &= \frac{|\vec{E_0}|^2 }{4} \left(e^{i k_z z} + e^{i k_z (z + \Delta z)} \right) \left(e^{-i k_z z} + e^{-i k_z (z + \Delta z)} \right)\\
-    &= \frac{|\vec{E_0}|^2}{2}(1+\cos(k_z\Delta z)\\
+    &= \frac{|\vec{E_0}|^2}{2}(1+\cos(k_z\Delta z) )\\
   \end{split}
 \end{equation}
 
@@ -164,14 +165,18 @@ In diesen Versuch wird das Mach-Zehnder-Interferometer, wie in Abbildung \ref{fi
 \end{equation}
 
 Die Teilstrahlen A 	und B werden unterschiedlich polarisiert, mit Polarisationswinkeln von $45^{\circ}$ und $-45^{\circ}$. 
-Hieraus ergibt sich:
+Hieraus ergeben sich
+
 \begin{equation}
-\vec{E_A} = \frac{E_0}{2 \sqrt{2}} \ \begin{pmatrix} 1\\ 1 \end{pmatrix}
+\vec{E_A} = \frac{E_0}{2 \sqrt{2}} \ \begin{pmatrix} 1\\ 1 \end{pmatrix} \ e^{i (k_z z -\omega t)}
 \end{equation}
+und
 \begin{equation}
-\vec{E_B} = \frac{E_0}{2 \sqrt{2}} \ \begin{pmatrix} 1\\ -1 \end{pmatrix}
+\vec{E_B} = \frac{E_0}{2 \sqrt{2}} \ \begin{pmatrix} 1\\ -1 \end{pmatrix} \ e^{i (k_z (z + \delta z) -\omega t)} .
 \end{equation}
 
+Hierbei wurde ohne Einschränkung der Allgemeinheit angenommen, dass sich die Wellen in z-Richtung ausbreiten. 
+Der Gangunterschied $\Delta z$ stammt im Experiment von einer Linse, die eine kleine Divergenz der Strahlen verursacht.
 
 \begin{figure}
 \includegraphics[width=0.7\textwidth]{mach-zehnder.png}
@@ -179,10 +184,40 @@ Hieraus ergibt sich:
 \label{fig:mach-zehnder}
 \end{figure}
 
+Durch die Wahl der Polarisation sind die Wellen A und B offensichtlich orthogonal. Der Interferenzterm aus Gleichung \ref{eqn:intensitaet} verschwindet. Es gilt somit der klassische Fall für die Intensität
+\begin{equation}
+I(z,t) = \frac{|\vec{E_0}|^2}{2}.
+\end{equation}
+Es ist somit kein Interferenzmuster sichtbar. 
+Ohne Polarisationsfilter wäre ein ringförmiges Interferenzmuster zu erwarten.
+Mit einem dritten Polarisator, der vor einem Abbildungsschirm montiert wird, kann man das Muster wieder sichtbar machen. 
+Ist der Polarisator auf $0^{\circ}$ gestellt, ergeben sich die Teilwellen als
+
+\begin{equation}
+\vec{E_A} = \frac{E_0}{4} \ \begin{pmatrix} 1\\ 0 \end{pmatrix} \ e^{i (k_z z -\omega t)}
+\end{equation}
+und
+\begin{equation}
+\vec{E_A} = \frac{E_0}{4} \ \begin{pmatrix} 1\\ 0 \end{pmatrix} \ e^{i (k_z z -\omega t)}.
+\end{equation}
+
+Hier verschwindet der Interferenzterm offensichtlich nicht und das Muster wird wieder erkennbar. Gleichung \ref{eqn:intensitaet} bleibt somit
+
+\begin{equation}
+I(z,t) = \frac{|\vec{E_0}|^2}{2} \ (1+\cos(k_z\Delta z) ).
+\end{equation}
+
+Man sieht also deutlich die Signifikanz der "Welcher-Weg"-Information aus \ref{sec:welcher-weg}.
 
 
 \section{Versuchsdurchführung}
 \label{sec:versuchsdurchfuhrung}
+
+
+
+
+
+
 
 
 \clearpage
