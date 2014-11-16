@@ -151,16 +151,49 @@ Hierbei ist $I_M$ der gemessene Gesamtstrom an der Membran. $\lambda_M$ beschrei
 Der typische Aufbau einer BLM ("`Black Lipid Membrane"') ist in Abbildung \ref{fig:blmaufbau} dargestellt und erklärt. \\
 
 In unserem Fall werden als Elektrolytlösung 0.5\,M Kaliumchlorid (KCl) vorbereitet, um genügend Ionen zur Verfügung zustellen, aber auch nicht zu viele, um die Lipid-Doppelschicht nicht zu zerstören. Die Lipidlösung zum Aufmalen der BLM soll eine Konzentration von 
-$\SI{3,5}{mg/ml}$ haben. Zum Erzeugen der Ionenkanäle in der Membran wird das Antibiotikum Gramicidin A verwendet. Dazu wird zuerst eine
+$\SI{3,5}{mg/ml}$ Glyzerin-Monooleat in Tetradekan haben. Zum Erzeugen der Ionenkanäle in der Membran wird das Antibiotikum Gramicidin A verwendet. Dazu wird zuerst eine
 Lösung mit einer Konzentration von $\SI{0,1}{mg/ml}$ hergestellt, von der ein Teil nochmal mit Wasser verdünnt wird, um eine Konzentration von
 $\SI{4}{ng/ml}$ zu erhalten. \\
 
 Als Serienwiderstand werden $\SI{100}{k\ohm}$ verwendet und als Feedback-Widerstand $\SI{500}{k\ohm}$. Zuerst werden wir eine 
-Rechteck-Wechselspannung mit einer Frequenz von 100\,Hz verwenden, die eine Amplitude zwischen 20 und 100\,mV haben soll.
+Rechteck-Wechselspannung mit einer Frequenz von 100\,Hz verwenden, die eine Amplitude zwischen 20 und 100\,mV haben soll. \\
 
 
-\subsection{Messung der Membran-Kapazität}
+
+\subsection{Erzeugung der Lidid-Doppelschicht und Messung der Membran-Kapazität}
 \label{sec:capacity}
+Die Küvette soll in die Apperatur eingesetzt und die Lipidlösung mit einem Teflonstäbchen auf das gereinigte Loch aufgetragen werden, wobei darauf geachtet werden sollte, dass es keine Luftblasen gibt.
+Dann soll einige Minuten gewartet werden, damit die Lipid-Doppelschicht trocknet. Die Schicht wird dabei mit einer Lampe im Abstand
+von 30\,cm beleuchtet. Am Anfang sollten in der Reflexion Newtonsche Ringe sichtbar sein. Wenn das nicht der Fall ist, soll mit einem
+Teflonstäbchen etwas von der Schicht entfernt werden. Im getrockneten Zustand sollte die Schicht im Objektiv schwarz erscheinen, da es 
+an das an der Vorder- und Rückseite der Schicht reflektierte Licht destruktiv interferiert. Außerdem sollten im getrockneten Zustand 
+einer Erhöhung der Membran-Kapazität feststellbar sein. Dabei kann die Membran als Plattenkondensator angenommen werden. Die Kapazität $C$
+ist dabei eine Funktion der Dicke $d$ und der Fläche $A$ der Membran
+\begin{equation}
+C = \epsilon_0 \epsilon_r \frac{A}{d}.
+\end{equation}1
+
+Die experimentelle Bestimmung der Kapazität erfolgt über die Messung des Relaxationszeit $\tau$ des Membranstroms $I_C$. Die Entladung erfolgt
+exponentiell gemäß der Formel
+
+\begin{equation}
+  I_C(t) = - \frac{U_0}{R_C} \cdot e^{\frac{t}{\tau}} = - I_0 \cdot e^{\frac{t}{R_C C}},
+\end{equation}
+
+wobei $R_C$ den reellen Widerstand des Kondensators bezeichnet. 
+Daraus folgt, dass sich die Kapazität berechnen lässt über:
+
+\begin{equation}
+  C = \frac{\tau}{R_C}.
+\end{equation}
+
+Als spezifische Kapazität pro Fläche $C_S$ soll ebenfalls bestimmt werden:
+
+\begin{equation}
+  C_S = \frac{C}{A}.
+\end{equation}
+
+Sobald die Membran trocken ist, wird in beide Hälften der Küvette die KCl Lösung eingefüllt.
 
 \subsection{Messung einzelne Ionenkanäle}
 \label{sec:singlechannels}
