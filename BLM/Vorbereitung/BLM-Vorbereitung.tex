@@ -95,7 +95,7 @@ Hieraus ergeben sich die Zusammenhänge der makroskopisch Messbaren Größen
 I_M = \lambda_M \cdot V_m
 \end{equation}
 und
-\begin{equation}
+\begin{equation}\label{eqn:transport-leitfaehigkeit}
 \lambda_m = \Lambda \cdot N_p.
 \end{equation}
 
@@ -120,15 +120,44 @@ Die Dimerasation kann durch die Gleichung
 G_1 + G_1 	\xtofrom[k_d]{k_r} G_2
 \end{equation}
 
-beschrieben werden. $k_d$ ist hier die Rate der Dissoziation und $k_r$ die der Entstehung der Dimere. Die Dissoziation folgt einem exponentiellem Zerfallsgesetz, die der Entstehungreaktion ist linear zu Konzentration. Aus dem Verlauf des Stromes über die zeit lässt sich die Zerfallsrate bestimmen.
+beschrieben werden. $k_d$ ist hier die Rate der Dissoziation und $k_r$ die der Entstehung der Dimere, $G_1$ entspricht den Monomeren, $G_2$ den Dimeren. Die Dissoziation folgt einem exponentiellem Zerfallsgesetz, die der Entstehungreaktion ist linear zum Quadrat der Konzentration. Aus dem Verlauf des Stromes über die zeit lässt sich die Zerfallsrate bestimmen.
 
 
 
 \subsubsection{Mehrkanalentstehung}
 
+Bei hohen Konzentrationen sind einzelne Kanäle nicht mehr ohne weiteres zu beobachten. Es gibt jedoch ein Rauschen in der Strommessung. Dies entstammt dem Öffnen und schließen von Kanälen. 
+Die Reaktionsgleichung ergibt sich als
+\begin{equation}\label{eqn:mehrkanal-reaktion1}
+\frac{dG_2}{dt} = - k_d \cdot G_2 + k_r \cdot G_1^2 .
+\end{equation}
+Woraus folgt:
+\begin{equation}\label{eqn:mehrkanal-reaktion2}
+\frac{G_2}{G_1^2} = \frac{k_r}{k_d} .
+\end{equation}
 
+Die Gesamtzahl der Moleküle ist
+\begin{equation}
+G = G_1 + 2 \cdot G_2.
+\end{equation}
+
+Dieser Prozess kann beobachtet werden, wenn das Gleichgewicht, zum Beispiel mit einem elektrischem Feld, oder Temperaturänderung, gestört wird. 
+Auch spontane Änderungen der Teilchenzahl können im Rauschen beobachtet werden.
+
+Die Relaxationszeit ergibt sich aus Gleichungen \ref{eqn:mehrkanal-reaktion1} und \ref{eqn:mehrkanal-reaktion2}, zusammen mit \ref{eqn:transport-leitfaehigkeit} (mit $G_2 = N_P$) als
+
+\begin{equation}
+\tau^{-1} = k_d + 4 \cdot k_r \cdot G_1 = k_d + 4 \sqrt{\frac{k_d \cdot k_r}{\Lambda}  \cdot \lambda_M} .
+\end{equation}
+
+Deutlich zu erkennen ist die inverse wurzelförmige Abhängigkeit zur Leitfähigkeit
 
 \subsubsection{Autokorrelationsfunkion}
+
+Eine Autokorrelationsfunktion beschreibt die Korrelation eines Signals mit sich selbst zu einem früherem Zeitpunkt. 
+
+
+
 
 
 \subsubsection{Charakteristik einer Membran}
