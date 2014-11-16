@@ -191,8 +191,8 @@ exponentiell gemäß der Formel
   I_C(t) = - \frac{U_0}{R_C} \cdot e^{\frac{t}{\tau}} = - I_0 \cdot e^{\frac{t}{R_C C}},
 \end{equation}
 
-wobei $R_C$ den reellen Widerstand des Kondensators bezeichnet. 
-Daraus folgt, dass sich die Kapazität berechnen lässt über:
+wobei $R_C$ den reellen Widerstand des Kondensators bezeichnet. Der Entladungsvorgang findet immer dann statt, wenn die Rechteckspannung umschwenkt. Der Die Spannung $U_0$ entspricht dann der doppelten Spannungsamplitude der Spannungsquelle.
+Es folgt, dass sich die Kapazität berechnen lässt über:
 
 \begin{equation}
   C = \frac{\tau}{R_C}.
@@ -208,10 +208,17 @@ Sobald die Membran trocken ist, wird in beide Hälften der Küvette die KCl Lös
 
 \subsection{Messung einzelne Ionenkanäle}
 \label{sec:singlechannels}
+Die Widerstände werden in diesem Versuchsteil gleich gelassen, aber statt der Wechselspannung wird nun an der Membran eine Gleichspannung 
+von 50\,mV verwendet. Es soll eine kleine Menge Gramicidin A hinzugefügt und dabei der Membranstrom aufgezeichnet werden. Da der Strom 
+sprunghaft mit der Anzahl der Kanäle steigen sollte, kann durch Differenzbildung an einer Stufe der Strom durch einen einzigen Kanal bestimmt werden. Wenn dieser Strom bekannt ist, kann man folglich immer sehen, wenn ein neuer Kanal ensteht oder zerfällt.\\
+
+Damit kann nun ein Histogramm der Kanal-Lebenszeiten erzeugt werden. Unter der Exponentialverteilung kann damit die mittlere Lebendauer 
+eines Kanals und der Ratenkoeffizient für den Zerfall von Gramicidin A bestimmt werden.
 
 \subsection{Messung multipler Ionenkanäle}
 \label{sec:multiplechannels}
-
+Nun soll die Konzentration von Gramicidin A erhöht werden, sodass viele Ionenkanäle entstehen. Mithilfe der gegebenen Analyse-Software
+wird der Membranstrom histogrammiert. Daraus sollen die Stufenhöhen und deren Mittelwerte bestimmt werden, was durch Messung der Position der Peaks und der dazugehörigen Stromdifferenz erfolgt.
 
 \subsection{Noise-Analyse und Autokorrelationsfunktion}
 \label{sec:noise-autocorr}
