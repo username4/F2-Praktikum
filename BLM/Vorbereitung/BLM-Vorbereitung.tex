@@ -146,7 +146,7 @@ Auch spontane Änderungen der Teilchenzahl können im Rauschen beobachtet werden
 
 Die Relaxationszeit ergibt sich aus Gleichungen \ref{eqn:mehrkanal-reaktion1} und \ref{eqn:mehrkanal-reaktion2}, zusammen mit \ref{eqn:transport-leitfaehigkeit} (mit $G_2 = N_P$) als
 
-\begin{equation}
+\begin{equation}\label{mehrkanal-tau}
 \tau^{-1} = k_d + 4 \cdot k_r \cdot G_1 = k_d + 4 \sqrt{\frac{k_d \cdot k_r}{\Lambda}  \cdot \lambda_M} .
 \end{equation}
 
@@ -155,19 +155,20 @@ Deutlich zu erkennen ist die inverse wurzelförmige Abhängigkeit zur Leitfähig
 \subsubsection{Autokorrelationsfunkion}
 
 Eine Autokorrelationsfunktion beschreibt die Korrelation eines Signals mit sich selbst zu einem früherem Zeitpunkt. 
+Bei einem stochastischem Prozess, wie der Entstehung und Schließung von Kanälen, ist das Zeitprofil der Korrelationsfunktion gleich der Relaxation des Gleichgewichts [\ref{ref:mappe}]. Diese ist in Gleichung \ref{mehrkanal-tau} beschrieben.
 
+Betrachtet man ein ein Signal x(t), welches den Erwartungswert 0 hat, wie das Rauschen des Stroms, so erwartet man, dass der Erwartungswert 
 
+\begin{equation}
+<x(t) \cdot x(t+T)> = 0
+\end{equation}
+für $T \rightarrow \inf $, sowie
+\begin{equation}
+<x(t) \cdot x(t+T)> = <x^2>
+\end{equation}
+für $T=0$. 
 
-
-
-\subsubsection{Charakteristik einer Membran}
-
-
-
-
-
-
-
+Die Lebensdauer eines Kanals $\frac{1}{k_d}$ definiert somit die Relaxationszeit. Somit genügt es die Korrelationsfunktion zu analysieren. Die einzelnen Kanäle müssen nicht beobachtet werden und somit ist das Rauschen reduziert.
 
 
 
