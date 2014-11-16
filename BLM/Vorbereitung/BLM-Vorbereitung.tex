@@ -167,34 +167,87 @@ Eine Autokorrelationsfunktion beschreibt die Korrelation eines Signals mit sich 
 
 
 
-\section{Versuchsaufbau}
+
+
+
+
+
+
+\clearpage
+\section{Versuchsaufbau und Versuchsdurchführung}
+
+
+
+\subsection{Versuchsaufbau und Vorbereitung der Lösungen}
+\label{sec:bilayer-vorbereitung}
 
 \begin{figure}[tb!]
   \centering
-  \includegraphics[width=0.9\textwidth]{abbildungen/blmaufbau.png}
-  \caption{\textbf{Aufbau einer BLM ("`Black Lipid Membrane"').} \\Eine Küvette ist durch eine hydrophobe Trennwand zweigeteilt. Diese Trennwand hat ein kleines Loch in der Größenordnungen von Mikrometern, auf das die BLM "`aufgemalt"' ist. Die Küvette enthält eine Lösung und zwischen beiden Hälften kann durch Dioden eine Gleich- oder Wechselspannung angelegt werden. An einem Oszilloskop kann der Strom zwischen beiden Hälften beobachtet werden.}
+  \includegraphics[width=0.8\textwidth]{abbildungen/blmaufbau.png}
+  \caption{\textbf{Aufbau einer BLM ("`Black Lipid Membrane"').} \\Eine Küvette ist durch eine hydrophobe Trennwand zweigeteilt. Diese Trennwand hat ein kleines Loch in der Größenordnungen von Mikrometern, auf das eine Lipid-Doppelschicht "`aufgemalt"' wird. Da sie im getrockneten Zustand eine molekulare Dicke von nur einigen Nanometern hat, kommt es zu destruktiver Interferenz des an beiden Seiten reflektierten Lichtes und sie erscheint schwarz, weshalb die Lipid-Doppelschicht als BML bezeichnet wird. Die Küvette enthält eine Elektrolytlösung und zwischen beiden Hälften kann durch Dioden eine Gleich- oder Wechselspannung angelegt werden. Das Ablesen von elektrischen Signalen erfolgt am Oszilloskop, das hinter einen Verstärker geschaltet ist.}
   \label{fig:blmaufbau}
 \end{figure}
 
+Der typische Aufbau einer BLM ("`Black Lipid Membrane"') ist in Abbildung \ref{fig:blmaufbau} dargestellt und erklärt. \\
+
+In unserem Fall werden als Elektrolytlösung 0.5\,M Kaliumchlorid (KCl) vorbereitet, um genügend Ionen zur Verfügung zustellen, aber auch nicht zu viele, um die Lipid-Doppelschicht nicht zu zerstören. Die Lipidlösung zum Aufmalen der BLM soll eine Konzentration von 
+$\SI{3,5}{mg/ml}$ Glyzerin-Monooleat in Tetradekan haben. Zum Erzeugen der Ionenkanäle in der Membran wird das Antibiotikum Gramicidin A verwendet. Dazu wird zuerst eine
+Lösung mit einer Konzentration von $\SI{0,1}{mg/ml}$ hergestellt, von der ein Teil nochmal mit Wasser verdünnt wird, um eine Konzentration von
+$\SI{4}{ng/ml}$ zu erhalten. \\
+
+Als Serienwiderstand werden $\SI{100}{k\ohm}$ verwendet und als Feedback-Widerstand $\SI{500}{k\ohm}$. Zuerst werden wir eine 
+Rechteck-Wechselspannung mit einer Frequenz von 100\,Hz verwenden, die eine Amplitude zwischen 20 und 100\,mV haben soll. \\
 
 
 
-
-
-\section{Aufgabenstellung und Versuchsdurchführung}
-
-\subsection{Vorbereitung der Lipid-Doppelschicht}
-\label{sec:bilayer-vorbereitung}
-
-\subsection{Messung der Membran-Kapazität}
+\subsection{Erzeugung der Lidid-Doppelschicht und Messung der Membran-Kapazität}
 \label{sec:capacity}
+Die Küvette soll in die Apperatur eingesetzt und die Lipidlösung mit einem Teflonstäbchen auf das gereinigte Loch aufgetragen werden, wobei darauf geachtet werden sollte, dass es keine Luftblasen gibt.
+Dann soll einige Minuten gewartet werden, damit die Lipid-Doppelschicht trocknet. Die Schicht wird dabei mit einer Lampe im Abstand
+von 30\,cm beleuchtet. Am Anfang sollten in der Reflexion Newtonsche Ringe sichtbar sein. Wenn das nicht der Fall ist, soll mit einem
+Teflonstäbchen etwas von der Schicht entfernt werden. Im getrockneten Zustand sollte die Schicht im Objektiv schwarz erscheinen, da es 
+an das an der Vorder- und Rückseite der Schicht reflektierte Licht destruktiv interferiert. Außerdem sollten im getrockneten Zustand 
+einer Erhöhung der Membran-Kapazität feststellbar sein. Dabei kann die Membran als Plattenkondensator angenommen werden. Die Kapazität $C$
+ist dabei eine Funktion der Dicke $d$ und der Fläche $A$ der Membran
+\begin{equation}
+C = \epsilon_0 \epsilon_r \frac{A}{d}.
+\end{equation}1
+
+Die experimentelle Bestimmung der Kapazität erfolgt über die Messung des Relaxationszeit $\tau$ des Membranstroms $I_C$. Die Entladung erfolgt
+exponentiell gemäß der Formel
+
+\begin{equation}
+  I_C(t) = - \frac{U_0}{R_C} \cdot e^{\frac{t}{\tau}} = - I_0 \cdot e^{\frac{t}{R_C C}},
+\end{equation}
+
+wobei $R_C$ den reellen Widerstand des Kondensators bezeichnet. Der Entladungsvorgang findet immer dann statt, wenn die Rechteckspannung umschwenkt. Der Die Spannung $U_0$ entspricht dann der doppelten Spannungsamplitude der Spannungsquelle.
+Es folgt, dass sich die Kapazität berechnen lässt über:
+
+\begin{equation}
+  C = \frac{\tau}{R_C}.
+\end{equation}
+
+Als spezifische Kapazität pro Fläche $C_S$ soll ebenfalls bestimmt werden:
+
+\begin{equation}
+  C_S = \frac{C}{A}.
+\end{equation}
+
+Sobald die Membran trocken ist, wird in beide Hälften der Küvette die KCl Lösung eingefüllt.
 
 \subsection{Messung einzelne Ionenkanäle}
 \label{sec:singlechannels}
+Die Widerstände werden in diesem Versuchsteil gleich gelassen, aber statt der Wechselspannung wird nun an der Membran eine Gleichspannung 
+von 50\,mV verwendet. Es soll eine kleine Menge Gramicidin A hinzugefügt und dabei der Membranstrom aufgezeichnet werden. Da der Strom 
+sprunghaft mit der Anzahl der Kanäle steigen sollte, kann durch Differenzbildung an einer Stufe der Strom durch einen einzigen Kanal bestimmt werden. Wenn dieser Strom bekannt ist, kann man folglich immer sehen, wenn ein neuer Kanal ensteht oder zerfällt.\\
+
+Damit kann nun ein Histogramm der Kanal-Lebenszeiten erzeugt werden. Unter der Exponentialverteilung kann damit die mittlere Lebendauer 
+eines Kanals und der Ratenkoeffizient für den Zerfall von Gramicidin A bestimmt werden.
 
 \subsection{Messung multipler Ionenkanäle}
 \label{sec:multiplechannels}
-
+Nun soll die Konzentration von Gramicidin A erhöht werden, sodass viele Ionenkanäle entstehen. Mithilfe der gegebenen Analyse-Software
+wird der Membranstrom histogrammiert. Daraus sollen die Stufenhöhen und deren Mittelwerte bestimmt werden, was durch Messung der Position der Peaks und der dazugehörigen Stromdifferenz erfolgt.
 
 \subsection{Noise-Analyse und Autokorrelationsfunktion}
 \label{sec:noise-autocorr}
