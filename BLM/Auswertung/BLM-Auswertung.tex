@@ -73,16 +73,24 @@ Daraus folgt, dass die BLM etwa 45\% des Lochs bedeckt, was bei einem Lochdurchm
 
 \section{Aufgabe 3: Messung multipler Ionenkanäle}
 
-In Aufgabe 2 sind bereits mehrere Kanäle beobachtet worden. Die gesamte Spritze wurde entleert, sodass sich 1 ml Gramicidin A in der Lösung befanden. Unter diesen Bedingungen war es noch schwieriger eine stabile Lipidschicht aufzubauen.
+Die gesamte Spritze wurde entleert, sodass sich 1 ml Gramicidin A in der Lösung befanden. Unter diesen Bedingungen war es noch schwieriger eine stabile Lipidschicht aufzubauen.
 Die Schicht platzte nach kurzer Zeit, insbesondere nach Anlegen einer Spannung, sodass die Messung nur in einem Intervall von einer Minute erfolgen konnte.
-
-Es ist ein Rauschen zu erkennen, bei dem 
 
 \begin{figure}
 \includegraphics[width=0.8\textwidth]{abbildungen/mehrkanal_raw.png}
 \caption{Strom durch eine Lipidmembran bei einer hohen Konzentration von Gramicidin A}
 \label{fig:mehrkanal-roh}
 \end{figure}
+
+
+Es ist ein Rauschen zu erkennen, das dem Öffnen und Schließen der Kanäle entspricht. Dieses ist in Abbildung \ref{fig:mehrkanal-korrel} gezeigt. In Aufgabe 2 sind bereits mehrere Kanäle beobachtet worden, daher sieht dieses Bild ähnlich aus. Der Strom ist hier nicht absolut angegeben. Einzelne Kanäle lassen sich hier nicht erkennen. Die durchschnittliche Lebensdauer der Kanäle lässt sich durch die Autokorrelationsfunktion, wie in der Vorbereitung besprochen, bestimmen. Die Lebensdauer ist die Dauer, in der sie auf einen Wert von $\frac{1}{e}$ mal dem Anfangswert abfällt. In Abbildung \ref{fig:mehrkanal-korrel} ist die Autokorrelation gezeigt. Dieses Diagramm wurde mit dem Labview-Programm erzeigt. Aus diesem wurde mittels Inkscape eine mittlere Lebensdauer von
+
+\begin{equation}
+\tau = 
+\end{equation}
+
+bestimmt.
+
 
 
 \begin{figure}
