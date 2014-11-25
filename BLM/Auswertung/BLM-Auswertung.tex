@@ -71,36 +71,6 @@ Wir erhielten daraus eine Membranfläche von
 Beide Teile der Küvette enthielten jeweils eine Elektrode. An die Elektroden
 wurde nun eine Rechteckspannung mit einer Frequenz von 100\,Hz angelegt. Bei jedem Umpolen der Rechteckspannung entlud sich die Membran wie ein Plattenkondensator exponentiell, bis die Spannung gegen Null ging. Die Frequenz war klein genug, dass sich die Membran fast vollständig entladen konnte, bevor es wieder zu einem Umpolen kam.\\
 
-Auf dem Oszilloskop war sichtbar, dass die Spannungsamplitude 10\,V betrug. Wir haben nun am Oszilloskop abgelesen, nach welcher Zeitspanne die Spannung auf
-\begin{equation}
- \frac{U_0}{\mathrm{e}} = \frac{\SI{10}{V}}{\mathrm{e}} \approx \SI{3,7}{V} 
-\end{equation}
-abfiel. Das ist die Relaxationszeit und die Betrug bei uns ungefähr
-
-\begin{equation}
-  \tau \approx \SI{60}{\micro\s}.
-\end{equation}
-
-Damit kann nun  mit dem Widerstand $R_C = \SI{100}{k\ohm}$ % bin mir hier echt nicht sicher, welcher Wid. verwendet werden muss, muss Michel fragen
-über Gleichung (14) aus der Vorbereitung die Kapazität der BLM bestimmen:
-e\begin{equation}
- C = \frac{\tau}{R_C} = \frac{\SI{60}{\micro\s}}{\SI{100}{k\ohm}} = \SI{0,6}{\nano\farad}.
-\end{equation}
-
-Mit der Membranfläche aus \eqref{eq:area} erhält man die spezifische Kapazität der Membran:
-
-\begin{equation}
-  C_{spez} \frac{C}{A} = \frac{\SI{0,6}{\nano\farad}}{\SI{0,0035}{cm^2}} \approx \SI{0,17}{\micro\farad\per\cm^2}.
-\end{equation}
-
-Außerdem erhält man mit einer angenommenen relativen Permittivät der Membran von $\epsilon_r = 2 $ \ref{ref:mappe},
-unter Verwendung von Gleichung (12) aus der Vorbereitung 
-die Membrandicke
-\begin{equation}
-  d = \epsilon_0 \epsilon_r \frac{A}{C} = \SI{8,85e-12}{\farad\per\m} \cdot 2 \cdot \frac{\SI{0,35e-6}{m^2}}{\SI{0,6}{nF}} 
-\approx \SI{10,33}{nm}.
-\end{equation}
-
 \begin{figure}[tbh!]
   \centering
   \begin{minipage}[b]{.4\textwidth}
@@ -119,6 +89,69 @@ Daraus folgt, dass die BLM etwa 45\% des Lochs bedeckt, was bei einem Lochdurchm
 \label{fig:blmflaeche}
 \end{figure}
 
+Auf dem Oszilloskop war sichtbar, dass die Spannungsamplitude 10\,V betrug. Wir haben nun am Oszilloskop abgelesen, nach welcher Zeitspanne die Spannung auf
+\begin{equation}
+ \frac{U_0}{\mathrm{e}} = \frac{\SI{10}{V}}{\mathrm{e}} \approx \SI{3,7}{V} 
+\end{equation}
+abfiel. Das ist die Relaxationszeit und die Betrug bei uns ungefähr
+
+\begin{equation}
+  \tau \approx \SI{60}{\micro\s}.
+\end{equation}
+
+Damit kann nun  mit dem Widerstand $R_C = \SI{100}{k\ohm}$
+über Gleichung (14) aus der Vorbereitung die Kapazität der BLM bestimmen:
+e\begin{equation}
+ C = \frac{\tau}{R_C} = \frac{\SI{60}{\micro\s}}{\SI{100}{k\ohm}} = \SI{0,6}{\nano\farad}.
+\end{equation}
+
+Mit der Membranfläche aus \eqref{eq:area} erhält man die spezifische Kapazität der Membran:
+
+\begin{equation}
+  C_{spez} = \frac{C}{A} = \frac{\SI{0,6}{\nano\farad}}{\SI{0,0035}{cm^2}} \approx \SI{0,17}{\micro\farad\per\cm^2}.
+\end{equation}
+Laut der Vorbereitungsmappe~\ref{ref:mappe} liegt die spezifische Kapazität der Membran normalerweise zwischen $\SI{0,3}{\micro\F\per\cm^2}$
+und $\SI{0,8}{\micro\F\per\cm^2}$. Die von uns gemessene spezifische Kapazität ist damit um einen Faktor 1.8 kleiner als die 
+in der Vorbereitungsmappe angegebene untere Grenze. Eine solche Abweichung ist jedoch nicht überraschend, da 
+die Fläche der BLM nur grob abgeschätzt wurde und die Relaxationszeit 
+am Oszilloskop nur ungefähr abgelesen werden konnte, sodass alle eingehenden experimentellen Parameter mit großen Fehler behaftet sind.
+Zumindest befindet sich die von uns bestimmte Kapazität in der richtigen Größenordnung und bietet eine gute Abschätzung. \\
+
+Außerdem erhält man mit einer angenommenen relativen Permittivät der Membran von $\epsilon_r = 2 $~\ref{ref:mappe},
+unter Verwendung von Gleichung (12) aus der Vorbereitung 
+die Membrandicke
+\begin{equation}
+  d = \epsilon_0 \epsilon_r \frac{A}{C} = \SI{8,854e-12}{\farad\per\m} \cdot 2 \cdot \frac{\SI{0,35e-6}{m^2}}{\SI{0,6}{nF}} 
+\approx \SI{10,33}{nm}.
+\end{equation}
+
+Diese Membrandicke ist durchaus vorstellbar, da sie sich in der Größenordnung von Molekülen befindet und um einen Faktor 40 kleiner
+ist als die Wellenlänge des sichtbaren Lichts, weshalb sie schwarz erscheint, statt Newtonsche Ringe zu bilden. \\
+
+Die Durchbruchspannung $U_{Durchbruch}$ der BLM wurde bestimmt, indem eine externe Gleichspannung angelegt wurde und kontiunierlich erhöht wurde,
+bis die BLM platzte, wozu sie gleichzeitig mit der Kamera beobachtet wurde. Das Platzen der BLM geschah ser plötzlich, weshalb wir sie 
+nur ungefähr bestimmen konnten. Wir erhielten:
+
+\begin{equation}
+  U_{Durchbruch} = \SI{237+-5}{mV}.
+\end{equation}
+
+Damit folgt das maximale E-Feld, unter der Annahme eines Plattenkondensators:
+\begin{equation}
+E_{max} = \frac{U}{d} = \frac{\SI{237}{mV}}{\SI{10,33}{nm}} \approx \SI{23}{\kilo\volt\per\meter}.
+\end{equation}
+
+Da bei der Bestimmung der Durchbruchspannung die BLM geplatzt ist, musste die Widerstandsmessung an einer neuen BLM durchgeführt werden.
+Nach Erzeugen der BLM wurde eine externe Gleichspannung von $U_{ext} = \SI{50}{mV}$ angelegt. 
+Zur Widerstandsbestimmung wurde die an der Membran abfallende Spannung bestimmt, die nach der Verstärkung 
+\begin{equation}
+  U_{BLM,amplified} = SI{10}{V}
+\end{equation}
+betrug. Es gilt
+
+\begin{equation}
+  R = \frac{U_{ext}}{I_{BLM}} = \frac{U_{ext}}{}
+\end{equation}
 \section{Aufgabe 2: Messung einzelner Ionenkanäle}
 
 \section{Aufgabe 3: Messung multipler Ionenkanäle}
