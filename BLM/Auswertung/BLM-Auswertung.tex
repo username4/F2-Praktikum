@@ -22,7 +22,9 @@
 \captionsetup[sub]{font={sf,footnotesize}} % setting for subcaptions
 \sisetup{ locale = DE, % use "," as decimal point instead of "."
 per-mode=fraction, % use fractions instead of ^{-1} when doing \si{... \per ...} 
-exponent-product={\cdot}} % used \cdot in front of 10^x
+exponent-product={\cdot},% used \cdot in front of 10^x
+separate-uncertainty % give out uncertainty with \pm instead of in brackets
+} 
 \setlength{\abovecaptionskip}{6pt}
 \setlength{\belowcaptionskip}{0pt}
 
@@ -146,7 +148,7 @@ Da bei der Bestimmung der Durchbruchspannung die BLM geplatzt ist, musste die Wi
 Nach Erzeugen der BLM wurde eine externe Gleichspannung von $U_{ext} = \SI{50}{mV}$ angelegt. 
 Zur Widerstandsbestimmung wurde die an der Membran abfallende Spannung bestimmt, die nach der Verstärkung 
 \begin{equation}
-  U_{BLM,amplified} = SI{10}{V}
+  U_{BLM,amplified} = \SI{10}{V}
 \end{equation}
 betrug. Es gilt
 
