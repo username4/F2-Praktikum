@@ -19,6 +19,7 @@
 
 % Formatting of table & figure captions
 \captionsetup{font={sf,footnotesize},labelfont=bf,skip=6pt}
+\captionsetup[sub]{font={sf,footnotesize}} % setting for subcaptions
 \sisetup{ locale = DE, % use "," as decimal point instead of "."
 per-mode=fraction, % use fractions instead of ^{-1} when doing \si{... \per ...} 
 exponent-product={\cdot}} % used \cdot in front of 10^x
@@ -150,9 +151,86 @@ Zur Widerstandsbestimmung wurde die an der Membran abfallende Spannung bestimmt,
 betrug. Es gilt
 
 \begin{equation}
-  R = \frac{U_{ext}}{I_{BLM}} = \frac{U_{ext}}{}
+  R_{BLM} = \frac{U_{ext}}{I_{gemessen}} = \frac{U_{ext}}{I_{gemessen}} = \frac{U_{ext}}{} % ????
 \end{equation}
+\clearpage
 \section{Aufgabe 2: Messung einzelner Ionenkanäle}
+Diese Aufgabe wurde erneut mit einer neuen BLM durchgeführt, da die in dem vorherigen Versuch verwendete BLM schnell geplatzt war.
+Die Empfindlichkeit und Instabilität der BLM war allgemein ein ständiges Problem bei unseren Versuchen.
+An die Elektroden wurde eine Gleichspannung von 50\,mV angelegt und es wurden etwa 1\,ml der Gramicidin~A Lösung mit einer Konzentration von $\SI{4}{\nano\gram\per\milli\liter}$ mit einer Spritze hinzugefügt. Mithilfe eines in \emph{Labview} programmierten Analyse Programms wurde 
+der Stromfluss über die Zeit aufgezeichnet, wie in Abbildung \ref{fig:einkanalfail-roh} zu sehen ist.
+Zu erwarten war, dass sich dadurch einzelne Kanäle in der Membran bilden. 
+Dadurch sollten Stufen in dem Strom zu sehen sein, was in Abbildung \ref{fig:einkanalfail-roh} eindeutig nicht der Fall ist. 
+Daher haben wir mit dem Analyseprogramm auch kein ordentliches Histogramm der Ströme erhalten, wir in Abbildung \ref{fig:einkanalfail-hist} zu sehen ist. 
+Der Grund ist wahrscheinlich, dass unsere Konzentration von Gramicidin~A bereits zu groß war und wir versehentlich bereits eine Multikanalmessung durchgeführt haben. Um unsere Vermutung zu bestätigen, haben für unsere Daten eine Analyse mit der Autokorrelationsfunktion machen lassen,
+wie es später auch in Aufgabe~3 gemacht wurde. 
+Da bekamen wir dann, wie bei einer Mehrkanalmessung zu erwarten ist, einen exponentiellen Abfall, 
+was in Abbildung \ref{fig:einkanalfail-autocorr} zu sehen ist. 
+Die Autokorrelation wird hier nicht weiter untersucht, da diese in Aufgabe~3 behandelt werden wird.\\
+
+\begin{figure}[tbh!]
+  \centering
+  \begin{minipage}[b]{.6\textwidth}
+    \includegraphics[width=1.\textwidth]{abbildungen/einkanal-fail_raw.png}
+    \subcaption{Messung des Stroms gegen die Zeit.}
+    \label{fig:einkanalfail-roh}
+  \end{minipage}
+  \begin{minipage}[b]{.6\textwidth}
+    \includegraphics[width=1.\textwidth]{abbildungen/einkanal-fail_hist.png}
+    \subcaption{Histogrammierung der Ströme aus Abbildung\ref{fig:einkanalfail-roh}.}
+    \label{fig:einkanalfail-hist}
+  \end{minipage}
+  \begin{minipage}[b]{.6\textwidth}
+    \includegraphics[width=1.\textwidth]{abbildungen/einkanal_autokorrel_cut.png}
+    \subcaption{Histogrammierung der Ströme aus Abbildung\ref{fig:einkanalfail-autocorr}.}
+    \label{fig:einkanalfail-autocorr}
+  \end{minipage}
+\caption{Unsere Messung des Stroms an einer Lipidmembran bei einer geringen Konzentration von Gramicidin~A.}
+\label{fig:einkanalfail}
+\end{figure}
+
+In diesem Aufgabenteil geht es um die Untersuchung einer Einkanalmessung und da wir bei unserem Versuch offensichtlich keine erhalten haben,
+verwenden wir im folgenden die Daten von der Gruppe 24 eines vergangenen Semesters. Diese hatte ebenfalls an einer BLM bei einer geringen 
+Konzentration von Gramicidin~A den Stromfluss gemessen. Der Stromfluss über die Zeit und das Histogramm der Ströme, dass man mit dem
+Analyseprogramm erhält, sind in Abbildung~\ref{fig:einkanal_gr24} dargestellt.\\
+
+\begin{figure}[tbh!]
+  \centering
+  \begin{minipage}[b]{.7\textwidth}
+    \includegraphics[width=1.\textwidth]{abbildungen/einkanal_gruppe24_raw.png}
+    \subcaption{Messung des Stroms gegen die Zeit.}
+    \label{fig:einkanal_gr24_roh}
+  \end{minipage}
+  \begin{minipage}[b]{.7\textwidth}
+    \includegraphics[width=1.\textwidth]{abbildungen/einkanal_gruppe24_hist.png}
+    \subcaption{Histogrammierung der Ströme aus Abbildung~\ref{fig:einkanal_gr24_roh}.}
+    \label{fig:einkanal_gr24_hist}
+  \end{minipage}
+\caption{Messung der Gruppe 24 des Stroms an einer Lipidmembran bei einer geringen Konzentration von Gramicidin~A.}
+\label{fig:einkanal_gr24}
+\end{figure}
+
+Aus dem Histogramm haben wir den Strom am Maximum des Peaks abgelesen und gegen die Anzahl der zum Peak gehörigen Anzahl der
+Gramicidin~A Kanäle graphisch aufgetragen. Dabei haben wir angenommen, dass der Strom von einem zum nächsten Peak immer durch einen
+zusätzlichen Gramicidin~A Kanal zustandekommt. Um den Einkanalstrom zu bestimmen, haben wir mit der "`curve\_fit"'-Funktion des scipy Moduls für Python 2 die Steigung eines linearen Fits durch die Punkte bestimmt. Dies in Abbildung~\ref{fig:einkanalfit} zu sehen. Damit erhielten wir
+den Strom durch einen einzelnen Gramicidin~A Kanal:
+
+\begin{equation}
+  I_{Einkanal} = \SI{1.67+-0.0003}{\pico\ampere}.
+\end{equation}
+
+\begin{figure}[tbh!]
+  \centering
+  \includegraphics[width=.7\textwidth]{abbildungen/a2_linfit.pdf}
+  \caption{Bestimmung des Einkanalstroms.\\ 
+    Dazu wurden die Ströme von den Peaks aus Abbildung~\ref{fig:einkanal_gr24_hist} gegen die vermutete Anzahl der 
+    Gramicidin~A Kanäle aufgetragen und mit einer linearen Funktion gefittet. Der Strom durch einen einzelnen Kanal entspricht der 
+    Steigungung der optimierten Fitfunktion.}
+  \label{fig:einkanalfit}
+\end{figure}
+
+\clearpage
+
 
 \section{Aufgabe 3: Messung multipler Ionenkanäle}
 
@@ -194,7 +272,7 @@ I_ch = \SI{24.5}{pA} .
 
 \begin{figure}
 \begin{tabular}{ccc}
-Maximum (\#)	&	Position (pixel)	&	Strom (pA) \\
+Maximum (\#)	&	Position (Pixel)	&	Strom (pA) \\
 \hline
 0	&	313	&	14	\\
 1	&	404	&	37	\\
@@ -205,7 +283,7 @@ Maximum (\#)	&	Position (pixel)	&	Strom (pA) \\
 \end{figure}
 
 \begin{figure}[tbh!]
-\includegraphics[width=0.8\textwidth]{abbildungen/mehrkanal_hist.pdf}
+\includegraphics[width=0.8\textwidth]{abbildungen/mehrkanal_histo.pdf}
 \caption{Histogrammierung der Ströme}
 \label{fig:mehrkanal-histo}
 \end{figure}
