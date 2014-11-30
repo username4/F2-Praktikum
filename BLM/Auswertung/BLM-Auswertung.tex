@@ -152,9 +152,21 @@ Zur Widerstandsbestimmung wurde die an der Membran abfallende Spannung bestimmt,
 \end{equation}
 betrug. Es gilt
 
+
 \begin{equation}
-  R_{BLM} = \frac{U_{ext}}{I_{gemessen}} = \frac{U_{ext}}{I_{gemessen}} = \frac{U_{ext}}{} % ????
+  R_{BLM} = \frac{U_{ext}}{I_{gemessen}} = \frac{U_{ext}}{I_{gemessen}}.% ????
 \end{equation}
+
+Der Strom am Serienwiderstand $I_S$ gleich dem Strom an der BLM sein, daher gilt
+  
+
+\begin{eqnarray}
+    I_S = \frac{U_S}{R_S} = \frac{U_{ext}-U_{BLM}}{R_S} = \frac{U_{BLM}}{R_{BLM}}\\
+    \Rightarrow R_{BLM} = \frac{U_{BLM} \cdot R_S}{U_{ext} - U_{BLM}}
+\end{eqnarray}
+
+
+
 \clearpage
 \section{Aufgabe 2: Messung einzelner Ionenkanäle}
 Diese Aufgabe wurde erneut mit einer neuen BLM durchgeführt, da die in dem vorherigen Versuch verwendete BLM schnell geplatzt war.
