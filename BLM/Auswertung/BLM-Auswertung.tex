@@ -221,29 +221,13 @@ den Strom durch einen einzelnen Gramicidin~A Kanal:
   I_{Einkanal} = \SI{1.67+-0.0003}{\pico\ampere}.
 \end{equation}
 
-
-\begin{table}
-\centering
-\caption{Abgelesene Positionen der erkennbaren Maxima in Abbildung \ref{fig:einkanal_gr24_hist}}
-\label{tab:einkanalmaxima}
-\begin{tabular}{ccc}
-  Kanäle & Strom (pA) \\
-\hline
-1	& 2,8 \\
-2	& 4,4 \\  
-3	& 6,1 \\  
-4       & 7,8 \\
-\hline
-\end{tabular}
-\end{table}
-
 \begin{figure}[tbh!]
   \centering
   \includegraphics[width=.7\textwidth]{abbildungen/a2_linfit.pdf}
   \caption{Bestimmung des Einkanalstroms.\\ 
-    Dazu wurden die Ströme von den Peaks aus Abbildung~\ref{fig:einkanal_gr24_hist}, die in Tabelle~\ref{tab:einkanalmaxima} zu sehen sind,
-    gegen die vermutete Anzahl der Gramicidin~A Kanäle aufgetragen und mit einer linearen Funktion gefittet. Der Strom durch einen einzelnen Kanal 
-    entspricht der Steigungung der optimierten Fitfunktion.}
+    Dazu wurden die Ströme von den Peaks aus Abbildung~\ref{fig:einkanal_gr24_hist} gegen die vermutete Anzahl der 
+    Gramicidin~A Kanäle aufgetragen und mit einer linearen Funktion gefittet. Der Strom durch einen einzelnen Kanal entspricht der 
+    Steigungung der optimierten Fitfunktion.}
   \label{fig:einkanalfit}
 \end{figure}
 
@@ -279,13 +263,16 @@ bestimmt.
 Mittels eines python-Skriptes wurde das Histogramm in Abbildung \ref{fig:mehrkanal-histo} erstellt. Da die Messung über kurze Zeit verlief, sind nicht genug Daten vorhanden, um mehrere Maxima eindeutig zu identifizieren. 
 
 Erkennbar sind ein hohes Maximum und rechts davon zwei kleinere. Weitere Maxima sind aufgrund der kurzen Messzeit kaum zu erkennen.
-Jedes Maximum entspricht einer Anzahl an geöffneten Kanälen. Da der Strom nur quantisiert durch sie fließt, entstehen Maxima, an denen die Werte für den Strom stark bevorzugt sind.
-Der zugehörige Strom wurde am Histogramm abgeschätzt (Fit-by-Eye) und ist in Tabelle \ref{tab:mehrkanal-maxima} gelistet. Mittels Wolframalpha wurde eine lineare Regression durchgeführt mit dem Argument "linear fit {0,14}{1,37},{2,63}". Die Steigung entspricht dem Strom eines einzelnen Kanals
+Jedes Maximum entspricht einer Anzahl an geöffneten Kanälen. Da der Strom nur quantisiert durch sie fließt, entstehen Maxima, an denen die Werte für den Strom bevorzugt sind.
+Als nulltes Maximum wird das höchste Maximum bezeichnet, die rechts werden mit positivem, links mit negativem Vorzeichen versehen und nummeriert. 
+Der zugehörige Strom wurde am Histogramm abgeschätzt (Fit-by-Eye) und ist in Tabelle \ref{tab:mehrkanal-maxima} gelistet. Mittels Wolframalpha wurde eine lineare Regression durchgeführt mit dem Argument "linear fit {0,14},{1,37},{2,63}". Die Steigung entspricht dem Strom eines einzelnen Kanals. 
 
 \begin{equation}
-I_{ch} = \SI{24.5}{pA} .
+\label{eqn:I_ch_aus_hist}
+I_{Einkanal} = \SI{24.5}{pA} .
 \end{equation}
 
+Dieses Ergebnis weicht um mehr als einen Faktor 10 vom Einkanalstrom aus Aufgabe 2 ab. Dies bedeutet, dass die Leitfähigkeit eines Kanals mit steigender Kanalzahl zunimmt. Es ist aber nicht auszuschließen, dass es sich bei den beobachteten Maxima nur um Rauschen handelt. Aufgrund der kurzen Messung waren sie nur schwer erkennbar. Ein Einkanalstrom von nur wenigen Picoampère  lässt sich bei einer solch kurzen Messung nicht auflösen. Histogramme sind bei hohen Konzentrationen ungeeignet, um den Einzelkanalstrom zu bestimmen.
 
 
 \begin{table}
@@ -298,7 +285,6 @@ Maximum (\#)	&	Position (Pixel)	&	Strom (pA) \\
 0	&	313	&	14	\\
 1	&	404	&	37	\\
 2	&	508	&	63	\\
-\hline
 \end{tabular}
 \end{table}
 
@@ -313,14 +299,46 @@ Maximum (\#)	&	Position (Pixel)	&	Strom (pA) \\
 
 \section{Aufgabe 4: Weitere Fragen}
 
+\subsection{Vergleich der Methoden}
 
 
 
 
+
+\subsection{Einzelkanalleitfähigkeit}
+
+
+
+
+
+\subsection{Ratenkoeffizient}
+
+
+
+
+
+\subsection{Partikelstrom}
+
+Aus dem Strom, der durch einen Kanal fließt kann man auf die Anzahl der Partikel schließen, die die Membran passieren. Jedes Kaliumion besitzt eine Elementarladung von $e = \SI{1.60e-19}{As}$ [\ref{ref:chemie.de}].
+
+Mit dem Einkanalstrom aus Aufgabe 2 folgte ein Teilchenstrom J von
+
+\begin{equation}
+J = \SI{10.4e6}{s^{-1}}.
+\end{equation}
+
+Mit dem Ergebnis aus dem Histogramm in Aufgabe 3 (Gleichung \ref{eqn:I_ch_aus_hist}) folgt
+
+\begin{equation}
+J = \SI{153e6}{s^{-1}}.
+\end{equation}
+
+Mögliche Gründe der Abweichung wurden in Aufgabe 3 diskutiert.
 
 \section{Quellen}
 \begin{enumerate}
 \item Vorbereitungsmappe \label{ref:mappe}
+\item http://www.chemie.de \label{ref:chemie.de}
 \end{enumerate}
 
 
