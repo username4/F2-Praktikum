@@ -267,12 +267,15 @@ Jedes Maximum entspricht einer Anzahl an geöffneten Kanälen. Da der Strom nur 
 Der zugehörige Strom wurde am Histogramm abgeschätzt (Fit-by-Eye) und ist in Tabelle \ref{tab:mehrkanal-maxima} gelistet. Mittels Wolframalpha wurde eine lineare Regression durchgeführt mit dem Argument "linear fit {0,14}{1,37},{2,63}". Die Steigung entspricht dem Strom eines einzelnen Kanals
 
 \begin{equation}
-I_ch = \SI{24.5}{pA} .
+I_{ch} = \SI{24.5}{pA} .
 \end{equation}
 
 
 
-\begin{figure}
+\begin{table}
+\centering
+\caption{Positionen der erkennbaren Maxima in Abbildung \ref{fig:mehrkanal-histo}}
+\label{tab:mehrkanal-maxima}
 \begin{tabular}{ccc}
 Maximum (\#)	&	Position (Pixel)	&	Strom (pA) \\
 \hline
@@ -280,9 +283,7 @@ Maximum (\#)	&	Position (Pixel)	&	Strom (pA) \\
 1	&	404	&	37	\\
 2	&	508	&	63	\\
 \end{tabular}
-\caption{Positionen der erkennbaren Maxima in Abbildung \ref{fig:mehrkanal-histo}}
-\label{tab:mehrkanal-maxima}
-\end{figure}
+\end{table}
 
 \begin{figure}[tbh!]
 \includegraphics[width=0.8\textwidth]{abbildungen/mehrkanal_histo.pdf}
