@@ -221,13 +221,29 @@ den Strom durch einen einzelnen Gramicidin~A Kanal:
   I_{Einkanal} = \SI{1.67+-0.0003}{\pico\ampere}.
 \end{equation}
 
+
+\begin{table}
+\centering
+\caption{Abgelesene Positionen der erkennbaren Maxima in Abbildung \ref{fig:einkanal_gr24_hist}}
+\label{tab:einkanalmaxima}
+\begin{tabular}{ccc}
+  Kanäle & Strom (pA) \\
+\hline
+1	& 2,8 \\
+2	& 4,4 \\  
+3	& 6,1 \\  
+4       & 7,8 \\
+\hline
+\end{tabular}
+\end{table}
+
 \begin{figure}[tbh!]
   \centering
   \includegraphics[width=.7\textwidth]{abbildungen/a2_linfit.pdf}
   \caption{Bestimmung des Einkanalstroms.\\ 
-    Dazu wurden die Ströme von den Peaks aus Abbildung~\ref{fig:einkanal_gr24_hist} gegen die vermutete Anzahl der 
-    Gramicidin~A Kanäle aufgetragen und mit einer linearen Funktion gefittet. Der Strom durch einen einzelnen Kanal entspricht der 
-    Steigungung der optimierten Fitfunktion.}
+    Dazu wurden die Ströme von den Peaks aus Abbildung~\ref{fig:einkanal_gr24_hist}, die in Tabelle~\ref{tab:einkanalmaxima} zu sehen sind,
+    gegen die vermutete Anzahl der Gramicidin~A Kanäle aufgetragen und mit einer linearen Funktion gefittet. Der Strom durch einen einzelnen Kanal 
+    entspricht der Steigungung der optimierten Fitfunktion.}
   \label{fig:einkanalfit}
 \end{figure}
 
@@ -282,6 +298,7 @@ Maximum (\#)	&	Position (Pixel)	&	Strom (pA) \\
 0	&	313	&	14	\\
 1	&	404	&	37	\\
 2	&	508	&	63	\\
+\hline
 \end{tabular}
 \end{table}
 
