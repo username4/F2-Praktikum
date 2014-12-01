@@ -99,7 +99,6 @@ Auf dem Oszilloskop war sichtbar, dass die Spannungsamplitude 10\,V betrug. Wir 
 abfiel. Das ist die Relaxationszeit und die Betrug bei uns ungefähr
 
 \begin{equation}
-\label{eqn:tau_einkanal}
   \tau \approx \SI{60}{\micro\s}.
 \end{equation}
 
@@ -153,9 +152,21 @@ Zur Widerstandsbestimmung wurde die an der Membran abfallende Spannung bestimmt,
 \end{equation}
 betrug. Es gilt
 
+
 \begin{equation}
-  R_{BLM} = \frac{U_{ext}}{I_{gemessen}} = \frac{U_{ext}}{I_{gemessen}} = \frac{U_{ext}}{} % ????
+  R_{BLM} = \frac{U_{ext}}{I_{gemessen}} = \frac{U_{ext}}{I_{gemessen}}.% ????
 \end{equation}
+
+Der Strom am Serienwiderstand $I_S$ gleich dem Strom an der BLM sein, daher gilt
+  
+
+\begin{eqnarray}
+    I_S = \frac{U_S}{R_S} = \frac{U_{ext}-U_{BLM}}{R_S} = \frac{U_{BLM}}{R_{BLM}}\\
+    \Rightarrow R_{BLM} = \frac{U_{BLM} \cdot R_S}{U_{ext} - U_{BLM}}
+\end{eqnarray}
+
+
+
 \clearpage
 \section{Aufgabe 2: Messung einzelner Ionenkanäle}
 Diese Aufgabe wurde erneut mit einer neuen BLM durchgeführt, da die in dem vorherigen Versuch verwendete BLM schnell geplatzt war.
@@ -180,12 +191,12 @@ Die Autokorrelation wird hier nicht weiter untersucht, da diese in Aufgabe~3 beh
   \end{minipage}
   \begin{minipage}[b]{.6\textwidth}
     \includegraphics[width=1.\textwidth]{abbildungen/einkanal-fail_hist.png}
-    \subcaption{Histogrammierung der Ströme aus Abbildung \ref{fig:einkanalfail-roh}.}
+    \subcaption{Histogrammierung der Ströme aus Abbildung\ref{fig:einkanalfail-roh}.}
     \label{fig:einkanalfail-hist}
   \end{minipage}
   \begin{minipage}[b]{.6\textwidth}
     \includegraphics[width=1.\textwidth]{abbildungen/einkanal_autokorrel_cut.png}
-    \subcaption{Autokorrelation des Stromes aus Abbildung \ref{fig:einkanalfail-roh}.}
+    \subcaption{Histogrammierung der Ströme aus Abbildung\ref{fig:einkanalfail-autocorr}.}
     \label{fig:einkanalfail-autocorr}
   \end{minipage}
 \caption{Unsere Messung des Stroms an einer Lipidmembran bei einer geringen Konzentration von Gramicidin~A.}
@@ -219,7 +230,6 @@ zusätzlichen Gramicidin~A Kanal zustandekommt. Um den Einkanalstrom zu bestimme
 den Strom durch einen einzelnen Gramicidin~A Kanal:
 
 \begin{equation}
-\label{eqn:I_einkanal}
   I_{Einkanal} = \SI{1.67+-0.0003}{\pico\ampere}.
 \end{equation}
 
@@ -234,7 +244,6 @@ den Strom durch einen einzelnen Gramicidin~A Kanal:
 \end{figure}
 
 \clearpage
-
 
 \section{Aufgabe 3: Messung multipler Ionenkanäle}
 
@@ -295,9 +304,7 @@ Maximum (\#)	&	Position (Pixel)	&	Strom (pA) \\
 \label{fig:mehrkanal-histo}
 \end{figure}
 
-
-
-
+\clearpage
 \section{Aufgabe 4: Weitere Fragen}
 
 \subsection{Vergleich der Methoden}
@@ -375,14 +382,16 @@ Mit dem Ergebnis aus dem Histogramm in Aufgabe 3 (Gleichung \ref{eqn:I_ch_aus_hi
 J = \SI{153e6}{s^{-1}}.
 \end{equation}
 
-Mögliche Gründe der Abweichung wurden im Abschnitt "'Vergleich der Methoden"' diskutiert.
+Mögliche Gründe der Abweichung wurden im Abschnitt "`Vergleich der Methoden"' diskutiert.
 
+\clearpage
 \section{Quellen}
 \begin{enumerate}
 \item Vorbereitungsmappe \label{ref:mappe}
 \item http://www.chemie.de \label{ref:chemie.de}
 \item http://www.wolframalpha.com \label{ref:wolfram}
 \end{enumerate}
+
 
 
 
