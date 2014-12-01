@@ -208,7 +208,6 @@ In diesem Aufgabenteil geht es um die Untersuchung einer Einkanalmessung und da 
 verwenden wir im folgenden die Daten von der Gruppe 24 eines vergangenen Semesters. Diese hatte ebenfalls an einer BLM bei einer geringen 
 Konzentration von Gramicidin~A den Stromfluss gemessen. Der Stromfluss über die Zeit und das Histogramm der Ströme, dass man mit dem
 Analyseprogramm erhält, sind in Abbildung~\ref{fig:einkanal_gr24} dargestellt.\\
-
 \begin{figure}[tbh!]
   \centering
   \begin{minipage}[b]{.7\textwidth}
@@ -245,6 +244,30 @@ den Strom durch einen einzelnen Gramicidin~A Kanal:
   \label{fig:einkanalfit}
 \end{figure}
 
+\begin{table}
+\centering
+\caption{Abgelesene Positionen der erkennbaren Maxima in Abbildung \ref{fig:einkanal_gr24_hist}}
+\label{tab:einkanalmaxima}
+\begin{tabular}{ccc}
+  Kanäle & Strom (pA) \\
+\hline
+1	& 2,8 \\
+2	& 4,4 \\  
+3	& 6,1 \\  
+4       & 7,8 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[tbh!]
+  \centering
+  \includegraphics[width=.7\textwidth]{abbildungen/a2_linfit.pdf}
+  \caption{Bestimmung des Einkanalstroms.\\ 
+    Dazu wurden die Ströme von den Peaks aus Abbildung~\ref{fig:einkanal_gr24_hist}, die in Tabelle~\ref{tab:einkanalmaxima} zu sehen sind,
+    gegen die vermutete Anzahl der Gramicidin~A Kanäle aufgetragen und mit einer linearen Funktion gefittet. Der Strom durch einen einzelnen Kanal 
+    entspricht der Steigungung der optimierten Fitfunktion.}
+  \label{fig:einkanalfit}
+\end{figure}
 \clearpage
 
 \section{Aufgabe 3: Messung multipler Ionenkanäle}
