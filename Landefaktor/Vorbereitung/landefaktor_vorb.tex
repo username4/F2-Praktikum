@@ -153,18 +153,104 @@ was die Flugstrecke 71-Fach erhöhen würde, sodass sie normalerweise Problemlos
 
 \subsection{Nachweis des Myonenzerfalls}
 \label{sec:nachweis}
-
 % die theorie hiervon kann ich auch noch nicht gut (michael)
 % aber müsste nicht viel sein
+
+
+Durch das beim Zerfall emittierte Positron wird der Zerfall gekennzeichnet. Das Spektrum kann differentiell im Raumwinkel $\Omega$ beschrieben werden in der Form
+
+\begin{equation}
+\label{eqn:doppeldiffspektrum}
+\frac{d^2N}{d\epsilon d\Omega} = \frac{\epsilon^2}{2 \pi} \cdot \left[  (3- 2\epsilon) - P \cdot (1-2\epsilon) \cdot cos(\theta)  \right] = \frac{3 \epsilon^2 - 2 \epsilon^3}{2 \pi} \cdot \left[  1 + P \cdot \frac{2 \epsilon -1}{3 - 2\epsilon} \cdot cos(\theta)  \right] .
+\end{equation}
+
+Hierbei ist $P$ die Polarisation, $\theta$ der Winkel zwischen Impuls und Spin des Myons. $\epsilon = E / E_{max}$ ist eine Energie in Einheiten der maximalen Energie $E_{max} = m_{\mu}c^2/2$, die beim Zerfall auf das Myon übertragen werden kann. 
+
+Obige Gleichung lässt sich vereinfacht schreiben als
+
+\begin{equation}
+\frac{d^2N}{d\epsilon d\Omega} = a \cdot (1 + b \cdot cos(\theta) ) .
+\end{equation}
+
+$b$ läuft von $-\frac{1}{3}$ über $0$ bis $1$. Die Emission des Positrons ist demnach nicht isotrop bezüglich des Spins des $\mu^{+}$. Sie erfolgt bevorzugt in dessen Richtung. Bei höheren Energien ist die Asymmetrie größer. Es existiert eine untere Schwelle für Beobachtung der Positronen. Solche mit zu geringer Energie erreichen den Detektor nicht. 
+
+Wird Gleichung \ref{eqn:doppeldiffspektrum} über $\epsilon$ integriert, erhält man
+
+\begin{equation}
+\label{eqn:spektrum}
+\frac{dN}{ d\Omega} = k \cdot (1 + A cos(\theta) ).
+\end{equation}
+
+$k$ ist ein Konstante, die durch die Schwelle bestimmt wird. $A$ wird als Asymmetrie bezeichnet. Wird über das ganze Spektrum integriert, so ist diese $A=P/3$, für die obere Hälfte erhält man $A = 0.44 P$, der Grenzwert beträgt für hohe Schwellen $A=P$. Bei höheren Schwellen sinkt die Zählrate jedoch ab, sodass zwischen hoher Asymmetrie und Zählrate abgewägt werden muss.
+
+Gleichung \ref{eqn:spektrum} wird über einen endlichen Winkel integriert, um die Winkelverteilung der Positronen zu berücksichtigen. Die Asymmetrie nimmt durch die Mittelung über $\theta$ ab.
+
+
+
+
+
+
 
 \subsection{Präzession von Myonen im Magnetfeld}
 \label{sec:prazission}
 % gyromagnetische verhältnis gamma, landé-faktor g erklären
 % präzission im magnetfeld
 % am wichtigsten ist eigentlich nur folgende gleichung:
+%\begin{equation}
+%g = \frac{\gamma \hbar}{\mu_\mathrm{B}} = \frac{\hbar \omega}{\mu_\mathrm{B}\mathrm{B}}
+%\end{equation}
+
+Das Magnetische Moment $\vec{\mu}$ steht mit dem Drehimpuls $\vec{J}$ eines Teilchen in Relation
+
 \begin{equation}
-g = \frac{\gamma \hbar}{\mu_\mathrm{B}} = \frac{\hbar \omega}{\mu_\mathrm{B}\mathrm{B}}
+\vec{\mu} = \gamma \cdot \vec{J} .
 \end{equation}
+
+Aus der Bewegungsgleichung im Magnetfeld $\vec{B}$
+
+\begin{equation}
+\frac{d\vec{J}}{dt} = \vec{\mu} \times \vec{B}
+\end{equation}
+
+folgt die Präzesionsfrequens
+
+\begin{equation}
+\omega = \gamma \cdot B
+\end{equation}
+
+mit dem Betrag des Magnetfeldes $B$ und dem gyromagnetischem Verhältnis 
+
+\begin{equation}
+\label{eqn:praez_gyro}
+\gamma = \frac{g \mu_B}{\hbar}. 
+\end{equation}
+
+Das Bohrsche Magneton $\mu_B$ ist für ein Teilchen der Masse m und der Ladung q
+
+\begin{equation}
+\mu_B = \frac{q\hbar}{2 m} .
+\end{equation}
+
+
+Für ein Elektron ergibt dies [\ref{ref:bb}]
+
+\begin{equation}
+\mu_B (Elektron) = \SI{9.273e-24}{ J/T } .
+\end{equation}
+
+Für das schwerere Myon beträgt es [\ref{ref:bb}]
+
+\begin{equation}
+\mu_B (Elektron) = \SI{4.485e-26}{ J/T } .
+\end{equation} 
+
+
+Der dimensionslose Faktor $g$ wird als \textbf{Landé-faktor} bezwichnet. Für den Bahndrehimpuls ist er genau gleich eins. Für den Spin ist er 2 + Korrekturen höherer Ordnung. Nach Gleichung \ref{eqn:praez_gyro} lässt er sich berechnen mit
+
+\begin{equation}
+g = \frac{\gamma \hbar}{\mu_B} = \frac{\hbar \omega}{\mu_B B} .
+\end{equation}
+
 
 \subsection{Messprinzip}
 \label{sec:messprinzip}
@@ -192,10 +278,7 @@ Die mittlere Lebensdauer $\tau$ kann man bestimmen, auch ohne die Energie und Ri
 Indem nur in eine bestimmte Richtung emittierte Positronen gemessen werden, ist die Zählrate mit der Präzessionsfrequenz moduliert. Ist der Spin der Myonen antiparallel zur Richtung, ist er am geringsten, bei parallel gerichtetem am höchsten.
 
 
-Gleichungen und \ref{eqn:messprinzip-zerfall}
-
-%!!!!!!!!!!!!!!!!!!!!!! Gleichungsnummer einfügen, 7-116 aus BB.
-
+Gleichungen \ref{eqn:spektrum} und \ref{eqn:messprinzip-zerfall}
 lassen sich zusammenfassen zu
 
 \begin{equation}
@@ -238,13 +321,26 @@ Ein gestopptes Myon hat die Signatur $1 + 2 + \overline{3}$, also eine Koinziden
   \label{fig:aufbau_skizze}
 \end{figure}
 
+Der Time to Amplitude Converter (TAC) kann Signale nicht verarbeiten, wenn diese gleichzeitig eintreffen. Da Start- und Stoppsignal die selbe Signatur haben, ist die der Fall. 
+Daher wird das Startsignal um einige Nanosekunden verzögert. 
+Das verzögerte Startsignal eines Myons startet den Zähler, wird aber nicht von dessen Stoppsignal gestoppt. Das nächste Stoppsignal kommt erst bei dem nächsten Myon. Hier liegt das Stoppsignal aufgrund der Verzögerung schneller an, als dessen Startsignal. Seit $T_{1-2}$ die Zeit, die zwischen dem Eintreffen der beiden Myonen vergangen ist, $\tau_1$ und $\tau_2$ die Lebensdauern der beiden Myonen und $\delta t$ die Verzögerung am Startsignal. 
+
+Ohne Verzögerung und mit einem entsprechend schnellen Detektor würde ein Startsignal kommen, gefolgt von dem Stoppsignal für jedes Myon. Man würde die Lebensdauer also direkt messen, was aber hier nicht möglich ist. Stattdessen misst man die Zeit von dem verzögertem Startsignal des ersten bis zu dem Stoppsignal des zweiten Myons. Die gemessene Zeit ist also
+
+\begin{equation}
+t = T_{1-2} - \tau_2 .
+\end{equation}
+
+Das Startsignal des zweiten Myons wird ignoriert, denn der TAC benötigt einige Microsekunden, um das analoge Signal zu erzeugen.
+
+
 
 \subsection{Zusätzliche Aufgaben}
 
-\begin{enumerate}[(a)]
-\item Einstellung der Schwellen an den Diskriminatoren
-\item Zeiteichung des Zeit-zu-Amplituden-Konverters (TAC)
-\end{enumerate}
+\begin{itemize}
+\item a) Einstellung der Schwellen an den Diskriminatoren
+\item b) Zeiteichung des Zeit-zu-Amplituden-Konverters (TAC)
+\end{itemize}
 
 
 
