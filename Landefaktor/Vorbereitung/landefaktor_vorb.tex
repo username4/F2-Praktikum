@@ -25,7 +25,7 @@
 per-mode=reciprocal, % use fractions instead of ^{-1} when doing \si{... \per ...} 
 exponent-product={\cdot},% used \cdot in front of 10^x
 separate-uncertainty % give out uncertainty with \pm instead of in brackets
-}  
+} 
 \setlength{\abovecaptionskip}{6pt}
 \setlength{\belowcaptionskip}{0pt}
 
@@ -172,6 +172,45 @@ g = \frac{\gamma \hbar}{\mu_\mathrm{B}} = \frac{\hbar \omega}{\mu_\mathrm{B}\mat
 % wie misst man präzission?
 % -> angelegtes magnetfeld
 % formeln...
+
+\subsubsection*{Messung der mittleren Lebensdauer}
+
+Die Messung startet mit der Registrierung der Abbremsung eines Myons im Detektor. Durch den Zerfall entsteht ein Positron, dessen Auftreten die Messung stoppt. Da es sich um einen Zerfall handelt, kann man für viele beobachtete Myonen ein Exponentialgesetz ansetzen:
+
+\begin{equation}
+\label{eqn:messprinzip-zerfall}
+N(T) = N_0 \cdot exp(-t / \tau) .
+\end{equation} 
+	
+$N_0$ ist die Gesamtzahl der im Detektor gestoppten Myonen während der Messzeit, $N$ die Anzahl der beobachteten Zerfälle.
+Die mittlere Lebensdauer $\tau$ kann man bestimmen, auch ohne die Energie und Richtung der Myonen zu betrachten. 
+
+\subsubsection*{Messung der Präzessionsfrequenz}
+
+
+Über das Stopptarget wird ein Magnetfeld transversal zur Einfallsrichtung der Myonen gelegt, in diese präzedieren.
+Indem nur in eine bestimmte Richtung emittierte Positronen gemessen werden, ist die Zählrate mit der Präzessionsfrequenz moduliert. Ist der Spin der Myonen antiparallel zur Richtung, ist er am geringsten, bei parallel gerichtetem am höchsten.
+
+
+Gleichungen und \ref{eqn:messprinzip-zerfall}
+
+%!!!!!!!!!!!!!!!!!!!!!! Gleichungsnummer einfügen, 7-116 aus BB.
+
+lassen sich zusammenfassen zu
+
+\begin{equation}
+N(t) = K \cdot exp(- \frac{t}{\tau}) \cdot \left[ 1 + \overline{A} \cdot cos(\omega t + \delta) \right] .
+\end{equation}
+
+Die Exponentialfunktion entstammt dem Zerfallsgesetz aus Gleichung \ref{eqn:messprinzip-zerfall}, der Term in der eckigen Klammer beschreibt die Modulation durch Präzession.
+$\overline{A}$ ist die, über die Geometrie des Detektors gemittelte, Asymmetrie. Diese ist aufgrund der Depolarisation der $\mu^{+}$ zeitabhängig und folgt einem Exponentialgesetz
+
+\begin{equation}
+\overline{A} = \overline{A}_0 \cdot exp(- \frac{t}{ T_R }) .
+\end{equation}
+
+In Kupfer kann sie jedoch als konstant angenommen werden. $T_R$ bezeichnet die Relaxationszeit.
+	
 \clearpage
 
 \section{Versuchsaufbau und Durchführung}
@@ -184,16 +223,20 @@ g = \frac{\gamma \hbar}{\mu_\mathrm{B}} = \frac{\hbar \omega}{\mu_\mathrm{B}\mat
 % trigger für veto (szinti 3) lieber etwas niedriger als zu hoch, damit man keine falschen ereignisse aufnimmt
 % was ist ein TAC (zeit-amplituden-converter) und zeiteichung ?
 
+In Abbildung \ref{fig:aufbau_skizze} ist eine Skizze des Versuchsaufbaus gezeigt. Drei Szintillatorplatten, mit einer Dicke von $\SI{2.5}{cm}$, sind waagerecht übereinandergelegt. Zwischen dem zweiten und dritten befindet sich eine ebenso dicke Kupferplatte. 
+
+
 
 \begin{figure}[tb!]
   \centering
   \includegraphics[width=0.8\textwidth]{abbildungen/aufbau_skizze.png}
   \caption{\textbf{Skizze des Versuchsaufbaus.} 
   \\ 
-  Drei Kunstoffszintillatoren und eine Kupferplatte mit einer Dicke von jeweils $\SI{2}{cm}$ sind übereinander angeordnet. 	Das Signal aus den Szintillatoren wird mit Photomultpliern (\textbf{PM}) verstärkt. Bei den definierten Signatur $1 + 2 + \overline{3}$ wird von der Koinzidenz ein Signal für den Start, bzw. Stopp der Messung gegeben. Das Startsignal wird um einige Nanosekunden verzögert, damit der Time to Amplitude Converter (\textbf{TAC}) das Signal verarbeiten kann. Über einen Vielkanalanalysator (\textbf{VKA}) wird das Signal an einem Rechner (\textbf{PC}) analysiert.
+  Drei Kunstoffszintillatoren und eine Kupferplatte mit einer Dicke von jeweils $\SI{2.5}{cm}$ sind übereinander angeordnet. Die Kupferplatte befindet sich zwischen dem 2. und 3. Szintillator. Das Signal aus den Szintillatoren wird mit Photomultpliern (\textbf{PM}) verstärkt. Bei den definierten Signatur $1 + 2 + \overline{3}$ wird von der Koinzidenz ein Signal für den Start, bzw. Stopp der Messung gegeben. Das Startsignal wird um einige Nanosekunden verzögert, damit der Time to Amplitude Converter (\textbf{TAC}) das Signal verarbeiten kann. Über einen Vielkanalanalysator (\textbf{VKA}) wird das Signal an einem Rechner (\textbf{PC}) analysiert.
   \\Quelle: [\ref{ref:bb}]}
-  \label{fig:blmaufbau}
+  \label{fig:aufbau_skizze}
 \end{figure}
+
 
 
 
