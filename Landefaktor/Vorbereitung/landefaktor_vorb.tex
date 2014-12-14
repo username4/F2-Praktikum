@@ -87,7 +87,7 @@ separate-uncertainty % give out uncertainty with \pm instead of in brackets
 % die theorie hiervon kann ich auch noch nicht gut (michael)
 % aber müsste nicht viel sein
 
-\subsection{Präzission von Myonen im Magnetfeld}
+\subsection{Präzession von Myonen im Magnetfeld}
 \label{sec:prazission}
 % gyromagnetische verhältnis gamma, landé-faktor g erklären
 % präzission im magnetfeld
@@ -153,8 +153,9 @@ In Kupfer kann sie jedoch als konstant angenommen werden. $T_R$ bezeichnet die R
 % trigger für veto (szinti 3) lieber etwas niedriger als zu hoch, damit man keine falschen ereignisse aufnimmt
 % was ist ein TAC (zeit-amplituden-converter) und zeiteichung ?
 
-In Abbildung \ref{fig:aufbau_skizze} ist eine Skizze des Versuchsaufbaus gezeigt. Drei Szintillatorplatten, mit einer Dicke von $\SI{2.5}{cm}$, sind waagerecht übereinandergelegt. Zwischen dem zweiten und dritten befindet sich eine ebenso dicke Kupferplatte. 
-
+In Abbildung \ref{fig:aufbau_skizze} ist eine Skizze des Versuchsaufbaus gezeigt. Drei Szintillatorplatten, mit einer Dicke von $\SI{2.5}{cm}$, sind waagerecht übereinandergelegt. Zwischen dem zweiten und dritten befindet sich eine ebenso dicke Kupferplatte, welches die $\mu^{+}$ stoppt. 
+Signale aus den Szintillatoren werden mit einem Photomultiplier (PM) verstärkt und in die Koinzidenz geschickt.
+Ein gestopptes Myon hat die Signatur $1 + 2 + \overline{3}$, also eine Koinzidenz der oberen Szintillatoren und eine Antikoinzidenz des unteren. Damit wird die Messsung begonnen. Die Messung wird beendet, wenn ein Positron detektiert wird. Dieses kann in Richtung des Szintillators 2, oder 3 emittiert werden. Das Stoppsignal auszusenden, wenn eines der beiden Szintillatoren ein Signal aussendet ist jedoch nicht optimal, da zufällige Stopps aufgrund von Hintergrundstrahlung auftreten. Am besten eignet sich eine Signatur $1 + 2 + \overline{3}$. Die Zählrate ist hier jedoch abgeschwächt.  
 
 
 \begin{figure}[tb!]
@@ -162,12 +163,18 @@ In Abbildung \ref{fig:aufbau_skizze} ist eine Skizze des Versuchsaufbaus gezeigt
   \includegraphics[width=0.8\textwidth]{abbildungen/aufbau_skizze.png}
   \caption{\textbf{Skizze des Versuchsaufbaus.} 
   \\ 
-  Drei Kunstoffszintillatoren und eine Kupferplatte mit einer Dicke von jeweils $\SI{2.5}{cm}$ sind übereinander angeordnet. Die Kupferplatte befindet sich zwischen dem 2. und 3. Szintillator. Das Signal aus den Szintillatoren wird mit Photomultpliern (\textbf{PM}) verstärkt. Bei den definierten Signatur $1 + 2 + \overline{3}$ wird von der Koinzidenz ein Signal für den Start, bzw. Stopp der Messung gegeben. Das Startsignal wird um einige Nanosekunden verzögert, damit der Time to Amplitude Converter (\textbf{TAC}) das Signal verarbeiten kann. Über einen Vielkanalanalysator (\textbf{VKA}) wird das Signal an einem Rechner (\textbf{PC}) analysiert.
+  Drei Kunstoffszintillatoren und eine Kupferplatte mit einer Dicke von jeweils $\SI{2.5}{cm}$ sind übereinander angeordnet. Die Kupferplatte befindet sich zwischen dem 2. und 3. Szintillator. Das Signal aus den Szintillatoren wird mit Photomultpliern (\textbf{PM}) verstärkt. Bei den definierten Signatur wird von der Koinzidenz ein Signal für den Start, bzw. Stopp der Messung gegeben. Das Startsignal wird um einige Nanosekunden verzögert, damit der Time to Amplitude Converter (\textbf{TAC}) das Signal verarbeiten kann. Über einen Vielkanalanalysator (\textbf{VKA}) wird das Signal an einem Rechner (\textbf{PC}) analysiert.
   \\Quelle: [\ref{ref:bb}]}
   \label{fig:aufbau_skizze}
 \end{figure}
 
 
+\subsection{Zusätzliche Aufgaben}
+
+\begin{enumerate}[(a)]
+\item Einstellung der Schwellen an den Diskriminatoren
+\item Zeiteichung des Zeit-zu-Amplituden-Konverters (TAC)
+\end{enumerate}
 
 
 
