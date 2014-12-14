@@ -15,13 +15,14 @@
 \usepackage{units,siunitx} % Write units with correct spacing
 \usepackage{upgreek} % provide non-italic greek letters
 \usepackage{url}
+\usepackage{hepnames}
 %\usepackage{subfig}
 
 % Formatting of table & figure captions
 \captionsetup{font={sf,footnotesize},labelfont=bf,skip=6pt}
 \captionsetup[sub]{font={sf,footnotesize}} % setting for subcaptions
-\sisetup{ locale = DE, % use "," as decimal point instead of "."
-per-mode=fraction, % use fractions instead of ^{-1} when doing \si{... \per ...} 
+\sisetup{locale = DE, % use "," as decimal point instead of "."
+per-mode=reciprocal, % use fractions instead of ^{-1} when doing \si{... \per ...} 
 exponent-product={\cdot},% used \cdot in front of 10^x
 separate-uncertainty % give out uncertainty with \pm instead of in brackets
 }  
@@ -51,15 +52,74 @@ separate-uncertainty % give out uncertainty with \pm instead of in brackets
 \subsection{Enstehung von Myonen in Luftschauern}
 \label{sec:luftschauer}
 
-Atmosphärische Myonen entstehen beim Auftreffen von hochenergetischen kosmischen Strahlen auf die Erdatmosphäre.
+Die Erde wird ständig hochenergetischer kosmischer Strahlung getroffen. 
+Diese besteht zu einem Großteil von 85\% aus Protonen, aber auch aus 12\% $alpha$-Teilchen und etwa 2\% schweren Kernen,
+sowie einer elektromagnetischen Komponente mit Elektronen und Gammaquanten~\ref{ref:bb}.
+Aus Experimenten ist bekannt, dass die kosmische Strahlung ein Potenzspektrum der Form
 
-
+\begin{equation}
+  N(> E) = K \cdot \left(\frac{E}{E_0}\right)^{-\gamma}
+  \label{eq:powerlaw}
+\end{equation}
+hat, mit $E_0 = \SI{e16}{eV}$, $K = \SI{3e4}{\per\square\meter\per\hour}$ und dem Exponenten $\gamma$ in einem Bereich zwischen 1,7 und 2,1.
+Wenn man das Spektrum doppelt logarithmisch aufträgt, erhält man eine Gerade mit einer dem Faktor $\gamma$ entsprechenden Steigung.
+Bei $\SI{4e15}{eV}$ wird $gamma$ etwas größer, was als "`Knie"' bezeichnet wird, und etwa $\SI{e18}{eV}$ wird der Faktor $gamma$ wieder etwas kleiner, was als "`Knöchel"' bezeichnet wird. Eine Hypothese ist, dass diese Struktur mit dem Übergang von galaktischer zu extragalaktischer kosmischer Strahlung zusammenhängt. In Abbildung~\ref{fig:cr_spectrum} ist das Spektrum des kosmischen Strahlung mit den neuesten Messwerten von den aktuellen Luftschauerexperimenten dargestellt. Zu beachten ist, dass es sehr steil ist, weshalb es mit einem Faktor $E^{2,6}$ multipliziert wird. Die Folge für die Beobachtung von kosmischen Strahlen ist, dass der Fluss bei hohen Energien sehr selten wird. Daher bietet es sich bei der
+Beobachtung an, die Atmosphäre als Detektor mit einer sehr hohen effektiven Fläche zu verwenden und die kosmischen Teilchen ähnlich wie bei einem Kalorimeter anhand der Luftschauer zu beobachten, die entstehen, sobald sie auf die Atmosphäre treffen.\\
+ 
 \begin{figure}[tbh!]
   \centering
   \includegraphics[width=0.8\textwidth]{abbildungen/cr_spectrum_pdg14.pdf}
-  \caption{\textbf{Spektrum der kosmischen Strahlung für alle Teilchen aus den Daten von verschiedenen Luftschauerexperimenten.} Aufgetragen ist der differentielle Fluss, gewichtet mit der Energie $E^{2.6}$, gegen die Teilchenenergie pro Nukleon. Gut zu sehen sind das Knie bei etwa $\SI{e15}{eV}$ und der Knöchel ab $\SI{e19}{eV}$, was die beiden Punkte sind, bei denen sich der Faktor $\Gamma$ des Potenzspektrums der kosmischen Strahlung ändert. Mit den neusten experimentellen Daten scheint es auch einen zweiten Knöchel bei $\SI{e17}{eV}$ zu geben. Stand 2014 \ref{ref:pdg14}.}
+  \caption{\textbf{Spektrum der kosmischen Strahlung für alle Teilchen aus den Daten von verschiedenen Luftschauerexperimenten.} Aufgetragen ist der differentielle Fluss, gewichtet mit der Energie $E^{2,6}$, gegen die Teilchenenergie pro Nukleon. Gut zu sehen sind das Knie bei etwa $\SI{4e15}{eV}$ und der Knöchel ab $\SI{e18}{eV}$, was die beiden Punkte sind, bei denen sich der Faktor $\gamma$ des Potenzspektrums der kosmischen Strahlung ändert. Mit den neusten experimentellen Daten scheint es auch einen zweites Knie bei $\SI{e17}{eV}$ zu geben. Stand 2014 \ref{ref:pdg14}.}
   \label{fig:cr_spectrum}
 \end{figure}
+
+Trifft ein hadronisches Teilchen auf die Atmosphäre, erzeugt es einen hadronischen Luftschauer, bei dem durch hadronische Wechselwirkungen
+zu einem Großteil Pionen, aber auch Kaonen entstehen, die durch weitere Zusammenstöße mit Kernen noch mehr Pionen und Kaonen entstehen lassen,
+sodass man eine Kaskade von Teilchen erhält. 
+Neutrale Pionen zerfallen sehr schnell in zwei Gammaquanten, die durch Paarbildung und Bremmstrahlung elektromagnetische Subschauer entstehen lassen
+
+\begin{equation}
+\Pgpz \rightarrow \Pgamma + \Pgamma.
+\end{equation}
+
+Geladene Pionen, die ein Drittel der entstehenden Pionen betragen, zerfallen größtenteils in Myonen und Myon-Neutrinos:
+\begin{equation}
+  \begin{split}
+    \Pgpp &\rightarrow \APmuon + \Pgngm  \\
+    \Pgpm &\rightarrow \Pmuon + \Pagngm \\
+  \end{split}
+\label{eq:pipmdecay}
+\end{equation}
+
+Der Zerfallskanal in Elektronen und Elektron-Neutrinos ist stark unterdrückt, auch wenn er energetisch günstiger wäre. 
+Das liegt daran, dass die schwache Wechselwirkung, der dieser Zerfall unterliegt, eine vektorielle Kraft ist.
+Sie koppelt nur an linkshändige Teilchen und rechtshändige Antiteilchen, womit sie stark paritätsverletztend ist.
+Damit sind Neutrinos immer linkshändig und Antineutrinos immer rechtshändig, da sie nur schwach wechselwirken und nahezu masselos sind.
+Aus der Impulserhaltung folgt, dass das in~\ref{eq:pipmdecay} im Zerfall entstehende Myon bzw. Elektron in die entgegengesetzte Richtung wie
+das Neutrino emittiert werden muss. 
+Da der Drehimpuls auch erhalten ist, muss zum Beispiel bei einem emittierten rechtshändigen Antineutrino das Elektron bzw. Myon ebenfalls rechtshändig sein. Da Elektronen eine sehr geringe Masse $m_e = \SI{511}{keV}$ haben, treten sie normalerweise meist nur linkshändig auf. Die rechtshändige Komponente ist dagegen stark unterdrückt. Myonen haben eine ungefähr 200-fach höhere Masse, weshalb sie eher rechtshändig auftreten könnten. Daher Zerfallen geladene Pionen meist in Myonen, während der Zerfall in Elektronen nur mit einer Wahrscheinlichkeit von $\SI{1,230+-0,004}{}$~[\ref{ref:pdg14}] auftritt.\\
+
+Freie Myonen haben eine Lebensdauer von 
+\begin{equation}
+ \tau = \SI{2,197}{\micro\s}. [\ref{ref:pdg14}]
+ \label{eq:lebensdauer}
+\end{equation}
+
+In dieser Zeit legen sie eine Strecke von $c_0 \cdot \tau \approx \SI{600}{m}$ zurück. 
+Da sie normalerweise in mehreren Kilometern Höhe entstehen, würden sie mit einer solchen Lebensdauer im Laborsystem gar nicht bis
+auf die Erdorberfläche treffen. Durch ihre hohe Energie haben sie im Laborsystem der Erde durch den Lorentz-Boost eine deutlich höhere Lebensdauer
+
+\begin{equation}
+  \tau_E = \gamma\cdot\tau,
+\end{equation}
+mit dem Lorentz-Faktor $\gamma = \frac{E}{E_0}$. Bei einer Energie von $E = \SI{10}{GeV}$ beträgt da Gamma-Faktor zum Beispiel
+\begin{equation}
+\gamma \approx \frac{\SI{10}{\giga\electronvolt}}{\SI{140}{\mega\electronvolt}} = 71, 
+\end{equation}
+was die Flugstrecke 71-Fach erhöhen würde, sodass sie normalerweise Problemlos die Erdoberfläche erreichen, wenn man annimmt, dass sie bis dahin nicht wechselwirken. Auf die Wechselwirkung von Myonen mit Materie wird jedoch im nächsten Kapitel eingegangen.\\
+
+
+
 % kurz schreiben, dass hochenergetische kosmische teilchen luftschauer erzeugen,
 % bei denen durch hadronische wechselwirkungen geladene pionen entstehen, bei deren zerfall myonen entstehen
 % vielleicht auch weglassen und erst später beim kapitel zum spin
