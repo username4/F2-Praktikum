@@ -178,8 +178,8 @@ erhält man folglich ein kontiunierliches Energiespektrum.
 
 
 Da Myonen auf dem Weg zum Detektor auf der Erdoberfläche kontiunierlich Energie verlieren, muss ihre anfängliche Energie in einem beschränkten Bereich gelegen haben, da sie sonst nicht auf der Erde ankommen würden. 
-Sie könnten von Pionen niedrigerer Energie stammen, bei denen die Myonen in vorwärtsrichtung emittiert wurden oder von höherenergetischen Pionen, bei denen die Myonen in vorwärtsrichtung emittiert wurden. 
-Wenn das Spektrum der Pionen, welche zur kosmischen Sekundärstrahlung gehören, analog zur kosmischen Primärstrahlung, gemäß Gleichung~\eqref{eq:powerlaw} einem Potenzgesetz folgt, müsste es mehr niederenergetische Pionen geben, weshalb entsprechend der Anteil der in vorwärtsrichtung emittierten Myonen größer müsste als der Anteil der Rückwärtsrichtung emittierten Myonen.
+Sie könnten von Pionen niedrigerer Energie stammen, bei denen die Myonen in Vorwärtsrichtung emittiert wurden oder von höherenergetischen Pionen, bei denen die Myonen in Rückwärtsrichtung emittiert wurden. 
+Wenn das Spektrum der Pionen, welche zur kosmischen Sekundärstrahlung gehören, analog zur kosmischen Primärstrahlung, gemäß Gleichung~\eqref{eq:powerlaw} einem Potenzgesetz folgt, müsste es mehr niederenergetische Pionen geben, weshalb entsprechend der Anteil der in Vorwärtsrichtung emittierten Myonen größer müsste, als der Anteil der Rückwärtsrichtung emittierten Myonen.
 
 
 Um zwischen den in Vorwärts- und in Rückwärtsrichtung emittierten Myonen unterscheiden zu können, muss deren Polarisation betrachtet werden.
@@ -203,7 +203,7 @@ Durch das emittierte Positron wird der Zerfall gekennzeichnet. Das Spektrum kann
 
 \begin{equation}
 \label{eqn:doppeldiffspektrum}
-\frac{d^2N}{d\epsilon d\Omega} = \frac{\epsilon^2}{2 \pi} \cdot \left[  (3- 2\epsilon) - P \cdot (1-2\epsilon) \cdot cos(\theta)  \right] = \frac{3 \epsilon^2 - 2 \epsilon^3}{2 \pi} \cdot \left[  1 + P \cdot \frac{2 \epsilon -1}{3 - 2\epsilon} \cdot cos(\theta)  \right] .
+\frac{d^2N}{d\epsilon d\Omega} = \frac{\epsilon^2}{2 \pi} \cdot \left[  (3- 2\epsilon) - P \cdot (1-2\epsilon) \cdot \cos(\theta)  \right] = \frac{3 \epsilon^2 - 2 \epsilon^3}{2 \pi} \cdot \left[  1 + P \cdot \frac{2 \epsilon -1}{3 - 2\epsilon} \cdot cos(\theta)  \right] .
 \end{equation}
 
 Hierbei ist $P$ die Polarisation, $\theta$ der Winkel zwischen Impuls und Spin des Myons. $\epsilon = E / E_{max}$ ist eine Energie in Einheiten der maximalen Energie $E_{max} = m_{\mu}c^2/2$, die beim Zerfall auf das Myon übertragen werden kann. 
@@ -307,7 +307,7 @@ Die Messung startet mit der Registrierung der Abbremsung eines Myons im Detektor
 
 \begin{equation}
 \label{eqn:messprinzip-zerfall}
-N(T) = N_0 \cdot exp(-t / \tau) .
+N(T) = N_0 \cdot \exp(-t / \tau) .
 \end{equation} 
 	
 $N_0$ ist die Gesamtzahl der im Detektor registrierten, gestoppten Myonen während der Messzeit, $N$ die Anzahl der beobachteten Zerfälle.
@@ -324,14 +324,14 @@ Gleichungen \ref{eqn:spektrum} und \ref{eqn:messprinzip-zerfall}
 lassen sich zusammenfassen zu
 
 \begin{equation}
-N(t) = K \cdot exp(- \frac{t}{\tau}) \cdot \left[ 1 + \overline{A} \cdot cos(\omega t + \delta) \right] .
+N(t) = K \cdot \exp(- \frac{t}{\tau}) \cdot \left[ 1 + \overline{A} \cdot \cos(\omega t + \delta) \right] .
 \end{equation}
 
 Die Exponentialfunktion entstammt dem Zerfallsgesetz aus Gleichung \ref{eqn:messprinzip-zerfall}, der Term in der eckigen Klammer beschreibt die Modulation durch Präzession.
 $\overline{A}$ ist die über die Geometrie des Detektors gemittelte Asymmetrie. Diese ist aufgrund der Depolarisation der $\mu^{+}$ zeitabhängig und folgt einem Exponentialgesetz
 
 \begin{equation}
-\overline{A} = \overline{A}_0 \cdot exp(- \frac{t}{ T_R }) .
+\overline{A} = \overline{A}_0 \cdot \exp(- \frac{t}{ T_R }) .
 \end{equation}
 
 In Kupfer kann sie jedoch als konstant angenommen werden. $T_R$ bezeichnet die Relaxationszeit.
@@ -348,7 +348,7 @@ In Kupfer kann sie jedoch als konstant angenommen werden. $T_R$ bezeichnet die R
 % trigger für veto (szinti 3) lieber etwas niedriger als zu hoch, damit man keine falschen ereignisse aufnimmt
 % was ist ein TAC (zeit-amplituden-converter) und zeiteichung ?
 
-In Abbildung \ref{fig:aufbau_skizze} ist eine Skizze des Versuchsaufbaus gezeigt. Drei Szintillatorplatten, mit einer Dicke von $\SI{2.5}{cm}$, sind waagerecht übereinandergelegt. Zwischen dem zweiten und dritten befindet sich eine ebenso dicke Kupferplatte, welches die Myonen stoppt. 
+In Abbildung \ref{fig:aufbau_skizze} ist eine Skizze des Versuchsaufbaus gezeigt. Drei Szintillatorplatten, mit einer Dicke von $\SI{2.5}{\centi\meter}$, sind waagerecht übereinandergelegt. Zwischen dem zweiten und dritten befindet sich eine ebenso dicke Kupferplatte, welches die Myonen stoppt. 
 Signale aus den Szintillatoren werden mit einem Photomultiplier (PM) verstärkt und in die Koinzidenzschaltung geschickt.
 Ein gestopptes Myon hat die Signatur $1 + 2 + \overline{3}$, also eine Koinzidenz der oberen Szintillatoren und eine Antikoinzidenz des unteren. Damit wird die Messsung begonnen. Die Messung wird beendet, wenn ein Positron detektiert wird. Dieses kann in Richtung des Szintillators 2, oder 3 emittiert werden. Das Stoppsignal auszusenden, wenn eines der beiden Szintillatoren ein Signal aussendet ist jedoch nicht optimal, da zufällige Stopps aufgrund von Hintergrundstrahlung auftreten. Am besten eignet sich eine Signatur $1 + 2 + \overline{3}$. Die Zählrate ist hier jedoch abgeschwächt.  
 
