@@ -199,7 +199,7 @@ Im Kupfer erfolgt die Depolarisation wie in anderen paramagnetischen Metallen du
 % aber müsste nicht viel sein
 
 
-Durch das beim Zerfall emittierte Positron wird der Zerfall gekennzeichnet. Das Spektrum kann differentiell im Raumwinkel $\Omega$ beschrieben werden in der Form
+Durch das emittierte Positron wird der Zerfall gekennzeichnet. Das Spektrum kann differentiell im Raumwinkel $\Omega$ beschrieben werden in der Form
 
 \begin{equation}
 \label{eqn:doppeldiffspektrum}
@@ -220,10 +220,10 @@ Wird Gleichung \ref{eqn:doppeldiffspektrum} über $\epsilon$ integriert, erhält
 
 \begin{equation}
 \label{eqn:spektrum}
-\frac{dN}{ d\Omega} = k \cdot (1 + A cos(\theta) ).
+\frac{dN}{ d\Omega} = k \cdot (1 + A \cdot cos(\theta) ).
 \end{equation}
 
-$k$ ist ein Konstante, die durch die Schwelle bestimmt wird. $A$ wird als Asymmetrie bezeichnet. Wird über das ganze Spektrum integriert, so ist diese $A=P/3$, für die obere Hälfte erhält man $A = 0.44 P$, der Grenzwert beträgt für hohe Schwellen $A=P$. Bei höheren Schwellen sinkt die Zählrate jedoch ab, sodass zwischen hoher Asymmetrie und Zählrate abgewägt werden muss.
+$k$ ist eine Konstante, die durch die Schwelle bestimmt wird. $A$ wird als Asymmetrie bezeichnet. Wird über das ganze Spektrum integriert, so ist $A=P/3$, für die obere Hälfte erhält man $A = 0.44 \ P$, der Grenzwert beträgt für hohe Schwellen $A=P$. Bei höheren Schwellen sinkt die Zählrate jedoch ab, sodass zwischen hoher Asymmetrie und Zählrate abgewägt werden muss.
 
 Gleichung \ref{eqn:spektrum} wird über einen endlichen Winkel integriert, um die Winkelverteilung der Positronen zu berücksichtigen. Die Asymmetrie nimmt durch die Mittelung über $\theta$ ab.
 
@@ -254,7 +254,7 @@ Aus der Bewegungsgleichung im Magnetfeld $\vec{B}$
 \frac{d\vec{J}}{dt} = \vec{\mu} \times \vec{B}
 \end{equation}
 
-folgt die Präzesionsfrequens
+folgt die Präzessionsfrequenz
 
 \begin{equation}
 \omega = \gamma \cdot B
@@ -310,13 +310,13 @@ Die Messung startet mit der Registrierung der Abbremsung eines Myons im Detektor
 N(T) = N_0 \cdot exp(-t / \tau) .
 \end{equation} 
 	
-$N_0$ ist die Gesamtzahl der im Detektor gestoppten Myonen während der Messzeit, $N$ die Anzahl der beobachteten Zerfälle.
+$N_0$ ist die Gesamtzahl der im Detektor registrierten, gestoppten Myonen während der Messzeit, $N$ die Anzahl der beobachteten Zerfälle.
 Die mittlere Lebensdauer $\tau$ kann man bestimmen, auch ohne die Energie und Richtung der Myonen zu betrachten. 
 
 \subsubsection*{Messung der Präzessionsfrequenz}
 
 
-Über das Stopptarget wird ein Magnetfeld transversal zur Einfallsrichtung der Myonen gelegt, in diese präzedieren.
+Über das Stopptarget wird ein Magnetfeld transversal zur Einfallsrichtung der Myonen gelegt, in dem diese präzedieren.
 Indem nur in eine bestimmte Richtung emittierte Positronen gemessen werden, ist die Zählrate mit der Präzessionsfrequenz moduliert. Ist der Spin der Myonen antiparallel zur Richtung, ist er am geringsten, bei parallel gerichtetem am höchsten.
 
 
@@ -328,7 +328,7 @@ N(t) = K \cdot exp(- \frac{t}{\tau}) \cdot \left[ 1 + \overline{A} \cdot cos(\om
 \end{equation}
 
 Die Exponentialfunktion entstammt dem Zerfallsgesetz aus Gleichung \ref{eqn:messprinzip-zerfall}, der Term in der eckigen Klammer beschreibt die Modulation durch Präzession.
-$\overline{A}$ ist die, über die Geometrie des Detektors gemittelte, Asymmetrie. Diese ist aufgrund der Depolarisation der $\mu^{+}$ zeitabhängig und folgt einem Exponentialgesetz
+$\overline{A}$ ist die über die Geometrie des Detektors gemittelte Asymmetrie. Diese ist aufgrund der Depolarisation der $\mu^{+}$ zeitabhängig und folgt einem Exponentialgesetz
 
 \begin{equation}
 \overline{A} = \overline{A}_0 \cdot exp(- \frac{t}{ T_R }) .
@@ -355,7 +355,7 @@ Ein gestopptes Myon hat die Signatur $1 + 2 + \overline{3}$, also eine Koinziden
 
 \begin{figure}[tb!]
   \centering
-  \includegraphics[width=0.8\textwidth]{abbildungen/aufbau_skizze.png}
+  \includegraphics[width=1\textwidth]{abbildungen/aufbau_skizze.png}
   \caption{\textbf{Skizze des Versuchsaufbaus.} 
   \\ 
   Drei Kunstoffszintillatoren und eine Kupferplatte mit einer Dicke von jeweils $\SI{2.5}{cm}$ sind übereinander angeordnet. Die Kupferplatte befindet sich zwischen dem 2. und 3. Szintillator. Das Signal aus den Szintillatoren wird mit Photomultpliern (\textbf{PM}) verstärkt. Bei den definierten Signatur wird von der Koinzidenz ein Signal für den Start, bzw. Stopp der Messung gegeben. Das Startsignal wird um einige Nanosekunden verzögert, damit der Time to Amplitude Converter (\textbf{TAC}) das Signal verarbeiten kann. Über einen Vielkanalanalysator (\textbf{VKA}) wird das Signal an einem Rechner (\textbf{PC}) analysiert.
@@ -363,14 +363,14 @@ Ein gestopptes Myon hat die Signatur $1 + 2 + \overline{3}$, also eine Koinziden
   \label{fig:aufbau_skizze}
 \end{figure}
 
-Der Time to Amplitude Converter (TAC) kann Signale nicht verarbeiten, wenn diese gleichzeitig eintreffen. Da Start- und Stoppsignal die selbe Signatur haben, ist die der Fall. 
+Der Time to Amplitude Converter (TAC) kann Signale nicht verarbeiten, wenn diese gleichzeitig eintreffen. Da Start- und Stoppsignal die selbe Signatur haben, ist dies der Fall. 
 Daher wird das Startsignal um einige Nanosekunden verzögert. 
-Das verzögerte Startsignal eines Myons startet den Zähler, wird aber nicht von dessen Stoppsignal gestoppt. Das nächste Stoppsignal kommt erst bei dem nächsten Myon. Hier liegt das Stoppsignal aufgrund der Verzögerung schneller an, als dessen Startsignal. Seit $T_{1-2}$ die Zeit, die zwischen dem Eintreffen der beiden Myonen vergangen ist, $\tau_1$ und $\tau_2$ die Lebensdauern der beiden Myonen und $\delta t$ die Verzögerung am Startsignal. 
+Das verzögerte Startsignal eines Myons startet den Zähler, wird aber nicht von dessen Stoppsignal gestoppt. Das nächste Stoppsignal kommt erst bei dem nächsten Myon. Hier liegt das Stoppsignal aufgrund der Verzögerung schneller an, als dessen Startsignal. Seit $T_{12}$ die Zeit, die zwischen dem Eintreffen der beiden Myonen vergangen ist, $\tau_1$ und $\tau_2$ die Lebensdauern der beiden Myonen und $\delta t$ die Verzögerung am Startsignal. 
 
 Ohne Verzögerung und mit einem entsprechend schnellen Detektor würde ein Startsignal kommen, gefolgt von dem Stoppsignal für jedes Myon. Man würde die Lebensdauer also direkt messen, was aber hier nicht möglich ist. Stattdessen misst man die Zeit von dem verzögertem Startsignal des ersten bis zu dem Stoppsignal des zweiten Myons. Die gemessene Zeit ist also
 
 \begin{equation}
-t = T_{1-2} - \tau_2 .
+t = T_{12} - \tau_2 .
 \end{equation}
 
 Das Startsignal des zweiten Myons wird ignoriert, denn der TAC benötigt einige Microsekunden, um das analoge Signal zu erzeugen.
