@@ -1,4 +1,7 @@
-#include <string>
+
+
+
+include <string>
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -20,7 +23,7 @@
 #include <TROOT.h>
 
 
-void histogram(const char* f1name, const char* f2name)
+void histogram(const char* f1name, const char* f2name, const int time_per_channel)
 {
   // function reads histogram from to files, add the binvalues and draws the histogram
   // the error of the bins is sqrt(N)
@@ -65,31 +68,41 @@ void histogram(const char* f1name, const char* f2name)
   histT->GetXaxis()->SetTitle("channel");
   histT->GetYaxis()->SetTitle("counts");
   histT->SetStats(0); // disable stats box with mean and numb entries
-  c0->SaveAs("histogramm.pdf");
-
+  
   // define fitfunctions
   const int fitmin = 7, fitmax = 500; // only use relevant data, cut beginning and end
 
-  // simple exponential fit
   TF1 *expfit = new TF1("expfit","[0]*exp(-x/[1]) + [2]", fitmin, fitmax);
   expfit->SetParNames("K", "tau", "underground");
-  // set start parameters for fit
   expfit->SetParameters(800, 80, 20.);
 
-  // do fits
-  TFitResultPtr fitresults = histT->Fit("expfit", "REM+");
-  expfit->Draw("Same");
+  TF1 *fullfit = new TF1("fullfit","[0]*exp(-x/[1])*(1+[3]*cos([4]*x+[5])) + [2]", fitmin, fitmax);
+  fullfit->SetParNames("K", "tau", "underground", "\bar{A}", "omega", "delta");
 
-  double expfit_norm = expfit->GetParameter(0);
+  // do fits
+
+  // first simple exponenatial fit
+  histT->Fit("expfit", "REM+");
+  // expfit->Draw("Same");
+  double expfit_K = expfit->GetParameter(0);
   double expfit_tau = expfit->GetParameter(1);
   double expfit_underground = expfit->GetParameter(2);
+
+  // full fit with cos modulation
+  // exponential parameters from exponential fit
+  // modulation parameters at the momen from "fit by eye"
+  fullfit->SetParameters(expfit_K, expfit_tau, expfit_underground, 10., 2*TMath::Pi()/15., 0);
+  histT->Fit("fullfit", "REM");
+  fullfit->Draw("Same");
   
+  c0->SaveAs("histogramm.pdf");
+
 }
 
 int main() 
 {
   TApplication run("holder",0,0);
-  histogram("Myonen.RPT", "Myonen_Woche.RPT");
+  histogram("Myonen.RPT", "Myonen_Woche.RPT", 0.029978392);
   run.Run();
 
   return 0;
