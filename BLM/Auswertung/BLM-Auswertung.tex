@@ -112,7 +112,7 @@ e\begin{equation}
 Mit der Membranfläche aus \eqref{eq:area} erhält man die spezifische Kapazität der Membran:
 
 \begin{equation}
-  C_{spez} = \frac{C}{A} = \frac{\SI{0,6}{\nano\farad}}{\SI{0,0035}{cm^2}} \approx \SI{0,17}{\micro\farad\per\cm^2}.
+  C_{\text{spez}} = \frac{C}{A} = \frac{\SI{0,6}{\nano\farad}}{\SI{0,0035}{cm^2}} \approx \SI{0,17}{\micro\farad\per\cm^2}.
 \end{equation}
 Laut der Vorbereitungsmappe~\ref{ref:mappe} liegt die spezifische Kapazität der Membran normalerweise zwischen $\SI{0,3}{\micro\F\per\cm^2}$
 und $\SI{0,8}{\micro\F\per\cm^2}$. Die von uns gemessene spezifische Kapazität ist damit um einen Faktor 1.8 kleiner als die 
@@ -132,7 +132,7 @@ die Membrandicke
 Diese Membrandicke ist durchaus vorstellbar, da sie sich in der Größenordnung von Molekülen befindet und um einen Faktor 40 kleiner
 ist als die Wellenlänge des sichtbaren Lichts, weshalb sie schwarz erscheint, statt Newtonsche Ringe zu bilden. \\
 
-Die Durchbruchspannung $U_{Durchbruch}$ der BLM wurde bestimmt, indem
+Die Durchbruchspannung $U_{\mathrm{Durchbruch}}$ der BLM wurde bestimmt, indem
 eine externe Gleichspannung angelegt wurde und erhöht wurde,
 bis die BLM platzte, wozu sie gleichzeitig mit der Kamera beobachtet
 wurde. Dann wurde die Erhöhung der Spannung gestoppt, wobei die daraus
@@ -150,8 +150,10 @@ E_{\mathrm{max}} = \frac{U}{d} = \frac{\SI{237}{mV}}{\SI{10,33}{nm}} \approx \SI
 \end{equation}
 
 Da bei der Bestimmung der Durchbruchspannung die BLM geplatzt ist, musste die Widerstandsmessung an einer neuen BLM durchgeführt werden.
-Nach Erzeugen der BLM wurde eine externe Gleichspannung von $U_{ext} = \SI{50}{mV}$ angelegt. 
-Zur Widerstandsbestimmung wurde die an der Membran abfallende Spannung bestimmt, die nach der Verstärkung 
+Nach Erzeugen der BLM wurde eine externe Gleichspannung von 
+$U_{GEN} = \SI{50}{\milli\volt}$ angelegt. 
+Nun wurde der Widerstand der $R_u = \SI{500}{\mega\ohm}$ verwendet. % kilo Ohm oder mega ohm
+Zur Widerstandsbestimmung der Membran  wurde die an der Membran abfallende Spannung bestimmt, die nach der Verstärkung 
 \begin{equation}
   U_{\mathrm{BLM,amplified}} = \SI{10}{V}
 \end{equation}
@@ -160,26 +162,23 @@ betrug. Mit einem Verstärkungsfaktor von 200 erhalten wir also
   U_{\mathrm{BLM}} =  \frac{U_{\mathrm{BLM,amplified}}}{\text{Verstärkung}} =\frac{\SI{10}{V}}{200} = \SI{50}{\milli\volt}. 
 \end{equation}
 
-
+Damit können wir nun den Widerstand der Membran bestimmen:
 \begin{equation}
-  R_{BLM} = \frac{U_{ext}}{I_{gemessen}} = \frac{U_{ext}}{I_{gemessen}}.% ????
+  \begin{split}
+    R_x &= \frac{\left(R_u \cdot \text{Verstärkung}\right) \cdot U_{\mathrm{GEN}}}{U_{\mathrm{BLM}}}\\
+        &= \frac{\left(\SI{500}{\mega\ohm}\cdot 200\right) \cdot \SI{50}{\milli\volt}}{\SI{50}{\milli\volt}}\\
+        &= \SI{e11}{\ohm}.\\
+  \end{split}
 \end{equation}
 
-Der Strom am Serienwiderstand $I_S$ gleich dem Strom an der BLM sein, daher gilt
-  
-
-\begin{eqnarray}
-    I_S = \frac{U_S}{R_S} = \frac{U_{ext}-U_{BLM}}{R_S} = \frac{U_{BLM}}{R_{BLM}}\\
-    \Rightarrow R_{BLM} = \frac{U_{BLM} \cdot R_S}{U_{ext} - U_{BLM}}
-\end{eqnarray}
-
-
+Dieser ist Erwartungsgemäß beim Abhandensein von Ionenkanälen extrem
+groß, sodass praktisch kein Strom durch die Lipidmembran fließt.
 
 \clearpage
 \section{Aufgabe 2: Messung einzelner Ionenkanäle}
 Diese Aufgabe wurde erneut mit einer neuen BLM durchgeführt, da die in dem vorherigen Versuch verwendete BLM schnell geplatzt war.
 Die Empfindlichkeit und Instabilität der BLM war allgemein ein ständiges Problem bei unseren Versuchen.
-An die Elektroden wurde eine Gleichspannung von 50\,mV angelegt und es wurden etwa 1\,ml der Gramicidin~A Lösung mit einer Konzentration von $\SI{4}{\nano\gram\per\milli\liter}$ mit einer Spritze hinzugefügt. Mithilfe eines in \emph{Labview} programmierten Analyse Programms wurde 
+An die Elektroden wurde eine Gleichspannung von 50\,mV angelegt und es wurden etwa 1\,ml der Gramicidin~A Lösung mit einer Konzentration von $\SI{4}{\nano\gram\per\milli\liter}$ mit einer Spritze hinzugefügt. Mithilfe eines in \emph{Labview} programmierten Analyseprogramms wurde 
 der Stromfluss über die Zeit aufgezeichnet, wie in Abbildung \ref{fig:einkanalfail-roh} zu sehen ist.
 Zu erwarten war, dass sich dadurch einzelne Kanäle in der Membran bilden. 
 Dadurch sollten Stufen in dem Strom zu sehen sein, was in Abbildung \ref{fig:einkanalfail-roh} eindeutig nicht der Fall ist. 
@@ -199,12 +198,13 @@ Die Autokorrelation wird hier nicht weiter untersucht, da diese in Aufgabe~3 beh
   \end{minipage}
   \begin{minipage}[b]{.6\textwidth}
     \includegraphics[width=1.\textwidth]{abbildungen/einkanal-fail_hist.png}
-    \subcaption{Histogrammierung der Ströme aus Abbildung\ref{fig:einkanalfail-roh}.}
+    \subcaption{Histogramm der Ströme aus Abbildung\ref{fig:einkanalfail-roh}.}
     \label{fig:einkanalfail-hist}
   \end{minipage}
   \begin{minipage}[b]{.6\textwidth}
     \includegraphics[width=1.\textwidth]{abbildungen/einkanal_autokorrel_cut.png}
-    \subcaption{Histogrammierung der Ströme aus Abbildung\ref{fig:einkanalfail-autocorr}.}
+    \subcaption{Autokorrelationsfunktion der Ströme aus
+      Abbildung\ref{fig:einkanalfail-roh}.}
     \label{fig:einkanalfail-autocorr}
   \end{minipage}
 \caption{Unsere Messung des Stroms an einer Lipidmembran bei einer geringen Konzentration von Gramicidin~A.}
@@ -224,7 +224,7 @@ Analyseprogramm erhält, sind in Abbildung~\ref{fig:einkanal_gr24} dargestellt.\
   \end{minipage}
   \begin{minipage}[b]{.7\textwidth}
     \includegraphics[width=1.\textwidth]{abbildungen/einkanal_gruppe24_hist.png}
-    \subcaption{Histogrammierung der Ströme aus Abbildung~\ref{fig:einkanal_gr24_roh}.}
+    \subcaption{Histogramm der Ströme aus Abbildung~\ref{fig:einkanal_gr24_roh}.}
     \label{fig:einkanal_gr24_hist}
   \end{minipage}
 \caption{Messung der Gruppe 24 des Stroms an einer Lipidmembran bei einer geringen Konzentration von Gramicidin~A.}
@@ -332,7 +332,7 @@ Maximum (\#)	&	Position (Pixel)	&	Strom (pA) \\
 
 \subsection{Vergleich der Methoden}
 
-Das Ergebnis für den Einkanalstrom aus Aufgabe 3, Gleichung \ref{eqn:I_ch_aus_hist}, weicht um mehr als einen Faktor 10 von dem aus Aufgabe 2 ab. Dies bedeutet, dass die Leitfähigkeit eines Kanals mit steigender Kanalzahl zunimmt. Es ist aber nicht auszuschließen, dass es sich bei den beobachteten Maxima nur um Rauschen handelt. Aufgrund der kurzen Messung waren sie nur schwer erkennbar. Ein Einkanalstrom von nur wenigen Picoampère ließ sich bei einer solch kurzen Messung nicht auflösen. Die Fähigkeit von Histogrammen, bei einer Messung mehrerer Kanäle, den Einzelkanalstrom zu bestimmen konnte hier nicht geprüft werden.
+Das Ergebnis für den Einkanalstrom aus Aufgabe 3, Gleichung \ref{eqn:I_ch_aus_hist}, weicht um mehr als einen Faktor 10 von dem aus Aufgabe 2 ab. Dies bedeutet, dass die Leitfähigkeit eines Kanals mit steigender Kanalzahl zunimmt. Es ist aber nicht auszuschließen, dass es sich bei den beobachteten Maxima nur um Rauschen handelt. Aufgrund der kurzen Messung waren sie nur schwer erkennbar. Ein Einkanalstrom von nur wenigen Picoampere ließ sich bei einer solch kurzen Messung nicht auflösen. Die Fähigkeit von Histogrammen, bei einer Messung mehrerer Kanäle, den Einzelkanalstrom zu bestimmen konnte hier nicht geprüft werden.
 
 Auch die Lebenserwartung der Kanäle wichen stark voneinander ab. Aus Aufgabe 2, Gleichung \ref{eqn:tau_einkanal}, stammte das Ergebnis
 
