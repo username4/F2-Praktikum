@@ -15,6 +15,7 @@
 \usepackage{units,siunitx} % Write units with correct spacing
 \usepackage{upgreek} % provide non-italic greek letters
 \usepackage{url}
+\usepackage{booktabs} % zu benutzen fuer \toprule und \bottomrule bei tabellen
 %\usepackage{subfig}
 
 % Formatting of table & figure captions
@@ -56,7 +57,7 @@ Lipidschicht zu sehen. Die folgenden Bilder der Lipidschicht sind so ausgeschnit
 \end{figure}
 
 Mit einem Teflonstäbchen wurde dann in der Elektrolytlösung eine Lipidschicht auf der Öffnung angebracht. Durch Abstreifen mit dem 
-Teflonstäbchen und Durchrühren der Lösung wurde sie ausgedünnt, bis zuerst newtonsche Ringe sichtbar wurden und sich anschließend 
+Teflonstäbchen und Durchrühren der Lösung wurde sie ausgedünnt, bis zuerst Newtonsche Ringe sichtbar wurden und sich anschließend 
 darin eine Lipid-Doppelschicht herausbildete, die BLM. Ein Bild von einer sich ausbreitenden BLM ist in Abbildung \ref{fig:newton} zu sehen.
 
 \begin{figure}[tbh!]
@@ -131,26 +132,33 @@ die Membrandicke
 Diese Membrandicke ist durchaus vorstellbar, da sie sich in der Größenordnung von Molekülen befindet und um einen Faktor 40 kleiner
 ist als die Wellenlänge des sichtbaren Lichts, weshalb sie schwarz erscheint, statt Newtonsche Ringe zu bilden. \\
 
-Die Durchbruchspannung $U_{Durchbruch}$ der BLM wurde bestimmt, indem eine externe Gleichspannung angelegt wurde und kontinuierlich erhöht wurde,
-bis die BLM platzte, wozu sie gleichzeitig mit der Kamera beobachtet wurde. Das Platzen der BLM geschah sehr plötzlich, weshalb wir sie 
-nur ungefähr bestimmen konnten. Wir erhielten:
+Die Durchbruchspannung $U_{Durchbruch}$ der BLM wurde bestimmt, indem
+eine externe Gleichspannung angelegt wurde und erhöht wurde,
+bis die BLM platzte, wozu sie gleichzeitig mit der Kamera beobachtet
+wurde. Dann wurde die Erhöhung der Spannung gestoppt, wobei die daraus
+erhaltene Spannung eine Ungenauigkeit enthält, die aus der
+menschlichen Reaktionszeit multipliziert mit der Geschwindigkeit der
+Spannungserhöhung resultiert. Wir erhielten:
 
 \begin{equation}
-  U_{Durchbruch} = \SI{237+-5}{mV}.
+  U_{\mathrm{Durchbruch}} = \SI{237+-5}{mV}.
 \end{equation}
 
 Damit folgt das maximale E-Feld, unter der Annahme eines Plattenkondensators:
 \begin{equation}
-E_{max} = \frac{U}{d} = \frac{\SI{237}{mV}}{\SI{10,33}{nm}} \approx \SI{23}{\kilo\volt\per\meter}.
+E_{\mathrm{max}} = \frac{U}{d} = \frac{\SI{237}{mV}}{\SI{10,33}{nm}} \approx \SI{23}{\kilo\volt\per\meter}.
 \end{equation}
 
 Da bei der Bestimmung der Durchbruchspannung die BLM geplatzt ist, musste die Widerstandsmessung an einer neuen BLM durchgeführt werden.
 Nach Erzeugen der BLM wurde eine externe Gleichspannung von $U_{ext} = \SI{50}{mV}$ angelegt. 
 Zur Widerstandsbestimmung wurde die an der Membran abfallende Spannung bestimmt, die nach der Verstärkung 
 \begin{equation}
-  U_{BLM,amplified} = \SI{10}{V}
+  U_{\mathrm{BLM,amplified}} = \SI{10}{V}
 \end{equation}
-betrug. Es gilt
+betrug. Mit einem Verstärkungsfaktor von 200 erhalten wir also
+\begin{equation}
+  U_{\mathrm{BLM}} =  \frac{U_{\mathrm{BLM,amplified}}}{\text{Verstärkung}} =\frac{\SI{10}{V}}{200} = \SI{50}{\milli\volt}. 
+\end{equation}
 
 
 \begin{equation}
@@ -230,7 +238,7 @@ den Strom durch einen einzelnen Gramicidin~A Kanal:
 
 \begin{equation}
   \label{eqn:I_einkanal}
-  I_{Einkanal} = \SI{1.67+-0.0003}{\pico\ampere}.
+  I_{\text{Einkanal}} = \SI{1.67+-0.0003}{\pico\ampere}.
 \end{equation}
 
 \begin{table}
@@ -238,13 +246,14 @@ den Strom durch einen einzelnen Gramicidin~A Kanal:
 \caption{Abgelesene Positionen der erkennbaren Maxima in Abbildung \ref{fig:einkanal_gr24_hist}}
 \label{tab:einkanalmaxima}
 \begin{tabular}{ccc}
+\toprule
   Kanäle & Strom (pA) \\
 \hline
 1	& 2,8 \\
 2	& 4,4 \\  
 3	& 6,1 \\  
 4       & 7,8 \\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -295,7 +304,7 @@ Der zugehörige Strom wurde am Histogramm abgeschätzt (Fit-by-Eye) und ist in T
 
 \begin{equation}
 \label{eqn:I_ch_aus_hist}
-I_{Einkanal} = \SI{24.5}{pA} .
+I_{\text{Einkanal}} = \SI{24.5}{pA} .
 \end{equation}
 
 
@@ -341,7 +350,7 @@ Die Lebensdauer eines Kanals erhöhte sich mit der Konzentration des Gramicidin 
 
 \subsection{Einzelkanalleitfähigkeit}
 
-Aus dem Strom eines einzelnen Kanals $I_{Einkanal}$ aus Gleichung \ref{eqn:I_einkanal} und der Spannung an der Membran $U_{BLM}= 10 V$ ließ sich die Leitfähigkeit eines einzelnen Kanals berechnen.
+Aus dem Strom eines einzelnen Kanals $I_{\text{Einkanal}}$ aus Gleichung \ref{eqn:I_einkanal} und der Spannung an der Membran $U_{BLM}= 10 V$ ließ sich die Leitfähigkeit eines einzelnen Kanals berechnen.
 
 \begin{equation}
 \label{eqn:Einkanal-leit}
@@ -361,22 +370,22 @@ können die Ratenkoeffizienten $k_{r}$ und $k_{d}$, für die Assoziation bzw. Di
 
 \begin{equation}
 \label{eqn:raten_einkanal_kurz}
-\tau_{Einkanal}^{-1} = k_d + 4 \sqrt{k_d \cdot k_r }.
+\tau_{\text{Einkanal}}^{-1} = k_d + 4 \sqrt{k_d \cdot k_r }.
 \end{equation}
 
 Hier wird das Ergebnis aus der Einkanalmessung, Gleichung \ref{eqn:tau_einkanal}, verwendet.
 
 \begin{equation}
-\tau_{Einkanal} \approx \SI{60}{\micro\s}.
+\tau_{\text{Einkanal}} \approx \SI{60}{\micro\s}.
 \end{equation}
 
 Aus Gleichung \ref{eqn:raten_einkanal_kurz} folgt
 
 \begin{equation}
-k_{r} = \frac{ \left( \frac{1}{\tau_{Einkanal}} -k_d \right)^2 }{4}
+k_{r} = \frac{ \left( \frac{1}{\tau_{\text{Einkanal}}} -k_d \right)^2 }{4}
 \end{equation}
  
-Hiermit lässt sich Gleichung \ref{eqn:raten} nach $k_d$ auflösen. $\Lambda = \SI{0.167}{pS}$ war aus Gleichung \ref{eqn:Einkanal-leit} bekannt. $\tau_{Mehrkanal}$ wurde Gleichung \ref{eqn:tau_mehrkanal} entnommen. 
+Hiermit lässt sich Gleichung \ref{eqn:raten} nach $k_d$ auflösen. $\Lambda = \SI{0.167}{pS}$ war aus Gleichung \ref{eqn:Einkanal-leit} bekannt. $\tau_{\text{Mehrkanal}}$ wurde Gleichung \ref{eqn:tau_mehrkanal} entnommen. 
 Es fehlte die Leitfähigkeit der gesamten Membran $\lambda_M$, welche aus dem absolutem Strom durch die Membran, sowie die an ihr abfallende Spannung, berechnet wird. Diese wurden für die Mehrkanalmessung nicht notiert.
 
 
