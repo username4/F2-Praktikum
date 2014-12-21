@@ -10,8 +10,10 @@ def gaus(x, mu, norm, sigma):
 data = np.loadtxt("mehrkanal.DAT")
 hist, bins = np.histogram(data, bins=200, range = [data.min(),data.max()-1] )
 
+
 fitbins1 = bins[(bins>10)*(bins<22)]
 fithist1 = hist[(bins>10)*(bins<22)]
+
 
 fitbins2 = bins[(bins>22)*(bins<26)]
 fithist2 = hist[(bins>22)*(bins<26)]

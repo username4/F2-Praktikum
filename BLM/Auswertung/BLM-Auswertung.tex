@@ -268,9 +268,10 @@ den Strom durch einen einzelnen Gramicidin~A Kanal:
 \end{figure}
 \clearpage
 
+
 \section{Aufgabe 3: Messung multipler Ionenkanäle}
 
-Die gesamte Spritze wurde vollständig entleert; es befanden sich $\SI{1}{ml}$ der Gramicidin-A-Lösung ($\SI{0.1}{\milli \gram \per \milli \litre}$) in der Küvette. Unter diesen Bedingungen war es noch schwieriger eine stabile Lipidschicht aufzubauen.
+Die Spritze wurde vollständig entleert. Unter diesen Bedingungen war es noch schwieriger eine stabile Lipidschicht aufzubauen.
 Sie platzte meist nach kurzer Zeit, insbesondere nach Anlegen einer Spannung, sodass die Messung nur in einem Intervall von einer Minute erfolgen konnte.
 
 \begin{figure}[tbh!]
@@ -288,6 +289,8 @@ Es ist ein Rauschen zu erkennen, das dem Öffnen und Schließen der Kanäle ents
 \end{equation}
 
 bestimmt.
+Mittels eines python-Skriptes wurde das Histogramm in Abbildung \ref{fig:mehrkanal-histo} erstellt. Da die Messung über kurze Zeit verlief, sind nicht genug Daten vorhanden, um mehrere Maxima sicher und eindeutig zu identifizieren. 
+
 
 \begin{figure}[tbh!]
 \includegraphics[width=0.8\textwidth]{abbildungen/mehrkanal_korrel.png}
@@ -295,58 +298,49 @@ bestimmt.
 \label{fig:mehrkanal-korrel}
 \end{figure}
 
-Mittels eines python-Skriptes wurde das Histogramm in Abbildung \ref{fig:mehrkanal-histo} erstellt. Da die Messung über kurze Zeit verlief, sind nicht genug Daten vorhanden, um viele Maxima sicher und eindeutig zu identifizieren. 
+Die Position des erkennbaren großen Maximums wurde mit einem Gaußfit zwischen den Strömen $10$ und $\SI{22}{pA}$ ermittelt bei 
 
-Erkennbar sind ein hohes Maximum und rechts davon zwei kleinere. 
-Jedes Maximum entspricht einer Anzahl an geöffneten Kanälen. Da der Strom nur quantifiziert durch sie fließt, entstehen Maxima, an denen die Werte für den Strom bevorzugt sind.
-Als nulltes Maximum wird das höchste Maximum bezeichnet, die rechts werden mit positivem, links mit negativem Vorzeichen versehen und nummeriert. 
-Der zugehörige Strom wurde am Histogramm abgeschätzt (Fit-by-Eye) und ist in Tabelle \ref{tab:mehrkanal-maxima} gelistet. Mittels des Internetwerkzeugs Wolframalpha [\ref{ref:wolfram}] wurde eine lineare Regression mit dem Argument "linear fit {0,14},{1,37},{2,63}" durchgeführt. Die Steigung entspricht dem Strom eines einzelnen Kanals. 
+\begin{equation}
+\SI{15.728 \pm 0.006}{pA} .
+\end{equation}
+
+Für das Nebenmaximum ergab der Fit zwischen $22$ und $\SI{26}{pA}$ eine Position von
+
+\begin{equation}
+\SI{23.254 \pm 0.008}{pA} .
+\end{equation}
+
+Es sind keine weiteren Maxima erkennbar. Rechnet man unter der Annahme, das es sich bei den beiden identifizierten um benachbarte handelt, erhält man einen Einkanalstrom von
 
 \begin{equation}
 \label{eqn:I_ch_aus_hist}
-I_{\text{Einkanal}} = \SI{24.5}{pA} .
+I_{\mathrm{Einkanal}} =  \SI{7.5}{pA} .
 \end{equation}
 
+Dieser weicht jedoch stark von dem Ergebnis aus Aufgabe 2, Gleichung \ref{eqn:I_einkanal} ab. Daher handelt es sich wahrscheinlich nicht um benachbarte Maxima. Die Methode der Histogrammierung ist für diese Messung ungeeignet.
+Aufgrund der kurzen Messung war das Nebenmaximum nur schwer erkennbar. Durch längere Messzeiten könnten sich weitere Peaks ausbilden. 
 
-\begin{table}
-\centering
-\caption{Positionen der erkennbaren Maxima in Abbildung \ref{fig:mehrkanal-histo}}
-\label{tab:mehrkanal-maxima}
-\begin{tabular}{ccc}
-Maximum (\#)	&	Position (Pixel)	&	Strom (pA) \\
-\hline
-0	&	313	&	14	\\
-1	&	404	&	37	\\
-2	&	508	&	63	\\
-\end{tabular}
-\end{table}
 
 \begin{figure}[tbh!]
 \includegraphics[width=0.8\textwidth]{abbildungen/mehrkanal_histo.pdf}
-\caption{Histogrammierung der Ströme}
+\caption{\textbf{Histogrammierung der Ströme.} Ein großes Maximum (blau) ist zu erkennen. Ein Nebenmaximum (rot) deutet sich rechts vom Peak an. Die Binbreite beträgt $\SI{0.67}{pA}$.}
 \label{fig:mehrkanal-histo}
 \end{figure}
+
+
 
 \clearpage
 \section{Aufgabe 4: Weitere Fragen}
 
 \subsection{Vergleich der Methoden}
 
-Das Ergebnis für den Einkanalstrom aus Aufgabe 3, Gleichung \ref{eqn:I_ch_aus_hist}, weicht um mehr als einen Faktor 10 von dem aus Aufgabe 2 ab. Dies bedeutet, dass die Leitfähigkeit eines Kanals mit steigender Kanalzahl zunimmt. Es ist aber nicht auszuschließen, dass es sich bei den beobachteten Maxima nur um Rauschen handelt. Aufgrund der kurzen Messung waren sie nur schwer erkennbar. Ein Einkanalstrom von nur wenigen Picoampere ließ sich bei einer solch kurzen Messung nicht auflösen. Die Fähigkeit von Histogrammen, bei einer Messung mehrerer Kanäle, den Einzelkanalstrom zu bestimmen konnte hier nicht geprüft werden.
+Wie in Aufgabe 3 besprochen, ist die Mehrkanalmessung für die Bestimmung des Einkanalstromes weniger gut geeignet als die Einkanalmessung.
 
-Auch die Lebenserwartung der Kanäle wichen stark voneinander ab. Aus Aufgabe 2, Gleichung \ref{eqn:tau_einkanal}, stammte das Ergebnis
+Die Lebensdauer aus Gleichung \ref{eqn:tau_mehrkanal} der Mehrkanalmessung lies sich mit der Autokorrelationsfunktion einfach bestimmen. 
 
-\begin{equation}
-\tau \approx \SI{60}{\micro\s}.
-\end{equation}
+Da bei der Einkanalmessung bereits mehrere Kanäle geöffnet wurden, war eine vollständige Analyse von einzelnen Kanälen mit unseren Messungen nicht möglich
 
-Die Zeit aus Gleichung \ref{eqn:tau_mehrkanal} der Mehrkanalmessung war eine Größenordnung größer mit
 
-\begin{equation}
-\tau \approx \SI{580}{\micro\s}.
-\end{equation}
-
-Die Lebensdauer eines Kanals erhöhte sich mit der Konzentration des Gramicidin A.
 
 \subsection{Einzelkanalleitfähigkeit}
 
@@ -359,35 +353,11 @@ Aus dem Strom eines einzelnen Kanals $I_{\text{Einkanal}}$ aus Gleichung \ref{eq
 
 \subsection{Ratenkoeffizient}
 
-Aus Formel 9 der Vorbereitung
+Die Dissoziation der Gramicidin-A-Dimere wird durch die Ratenkonstante $k_d$ beschrieben. Sie ist das inverse der Lebensdauer eines einzelnen Kanals welche in der Mehrkanalmessung, Gleichung \ref{eqn:tau_mehrkanal}, bestimmt wurde. Daraus folgte die Rate
 
 \begin{equation}
-\label{eqn:raten}
-\tau^{-1} = k_d + 4 \sqrt{\frac{k_d \cdot k_r}{\Lambda}  \cdot \lambda_M} 
+k_d = \tau^{-1} = \SI[per-mode=symbol]{1724}{\second ^{-1}}.
 \end{equation}
-
-können die Ratenkoeffizienten $k_{r}$ und $k_{d}$, für die Assoziation bzw. Dimerisation, bestimmt werden. Für einen einzelnen Kanal kürzt sich die Leitfähigkeit eines einzelnen Kanals mit der Gesamtleitfähigkeit. Obige Formel vereinfacht sich zu
-
-\begin{equation}
-\label{eqn:raten_einkanal_kurz}
-\tau_{\text{Einkanal}}^{-1} = k_d + 4 \sqrt{k_d \cdot k_r }.
-\end{equation}
-
-Hier wird das Ergebnis aus der Einkanalmessung, Gleichung \ref{eqn:tau_einkanal}, verwendet.
-
-\begin{equation}
-\tau_{\text{Einkanal}} \approx \SI{60}{\micro\s}.
-\end{equation}
-
-Aus Gleichung \ref{eqn:raten_einkanal_kurz} folgt
-
-\begin{equation}
-k_{r} = \frac{ \left( \frac{1}{\tau_{\text{Einkanal}}} -k_d \right)^2 }{4}
-\end{equation}
- 
-Hiermit lässt sich Gleichung \ref{eqn:raten} nach $k_d$ auflösen. $\Lambda = \SI{0.167}{pS}$ war aus Gleichung \ref{eqn:Einkanal-leit} bekannt. $\tau_{\text{Mehrkanal}}$ wurde Gleichung \ref{eqn:tau_mehrkanal} entnommen. 
-Es fehlte die Leitfähigkeit der gesamten Membran $\lambda_M$, welche aus dem absolutem Strom durch die Membran, sowie die an ihr abfallende Spannung, berechnet wird. Diese wurden für die Mehrkanalmessung nicht notiert.
-
 
 \subsection{Partikelstrom}
 
@@ -399,13 +369,7 @@ Mit dem Einkanalstrom aus Aufgabe 2 folgte ein Teilchenstrom J von
 J = \SI{10.4e6}{s^{-1}}.
 \end{equation}
 
-Mit dem Ergebnis aus dem Histogramm in Aufgabe 3 (Gleichung \ref{eqn:I_ch_aus_hist}) folgt
 
-\begin{equation}
-J = \SI{153e6}{s^{-1}}.
-\end{equation}
-
-Mögliche Gründe der Abweichung wurden im Abschnitt "`Vergleich der Methoden"' diskutiert.
 
 \clearpage
 \section{Quellen}
