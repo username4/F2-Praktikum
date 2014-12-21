@@ -41,14 +41,14 @@ separate-uncertainty % give out uncertainty with \pm instead of in brackets
 \section{Aufgabe 1: Vorbereitung der Lipidmembran}
 Zuerst mussten wir die "`Black Lipid Membrane"' (BLM) erzeugen, was in etwa so gemacht wurde, wie in der Versuchsvorbereitung in Kapitel 3.1 beschrieben.
 Die beiden Hälften der Küvette bestanden bei unserem Aufbau aus einem äußeren Gefäß und einem inneren Gefäß, das in dieses hineingestellt wurde.
-Das innere Gefäß hatte ein herausragendes Rörchen, an dessen Ende eine Öffnung war, mit dem es mit dem äußeren Gefäß verbunden war.
-Die Gefäße wurden mit einer Elektrolytlösung befüllt, sodass diese in ihnen auf gleicher Höhe war. Eine Kamera wurde auf die Öffnung des Rörchens
-gerichtet und eine Lampe so ausgerichtet, dass am äußeren Rand das Rörchens eine kreisrunde Reflexion zu sehen war. Das Kamerabild der Öffnung sah dann wie in Abbildung \ref{fig:loch} dargestellt aus. 
+Das innere Gefäß hatte ein herausragendes Röhrchen, an dessen Ende eine Öffnung war, mit dem es mit dem äußeren Gefäß verbunden war.
+Die Gefäße wurden mit einer Elektrolytlösung befüllt, sodass diese in ihnen auf gleicher Höhe war. Eine Kamera wurde auf die Öffnung des Röhrchens
+gerichtet und eine Lampe so ausgerichtet, dass am äußeren Rand das Röhrchens eine kreisrunde Reflexion zu sehen war. Das Kamerabild der Öffnung sah dann wie in Abbildung \ref{fig:loch} dargestellt aus. 
 
 \begin{figure}[tbh!]
   \centering
   \includegraphics[width=.4\textwidth]{abbildungen/ohnelipidschicht_cut.jpg}
-  \caption{"`Loch"' ohne Lipidschicht. Es befindet sich am Ende eines Rörchens, dass den inneren und äußeren Teil der Küvette verbindet.
+  \caption{"`Loch"' ohne Lipidschicht. Es befindet sich am Ende eines Röhrchens, dass den inneren und äußeren Teil der Küvette verbindet.
 Es erscheint schwarz, da daran kein Licht reflektiert wird.\\
 Die Kreisrunde Reflexion am Rand indiziert, dass die Lichtquelle richtig eingestellt ist, um Newtonsche Ringe beim Anbringen einer
 Lipidschicht zu sehen. Die folgenden Bilder der Lipidschicht sind so ausgeschnitten, dass der äußere Rand nicht mehr sichtbar ist und man nur den inneren Rand des Lochs sieht.}
@@ -57,12 +57,12 @@ Lipidschicht zu sehen. Die folgenden Bilder der Lipidschicht sind so ausgeschnit
 
 Mit einem Teflonstäbchen wurde dann in der Elektrolytlösung eine Lipidschicht auf der Öffnung angebracht. Durch Abstreifen mit dem 
 Teflonstäbchen und Durchrühren der Lösung wurde sie ausgedünnt, bis zuerst newtonsche Ringe sichtbar wurden und sich anschließend 
-darin eine Lipid-Doppelschicht herausbildete, die BLM. Ein Bild von einer sich ausbreitenden BLM is in Abbildung \ref{fig:newton} zu sehen.
+darin eine Lipid-Doppelschicht herausbildete, die BLM. Ein Bild von einer sich ausbreitenden BLM ist in Abbildung \ref{fig:newton} zu sehen.
 
 \begin{figure}[tbh!]
   \centering
   \includegraphics[width=.4\textwidth]{abbildungen/newton2_cut.jpg}
-  \caption{"`Loch"' mit angebrachter Lipidschicht. Sie ist schon dünn genug, dass man Newtonsche Ringe sieht, da die Dicke im Bereich der Wellenlänge ist. Am unteren Rand ist als schwarzer Fleck die BLM zu sehen, die sich gerade herausbildet und in der Lididschicht ausbreitet.
+  \caption{"`Loch"' mit angebrachter Lipidschicht. Sie ist schon dünn genug, dass man Newtonsche Ringe sieht, da die Dicke im Bereich der Wellenlänge ist. Am unteren Rand ist als schwarzer Fleck die BLM zu sehen, die sich gerade herausbildet und in der Lipidschicht ausbreitet.
 Sie ist nun noch dünner, sodass es zu keiner Interferenz zu Newtonschen Ringen mehr kommt, weshalb sie schwarz erscheint.}
   \label{fig:newton}
 \end{figure}
@@ -131,8 +131,8 @@ die Membrandicke
 Diese Membrandicke ist durchaus vorstellbar, da sie sich in der Größenordnung von Molekülen befindet und um einen Faktor 40 kleiner
 ist als die Wellenlänge des sichtbaren Lichts, weshalb sie schwarz erscheint, statt Newtonsche Ringe zu bilden. \\
 
-Die Durchbruchspannung $U_{Durchbruch}$ der BLM wurde bestimmt, indem eine externe Gleichspannung angelegt wurde und kontiunierlich erhöht wurde,
-bis die BLM platzte, wozu sie gleichzeitig mit der Kamera beobachtet wurde. Das Platzen der BLM geschah ser plötzlich, weshalb wir sie 
+Die Durchbruchspannung $U_{Durchbruch}$ der BLM wurde bestimmt, indem eine externe Gleichspannung angelegt wurde und kontinuierlich erhöht wurde,
+bis die BLM platzte, wozu sie gleichzeitig mit der Kamera beobachtet wurde. Das Platzen der BLM geschah sehr plötzlich, weshalb wir sie 
 nur ungefähr bestimmen konnten. Wir erhielten:
 
 \begin{equation}
@@ -225,7 +225,7 @@ Analyseprogramm erhält, sind in Abbildung~\ref{fig:einkanal_gr24} dargestellt.\
 
 Aus dem Histogramm haben wir den Strom am Maximum des Peaks abgelesen und gegen die Anzahl der zum Peak gehörigen Anzahl der
 Gramicidin~A Kanäle graphisch aufgetragen. Dabei haben wir angenommen, dass der Strom von einem zum nächsten Peak immer durch einen
-zusätzlichen Gramicidin~A Kanal zustandekommt. Um den Einkanalstrom zu bestimmen, haben wir mit der "`curve\_fit"'-Funktion des scipy Moduls für Python 2 die Steigung eines linearen Fits durch die Punkte bestimmt. Dies in Abbildung~\ref{fig:einkanalfit} zu sehen. Damit erhielten wir
+zusätzlichen Gramicidin~A Kanal zustande kommt. Um den Einkanalstrom zu bestimmen, haben wir mit der "`curve\_fit"'-Funktion des scipy Moduls für Python 2 die Steigung eines linearen Fits durch die Punkte bestimmt. Dies in Abbildung~\ref{fig:einkanalfit} zu sehen. Damit erhielten wir
 den Strom durch einen einzelnen Gramicidin~A Kanal:
 
 \begin{equation}
@@ -254,7 +254,7 @@ den Strom durch einen einzelnen Gramicidin~A Kanal:
   \caption{Bestimmung des Einkanalstroms.\\ 
     Dazu wurden die Ströme von den Peaks aus Abbildung~\ref{fig:einkanal_gr24_hist}, die in Tabelle~\ref{tab:einkanalmaxima} zu sehen sind,
     gegen die vermutete Anzahl der Gramicidin~A Kanäle aufgetragen und mit einer linearen Funktion gefittet. Der Strom durch einen einzelnen Kanal 
-    entspricht der Steigungung der optimierten Fitfunktion.}
+    entspricht der Steigungen der optimierten Fitfunktion.}
   \label{fig:einkanalfit}
 \end{figure}
 \clearpage

@@ -51,7 +51,7 @@ Es existieren verschiedene Modelle, die Beschreiben, wie Gramicidin A in die Zel
 \item \textbf{A: Barrel Stave model,} 
 Hydrophobe, helixförmige Monomere bilden Poren in der Zellmembran.
 \item \textbf{B: Toroidial Wormhole model,}  
-Poremformation nahe phosphatidylethanolamine, oder phosphatidylserine Membranen. 
+Porenformation nahe phosphatidylethanolamine, oder phosphatidylserine Membranen. 
 \item \textbf{C: Carpet model}  
 Teppich-(engl. carpet-)ähnliche Anlagerung auf Membran.
 \item \textbf{D:  Detergent similar model,}
@@ -120,7 +120,7 @@ Die Dimerasation kann durch die Gleichung
 G_1 + G_1 	\xtofrom[k_d]{k_r} G_2
 \end{equation}
 
-beschrieben werden. $k_d$ ist hier die Rate der Dissoziation und $k_r$ die der Entstehung der Dimere, $G_1$ entspricht den Monomeren, $G_2$ den Dimeren. Die Dissoziation folgt einem exponentiellem Zerfallsgesetz, die der Entstehungreaktion ist linear zum Quadrat der Konzentration. Aus dem Verlauf des Stromes über die zeit lässt sich die Zerfallsrate bestimmen.
+beschrieben werden. $k_d$ ist hier die Rate der Dissoziation und $k_r$ die der Entstehung der Dimere, $G_1$ entspricht den Monomeren, $G_2$ den Dimeren. Die Dissoziation folgt einem exponentiellem Zerfallsgesetz, die der Entstehungsreaktion ist linear zum Quadrat der Konzentration. Aus dem Verlauf des Stromes über die zeit lässt sich die Zerfallsrate bestimmen.
 
 
 
@@ -152,7 +152,7 @@ Die Relaxationszeit ergibt sich aus Gleichungen \ref{eqn:mehrkanal-reaktion1} un
 
 Deutlich zu erkennen ist die inverse wurzelförmige Abhängigkeit zur Leitfähigkeit.
 
-\subsubsection{Autokorrelationsfunkion}
+\subsubsection{Autokorrelationsfunktion}
 
 Eine Autokorrelationsfunktion beschreibt die Korrelation eines Signals mit sich selbst zu einem früherem Zeitpunkt. 
 Bei einem stochastischem Prozess, wie der Entstehung und Schließung von Kanälen, ist das Zeitprofil der Korrelationsfunktion gleich der Relaxation des Gleichgewichts [\ref{ref:mappe}]. Diese ist in Gleichung \ref{mehrkanal-tau} beschrieben.
@@ -201,7 +201,10 @@ Rechteck-Wechselspannung mit einer Frequenz von 100\,Hz verwenden, die eine Ampl
 
 \subsection{Erzeugung der Lidid-Doppelschicht und Messung der Membran-Kapazität}
 \label{sec:capacity}
-Die Küvette soll in die Apperatur eingesetzt und die Lipidlösung mit einem Teflonstäbchen auf das gereinigte Loch aufgetragen werden, wobei darauf geachtet werden sollte, dass es keine Luftblasen gibt.
+Die Küvette wird in die Apparatur eingesetzt und in beide Hälften wird
+die KCl Lösung eingefüllt.
+
+Die Lipidlösung wird mit einem Teflonstäbchen auf das gereinigte Loch aufgetragen, wobei darauf geachtet werden sollte, dass es keine Luftblasen gibt.
 Dann soll einige Minuten gewartet werden, damit die Lipid-Doppelschicht trocknet. Die Schicht wird dabei mit einer Lampe im Abstand
 von 30\,cm beleuchtet. Am Anfang sollten in der Reflexion Newtonsche Ringe sichtbar sein. Wenn das nicht der Fall ist, soll mit einem
 Teflonstäbchen etwas von der Schicht entfernt werden. Im getrockneten Zustand sollte die Schicht im Objektiv schwarz erscheinen, da es 
@@ -219,7 +222,7 @@ exponentiell gemäß der Formel
   I_C(t) = - \frac{U_0}{R_C} \cdot e^{\frac{t}{\tau}} = - I_0 \cdot e^{\frac{t}{R_C C}},
 \end{equation}
 
-wobei $R_C$ den reellen Widerstand des Kondensators bezeichnet. Der Entladungsvorgang findet immer dann statt, wenn die Rechteckspannung umschwenkt. Der Die Spannung $U_0$ entspricht dann der doppelten Spannungsamplitude der Spannungsquelle.
+wobei $R_C$ den reellen Widerstand des Kondensators bezeichnet. Der Entladevorgang findet immer dann statt, wenn die Rechteckspannung umschwenkt. Der Die Spannung $U_0$ entspricht dann der doppelten Spannungsamplitude der Spannungsquelle.
 Es folgt, dass sich die Kapazität berechnen lässt über:
 
 \begin{equation}
@@ -232,15 +235,14 @@ Als spezifische Kapazität pro Fläche $C_S$ soll ebenfalls bestimmt werden:
   C_S = \frac{C}{A}.
 \end{equation}
 
-Sobald die Membran trocken ist, wird in beide Hälften der Küvette die KCl Lösung eingefüllt.
 
 \subsection{Messung einzelne Ionenkanäle}
 \label{sec:singlechannels}
 Die Widerstände werden in diesem Versuchsteil gleich gelassen, aber statt der Wechselspannung wird nun an der Membran eine Gleichspannung 
 von 50\,mV verwendet. Es soll eine kleine Menge Gramicidin A hinzugefügt und dabei der Membranstrom aufgezeichnet werden. Da der Strom 
-sprunghaft mit der Anzahl der Kanäle steigen sollte, kann durch Differenzbildung an einer Stufe der Strom durch einen einzigen Kanal bestimmt werden. Wenn dieser Strom bekannt ist, kann man folglich immer sehen, wenn ein neuer Kanal ensteht oder zerfällt.\\
+sprunghaft mit der Anzahl der Kanäle steigen sollte, kann durch Differenzbildung an einer Stufe der Strom durch einen einzigen Kanal bestimmt werden. Wenn dieser Strom bekannt ist, kann man folglich immer sehen, wenn ein neuer Kanal entsteht oder zerfällt.\\
 
-Damit kann nun ein Histogramm der Kanal-Lebenszeiten erzeugt werden. Unter der Exponentialverteilung kann damit die mittlere Lebendauer 
+Damit kann nun ein Histogramm der Kanal-Lebenszeiten erzeugt werden. Unter der Exponentialverteilung kann damit die mittlere Lebensdauer 
 eines Kanals und der Ratenkoeffizient für den Zerfall von Gramicidin A bestimmt werden.
 
 \subsection{Messung multipler Ionenkanäle}
@@ -250,7 +252,7 @@ wird der Membranstrom histogrammiert. Daraus sollen die Stufenhöhen und deren M
 
 \subsection{Noise-Analyse und Autokorrelationsfunktion}
 \label{sec:noise-autocorr}
-Nun soll eine solche Menge von Gramicidin A hinzugefügt werden, dass man mehrere Ionenkanäle erhält, die Grundlinie nicht 
+Nun soll eine solche Menge von Gramicidin A hinzugefügt werden, dass man mehrere Ionenkanäle erhält, sodass die Grundlinie nicht 
 mehr sichtbar ist und keine Stufen im Strom mehr enthalten sind. Der Mittelwert der Stromfluktuation sollte konstant bleiben, da sonst
 die Gleichungen für die Autokorrelation nicht gültig wären. Nun soll eine Analyse mit der Autokorrelationsfunktion durchgeführt werden und
 mit den Ergebnissen von dem Lebenszeit-Histogramm aus der Einzelkanalmessung verglichen werden, indem auch hier der Kanalstrom und die Kanal-Lebenszeit bestimmt werden. 
