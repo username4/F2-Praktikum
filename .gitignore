@@ -1,5 +1,8 @@
 ##########################################################################################################
 ### Eigene ignores, vom f1-Praktikum kopiert:
+# binaries
+*histogramm # so heißen oft unsere root programme um histogramme zu erstellen
+*hist
 # emacs autosave:
 *~
 \#*\#
