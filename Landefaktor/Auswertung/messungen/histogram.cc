@@ -73,7 +73,7 @@ void histogram(const char* f1name, const char* f2name, const int time_per_channe
   expfit->SetParNames("K", "tau", "underground");
   expfit->SetParameters(800, 80, 20.);
 
-  TF1 *fullfit = new TF1("fullfit","[0]*exp(-x/[1])*(1+[3]*cos([4]*x+[5])) + [2]", fitmin, fitmax);
+  TF1 *fullfit = new TF1("fullfit","[0]*exp(-x/[1])*(1+[3]*cos(2*TMath::Pi()*[4]*x+[5])) + [2]", fitmin, fitmax);
   fullfit->SetParNames("K", "tau", "underground", "\bar{A}", "omega", "delta");
 
   // do fits
@@ -87,8 +87,14 @@ void histogram(const char* f1name, const char* f2name, const int time_per_channe
 
   // full fit with cos modulation
   // exponential parameters from exponential fit
-  // modulation parameters at the momen from "fit by eye"
-  fullfit->SetParameters(expfit_K, expfit_tau, expfit_underground, 10., 2*TMath::Pi()/15., 0);
+  // modulation parameters from literature values
+  // g = 2.002
+  // B = 35.973932 Gaus = 35.973932e-4 Tesla, mu_B = 9.27401e-24 J/T
+  // => omega = mu_b * B * g / hbar = 6.333494403783369e8 s^{-1}
+  // Zeitkalibrierung: (0.029978 +- 4e-10) ns/Kanal
+  // ====> omega in Kanaleinheiten = omega*Zeitkalibrierung = 0.018986549523661782 Kanal^{-1}
+  double omegaLit = 0.0189;
+  fullfit->SetParameters(expfit_K, expfit_tau, expfit_underground, 5., omegaLit, 0);
   histT->Fit("fullfit", "REM");
   fullfit->Draw("Same");
   
