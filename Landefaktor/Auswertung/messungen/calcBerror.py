@@ -5,7 +5,7 @@ import numpy as np
 file = open("FieldInhomogenities.txt", "r")
 datalist = []
 for line in file:
-    if line.strip().split(" ")[0] != "#": # strip cleans not needed whitespace, split converts lines into lists
+    if line.strip().split(" ")[0] != "#": # strip cleans whitespace from start and end of line, split converts lines into lists
         datalist.append(line.strip().split(" ")) # append list representing line to datalist
 # convert datalist to numpy array of floats        
 datalist = np.array(datalist, dtype=float)
@@ -13,19 +13,18 @@ datalist = np.array(datalist, dtype=float)
 d = [line[0] for line in datalist]
 UArray = [line[1:5] for line in datalist]
 
-print "Array of voltages, 4 at each distance (mV)\n"
+print "Array of voltages, 4 at each distance (mV)"
 for line in UArray:
     print line
 
-Uerrors = [np.std(line) for line in UArray]
-print "\nErrors on U for different distances (mV)"
+Uerrors = [np.std(line)/float(np.mean(line)) for line in UArray]
+print "\nRelative errors for the mean dU/U for different distances (mV)"
 for Uerror in Uerrors:
     print Uerror
 
 meanUerror =  np.mean(Uerrors)
-print "\nmean error on U:"
-print "======> ",  meanUerror, " mV"
-print "\nTODO: convert error on U to error on B\n"
+print "\nmean relative error <dU/U> = <dB/B>"
+print "===>", meanUerror
 
 
 
