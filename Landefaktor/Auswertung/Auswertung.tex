@@ -39,7 +39,7 @@
 
 \section{Zeitkalibrierung}
 
-Ein Funktionsgenerator wurde an den Starteingang des TAC geschlossen, sowie über Verzögerungsglieder an des Stoppeingang. Diese wurden hinzugeschaltet, um die Zeitverzögerung in bekannten Schritten von $\SI{1}{\nano \second}$ zu erhöhen. Das zugehörige Peaks war scharf gegenüber des Abstandes, sodass die Messungen in einer einzelnen Grafik, Abb. \ref{fig:zeitkalibrierung_hist}, auswerten ließen. Die Nummer des Kanals steigt mit der zugehörigen Verzögerung. 
+Ein Funktionsgenerator wurde an den Starteingang des TAC geschlossen, sowie über Verzögerungsglieder an des Stoppeingang. Diese wurden zugeschaltet, um die Zeitverzögerung in bekannten Schritten von $\SI{1}{\nano \second}$ zu erhöhen. Das zugehörige Peaks war scharf gegenüber des Abstandes, sodass die Messungen in einer einzelnen Grafik, Abb. \ref{fig:zeitkalibrierung_hist}, auswerten ließen. Die Nummer des Kanals steigt mit der zugehörigen Verzögerung. 
 
 \begin{figure}[tb!]
 \centering
@@ -53,7 +53,7 @@ Die Zeit wurde den Kanälen zugewiesen. Mit Python wurde eine lineare Regression
 
 \begin{equation}
 \label{eqn:Zeitkalibrierung}
-\frac{\mathrm{Zeit}}{\mathrm{Kanal}} = \SI{0.0299783924 \pm 0.0000000004 }{\nano \second} ~.
+\frac{\mathrm{Zeit}}{\mathrm{Kanal}} = \SI{2.99783924  \pm 0.00000004 }{\pico \second} ~.
 \end{equation}
 
 
@@ -64,6 +64,10 @@ Die Zeit wurde den Kanälen zugewiesen. Mit Python wurde eine lineare Regression
 \label{fig:zeitkalibrierung}
 \end{figure}
 
+
+
+
+
 \section{Magnetfeld}
 
 Das Magnetfeld wurde mit einer Hallsonde bestimmt. Aus den Daten der Kalibrierung, die übernommen wurde, konnte die gemessene Spannung am Vorwiderstand $U_{\mathrm{VW}}$ in die Magnetfeldstärke umgerechnet werden. Zur Umrechnung wurde 
@@ -73,7 +77,7 @@ Das Magnetfeld wurde mit einer Hallsonde bestimmt. Aus den Daten der Kalibrierun
 B \mathrm{/G} = -1,68946 + 0,30472 \cdot U_{\mathrm{VW}} \mathrm{/mV}
 \end{equation}
 
-verwendet. Der Fehler für das Magnetfeld wurde aus der übernommenen Messreihe in Tabelle \ref{tab:fieldinhomogenities} ermittelt. Es sind die Spannungen an der Hallsonde aufgelistet. Diese stehem in einem linearen Verhältnis zu der Magnetfeldstärke, daher können die relativen Fehler übernommen werden. Der relative Fehler für jeweils vier Werte, also für jeden Punkt entlang der Spule wurde bestimmt. Über diese wurde gemittelt, um den mittleren relativen Fehler zu bestimmen. Dieser war
+verwendet. In der Spule ist das Magnetfeld inhomogen. Der Fehler für die Inhomogenität wurde aus der übernommenen Messreihe in Tabelle \ref{tab:fieldinhomogenities} ermittelt. Es sind die Spannungen an der Hallsonde aufgelistet. Diese stehem in einem linearen Verhältnis zu der Magnetfeldstärke, daher können die relativen Fehler übernommen werden. Der relative Fehler für jeweils vier Werte, also für jeden Punkt entlang der Spule wurde bestimmt. Über diese wurde gemittelt, um den mittleren relativen Fehler zu bestimmen. Dieser war
 
 \begin{equation}
 \label{eqn:inhomogen_fehler}
@@ -88,7 +92,7 @@ U_{\mathrm{VW}} = \SI{123,6}{\milli \volt} ~.
 
 Hieraus ergab Formel \eqref{eqn:B-gauss}, mit dem Fehler für die Inhomogenität aus Gleichung \eqref{eqn:inhomogen_fehler},
 \begin{equation}
-B = \SI{36.0 \pm 0.7}{G} ~.
+B = \SI[separate-uncertainty=true]{36.0 \pm 0.7 }{G} ~.
 \end{equation}
 
 \begin{table}[tb!]
@@ -129,7 +133,13 @@ $l$/m	&	$U_{\mathrm{Hall}} (0 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}} (0,28 \mathrm
 
 
 
+
+
 \section{Bestimmung der Lebensdauer des Myons}
+
+
+
+
 
 
 
@@ -152,7 +162,12 @@ g = \frac{\hbar \omega}{\mu_B B} ~.
 \section{Bestimmung des Landéfaktors des Myons}
 
 
+
+
 \section{Diskussion der Ergebnisse}
+
+
+
 
 \section{Quellen}
 \begin{enumerate}
