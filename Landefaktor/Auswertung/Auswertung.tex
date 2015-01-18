@@ -39,7 +39,7 @@
 
 \section{Zeitkalibrierung}
 
-Ein Funktionsgenerator wurde an den Starteingang des TAC geschlossen, sowie über Verzögerungsglieder an den Stoppeingang. Diese wurden zugeschaltet, um die Zeitverzögerung in bekannten Schritten von $\SI{1}{\nano \second}$ zu erhöhen. Die zugehörigen Peaks waren scharf gegenüber deren Abstand, sodass die Messungen in einer einzelnen Grafik, Abb. \ref{fig:zeitkalibrierung_hist}, auswerten ließen. Die Nummer des Kanals steigt mit der zugehörigen Verzögerung. 
+Ein Funktionsgenerator wurde an den Starteingang des TAC geschlossen, sowie über Verzögerungsglieder an den Stoppeingang. Diese wurden zugeschaltet, um die Zeitverzögerung in bekannten Schritten von \SI{1}{\nano \second} zu erhöhen. Die zugehörigen Peaks waren scharf gegenüber dem Abstand, sodass die Messungen sich in einer einzelnen Grafik, Abb. \ref{fig:zeitkalibrierung_hist}, auswerten ließen. Die Nummer des Kanals steigt mit der zugehörigen Verzögerung. 
 
 \begin{figure}[tb!]
 \centering
@@ -48,7 +48,8 @@ Ein Funktionsgenerator wurde an den Starteingang des TAC geschlossen, sowie übe
 \label{fig:zeitkalibrierung_hist}
 \end{figure}
 
-Mit Python wurde eine lineare Regression durchgeführt. Aus der resultierenden Geradengleichung wurden die Kanäle einer Zeit zugewiesen. Die Regression ist in Abbildung \ref{fig:zeitkalibrierung} gezeigt, das Ergebnis lautet
+
+Die Zeit wurde den Kanälen zugewiesen. Mit dem Python-Modul \emph{numpy} wurde eine lineare Regression durchgeführt. Mit der resultierenden Geradengleichung wurden die Kanäle einer Zeit zugewiesen. Die Regression ist in Abbildung \ref{fig:zeitkalibrierung} gezeigt, das Ergebnis lautet
 
 \begin{equation}
 \label{eqn:Zeitkalibrierung}
