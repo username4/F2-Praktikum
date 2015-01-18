@@ -16,7 +16,7 @@ plt.figure(1, [9,6])
 plt.plot(channels, times, "bo",
          label="Messwerte")
 plt.plot(channels, linfunc(channels, popt[0], popt[1]), "r-",
-         label=r"linear fit: <time / channel> = ({0} $\pm$ {1}) ns".format(np.round(popt[0],6),np.round(pcov[0,0],10)))
+         label=r"linear fit: <time / channel> = ({0} $\pm$ {1}) ns".format(np.round(popt[0]*1e3,6),np.round(pcov[0,0]*1e3,10)))
 plt.xlabel("channel #")
 plt.ylabel("time (ns)")
 plt.legend(loc="best")
