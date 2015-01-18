@@ -39,12 +39,16 @@
 
 \section{Zeitkalibrierung}
 
+<<<<<<< HEAD
 Ein Funktionsgenerator wurde an den Starteingang des TAC geschlossen, sowie über Verzögerungsglieder an den Stoppeingang. Diese wurden zugeschaltet, um die Zeitverzögerung in bekannten Schritten von \SI{1}{\nano \second} zu erhöhen. Die zugehörigen Peaks waren scharf gegenüber dem Abstand, sodass die Messungen sich in einer einzelnen Grafik, Abb. \ref{fig:zeitkalibrierung_hist}, auswerten ließen. Die Nummer des Kanals steigt mit der zugehörigen Verzögerung. 
+=======
+Ein Funktionsgenerator wurde an den Starteingang des TAC geschlossen, sowie über Verzögerungsglieder an des Stoppeingang. Diese wurden zugeschaltet, um die Zeitverzögerung in bekannten Schritten von $\SI{1}{\nano \second}$ zu erhöhen. Die zugehörigen Peaks waren scharf gegenüber dem Abstand, sodass die Messungen in einer einzelnen Grafik, Abb. \ref{fig:zeitkalibrierung_hist}, auswerten ließen. Die Nummer des Kanals steigt mit der zugehörigen Verzögerung. 
+>>>>>>> 3683b416b72c7998c101d016b4d1ee38f555e002
 
 \begin{figure}[tb!]
 \centering
 \includegraphics[width=0.7\textwidth]{abbildungen/zeitkalibrierung_hist.pdf}
-\caption[Daten zur Zeitkalibrierung]{\textbf{Daten zur Zeitkalibrierung.} Die gezeigten Peaks gehören zu unterschiedlichen Verzögerungen. Da sie sich signifikant unterscheiden, ließen sie sich in einer Grafik auswerten. Die Verzögerung wird von dem Peak am weitesten links nach rechts schrittweise um $\SI{1}{\nano \second}$ größer.}
+\caption[Daten zur Zeitkalibrierung]{\textbf{Daten zur Zeitkalibrierung.} Die gezeigten Peaks gehören zu unterschiedlichen Verzögerungen. Die zugehörigen Peaks waren scharf gegenüber dem Abstand, sodass die Messungen in einer einzelnen Grafik auswerten ließen. Die Verzögerung wird von dem Peak am weitesten links nach rechts schrittweise um $\SI{1}{\nano \second}$ größer.}
 \label{fig:zeitkalibrierung_hist}
 \end{figure}
 
@@ -100,7 +104,7 @@ B = \SI[separate-uncertainty=true]{36.0 \pm 0.7 }{G} ~.
 \caption[Inhomogenität des Magnetfelds der Spule]{\textbf{Inhomogenität des Magnetfelds der Spule} Um den relativen Fehler zum Magnetfeld zu finden wurde auf vorliegende Messungen einer Hallsonde zurückgegriffen. Über verschiedene Punkte an der Länge $l$ der Spule wurde die Spannung an der Hallsonde gemessen. Für jeden dieser Punkte wurden vier Messwerte für verschiedene Positionen innerhalb des Spulenquerschnitts aufgenommen. Die mit "'*"' markierten Werte für $l = \SI{0.00}{m}$ und $l = \SI{1.00}{m}$ wischen stark von den anderen Werten ab, wurden daher nicht in die Berechnung des Fehlers aufgenommen.}
 \begin{tabular}{ccccc}
 \toprule 
-$l$/m	&	$U_{\mathrm{Hall}} (0 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}} (0,28 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}}(- 0,28 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}} (\mathrm{m})$/mV	\\
+$l$/m	&	$U_{\mathrm{Hall}} (0 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}} (0,28 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}}(- 0,28 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}} (0 \mathrm{m})$/mV	\\
 \midrule
 0,00* & 149,6* & 123,6* & 123,6* & 139,7* \\
 0,05 & 213,9 & 231,2 & 227,5 & 218,8 \\
