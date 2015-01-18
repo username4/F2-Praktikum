@@ -76,16 +76,17 @@ B \mathrm{/G} = -1,68946 + 0,30472 \cdot U_{\mathrm{VW}} \mathrm{/mV}
 verwendet. Der Fehler für das Magnetfeld wurde aus der übernommenen Messreihe in Tabelle \ref{tab:fieldinhomogenities} ermittelt. Es sind die Spannungen an der Hallsonde aufgelistet. Diese stehem in einem linearen Verhältnis zu der Magnetfeldstärke, daher können die relativen Fehler übernommen werden. Der relative Fehler für jeweils vier Werte, also für jeden Punkt entlang der Spule wurde bestimmt. Über diese wurde gemittelt, um den mittleren relativen Fehler zu bestimmen. Dieser war
 
 \begin{equation}
+\label{eqn:inhomogen_fehler}
 \sigma_{\mathrm{B}} = 0,02 = 2 \% ~.
 \end{equation}
 
-Die Spannung am Vorwiderstand, mit dem Ablesefehler am Multimeter, betrug
+Die Spannung am Vorwiderstand betrug
 
 \begin{equation}
-U_{\mathrm{VW}} = \SI{123,6 \pm 0,1 }{\milli \volt} ~.
+U_{\mathrm{VW}} = \SI{123,6}{\milli \volt} ~.
 \end{equation}
 
-Hieraus ergab sich Formel \eqref{eqn:B-gauss} 
+Hieraus ergab Formel \eqref{eqn:B-gauss}, mit dem Fehler für die Inhomogenität aus Gleichung \eqref{eqn:inhomogen_fehler},
 \begin{equation}
 B = \SI{36.0 \pm 0.7}{G} ~.
 \end{equation}
@@ -130,10 +131,11 @@ $l$/m	&	$U_{\mathrm{Hall}} (0 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}} (0,28 \mathrm
 
 \section{Bestimmung der Lebensdauer des Myons}
 
-\section{Bestimmung des Landéfaktors des Myons}
-%Am Besten noch was zu g schreiben, in der Vorbereitung war nicht ausreichend erklärt, was es ist.
 
-\subsection{Bedeutung des Landéfaktors}
+
+
+
+\section{Bedeutung des Landéfaktors}
 
 Der Landéfaktor $g$ gibt für ein Teilchen das Verhältnis des gemessenen magnetischen Moments $ u_{\mathrm{gemessen}}$ zu dem klassisch erwartetem magnetischem Moment $u_{\mathrm{klassisch}}$ an. Demnach gilt
 
@@ -147,7 +149,7 @@ Jeder Drehimpuls besitzt in einem Magnetfeld ein magnetisches Moment. Für unter
 g = \frac{\hbar \omega}{\mu_B B} ~.
 \end{equation}
 
-
+\section{Bestimmung des Landéfaktors des Myons}
 
 
 \section{Diskussion der Ergebnisse}
