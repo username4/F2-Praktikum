@@ -17,14 +17,18 @@ print "Array of voltages, 4 at each distance (mV)"
 for line in UArray:
     print line
 
-Uerrors = [np.std(line)/float(np.mean(line)) for line in UArray]
+r_errors = [np.std(line)/float(np.mean(line)) for line in UArray]
+z_means = [float(np.mean(line)) for line in UArray]
 print "\nRelative errors for the mean dU/U for different distances (mV)"
 for Uerror in Uerrors:
     print Uerror
 
-meanUerror =  np.mean(Uerrors)
-print "\nmean relative error <dU/U> = <dB/B>"
-print "===>", meanUerror
+r_error = np.mean(r_errors)
+z_error = np.std(z_means)/np.mean(z_means)
+
+print "Error between different z (fixed r): ", r_error
+print "Error between different r (fixed z): ", z_error
+
 
 
 
