@@ -4,9 +4,10 @@
 import re # module for regular expressions, substitutions...
 
 def csv_to_tex (filepath, newfilepath, seperator, use_commas=True):
-    filestring = "\\toprule \n"
+    filestring = "\\begin{table}\n\\caption{}\n\\label{}\n\\begin{tabular}"
+    filestring += "\\toprule \n"
     filestring += "% insert headerline here\n"
-    filestring += "\\hline \n"
+    filestring += "\\midrule \n"
     
     with open(filepath, "r") as infile:
         for line in infile:
@@ -16,7 +17,7 @@ def csv_to_tex (filepath, newfilepath, seperator, use_commas=True):
                 else:
                     filestring += re.sub(",", ".", re.sub("\n", r" \\\\"+"\n", re.sub(seperator, " & ", line)))
     filestring +="\\bottomrule\n"
-
+    filestring +="\\end{tabular}\n\\end{table}"
     with open(newfilepath, "w") as outfile:
         outfile.write(filestring)
         
