@@ -192,7 +192,7 @@ Da Cooper-Paare die Ladung $q = 2e$ haben, folgt somit für Supraleiter
 die Quantisierung 
 \begin{equation}
   \label{eq:phi0}
-  Phi_0 = \frac{h}{2 e} = \SI{2e-15}{\volt\second}~.
+  \Phi_0 = \frac{h}{2 e} = \SI{2e-15}{\volt\second}~.
 \end{equation}
 
 Das passiert dabei so, dass der magnetische Fluss die supraleitende
@@ -220,15 +220,64 @@ In dem Fall lassen sich die beiden gekoppelten Schrödingergleichungen
 des System mit der Energiedifferenz $\Delta E = e U$ zwischen den
 Hälften berechnen. 
 Wir wollen uns in dieser Vorbereitung nicht mit den Details der
-Rechnung befassen, sondern betrachten direkt die Ergebnisse.
+Rechnung befassen, sondern betrachten direkt die Ergebnisse. 
+Man erhält die beiden folgenden Gleichungen:
+
+\begin{eqnarray}
+  \dot{n}_{c1} = -\dot{n}_{c2} = \frac{2}{\hbar} T n_c \cdot \sin(\phi_2 - \phi_1)\\
+  \hbar \cdot (\dot{\phi}_2 -\dot{\phi}_1) = - q U_{\rm ext}~.
+\end{eqnarray}
+
+Dabei bezeichnen $n_{C1}$ und $n_{C2}$ die Dichten der Cooper-Paare in
+den beiden supraleitenden Hälften, wobei aufgrund unserer angenommenen Symmetrie
+$n_{C1} = n_{c2} =: n_c$ gilt, und $\phi_1$ und $\phi_2$ bezeichnen
+die Phasen der Wellenfunktion in den beiden supraleitenden Hälften.
+Die Konstante $T$ charakterisiert die Kopplunststärke zwischen den
+beiden Hälften und hängt vor allem von der Dicke der Grenzschicht ab.
+Aus diesen beiden Gleichungen folgen nun die beiden Josephson-Effekte.\\
 
 \paragraph{1. Der Josephson-Gleichstrom:}
-Der erste Josephson-Effekt behandelt den Spannungslosen Fall mit
-$U_{\rm ext} = 0$ 
+Der erste Josephson-Effekt behandelt den spannungslosen Fall mit
+$U_{\rm ext} = 0$. 
+Selbst dann tritt an der Grenzschicht ein endlicher Tunnelstrom auf,
+der von der Phasendifferenz abhängt:
+\begin{equation}
+  I_{Co} = I_{Co}^{\rm max} \cdot \sin(\phi_2 - \phi 1)~.
+\end{equation}
 
+\paragraph{2. Der Josephson-Wechselstrom:}
+Der Josephson-Wechselstrom tritt bei einer angelegten externen
+Spannung auf. Dann ist die Phasendifferenz zeitlich nicht mehr
+konstant und es folgt mit Integration
 
+\begin{equation}
+  \phi_2 - \phi_1 = \frac{2 e U}{\hbar} t + \Delta\phi_0~.
+\end{equation}
+Damit erhält man am Tunnelkontakt zusätzlich noch einen Wechselstrom
+\begin{equation}
+  I_{\rm Co} \sim \dot{n}_{\rm Col} = \frac{1}{\hbar} 2 K n_{\rm Co}
+    \sin(\omega_{\rm Co} t + \Delta\phi_0)~,
+\end{equation}
+wobei die Frequenz gegeben ist als
+\begin{equation}
+  \frac{2 e U}{\hbar} ~.
+\end{equation}
 
+Der Maximalstrom $I_{Co}^{\rm max}$ des Josephson-Effekts wird durch
+Magnetfelder parallel zur Grenzschicht stark beeinflusst.
+Aufgetragen gegen den Magnetischen Fluss  gleicht er einem
+Interferzmuster und hat Nullstellen mit einer Periode, die dem magnetischen Flussquant
+$\Phi_0$ entspricht. Dies ist in Abbildung~\ref{fig:josephson}
+gezeigt.
+Über die Änderung des Maximalstroms lässt sich
+daher auf die Stärke eines extern angelegten Magnetfeldes schließen.
 
+\begin{figure}[tbh!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{abbildungen/josephson_modulation.png}
+  \caption{Abhängigkeit des Josephson-Effekts von einem parallel zur Grenzschicht angelegtem Magnetfeld. Zu sehen ist die Modulation der Maximalstromstärke in Abhängigkeit des angelegten Magnetfeldes. Die Periode entspricht einem Flussquant $\Phi_0$.}
+  \label{fig:josephson}
+\end{figure}
 
 \subsection{YBCO}
 
