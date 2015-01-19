@@ -85,14 +85,19 @@ Magnetfelder können aufgrund der Josephson-Effekte (Kap. \ref{ssec:josephson}) 
 
 Man unterscheidet hier auch zwischen \textbf{"'harten"'} und \textbf{"'schwachen"'} Supraleitern.
 Erstere besitzen besonders stabile Abschirmströme, frieren damit den magnetischen Fluss fest ein.
-Schwache Supraleiter reagieren auf Änderungen des äußeren Magnetfelds und lassen magnetischen Fluss gequantelt eindringen. 
+Schwache Supraleiter reagieren auf Änderungen des äußeren Magnetfelds und lassen magnetischen Fluss gequantelt mit einem Fluss von
+\begin{equation}
+\Phi_\mathrm{0} = \frac{h}{2 e}
+\end{equation}
+eindringen. 
+Der Term "'$2 e$"' deutet auch auf ein Elektronenpaar hin.
 
 
 
 \begin{figure}[tb!]
 \centering
 \includegraphics[width=0.7\textwidth]{abbildungen/typ2_supraleiter.png}
-\caption[Versuchsplatz]{\textbf{Flussfadengitter in einem Typ II-Supraleiter [\ref{ref:mappe}].}}
+\caption[Versuchsplatz]{\textbf{Flussfadengitter in einem Typ II-Supraleiter [\ref{ref:mappe}].} Magnetfelder treten durch Kanäle in den Supraleiter ein. Die Flüsse sind quantisiert und Laufen entlang der Magnetfeldrichtung.}
 \label{fig:typII}
 \end{figure}
 
@@ -115,18 +120,63 @@ Schwache Supraleiter reagieren auf Änderungen des äußeren Magnetfelds und las
 
 Zur Messung der Magnetisierung wird ein "'superconducting quantum interference device"' (\textbf{SQUID}) der Firma Jülinger SQUID GmbH verwendet. 
 Das verwendete SQUID basiert auf den Hochtemperatursupraleiter Yttrium-Barium-Kupferoxid (\textbf{YBCO}).
-Eine
 
 \begin{figure}[tb!]
 \centering
 \includegraphics[width=0.7\textwidth]{abbildungen/squide.png}
-\caption[Versuchsplatz]{\textbf{Aufbau eines SQUIDs [\ref{ref:wuppertal}].}}
+\caption[Versuchsplatz]{\textbf{Aufbau eines dc-SQUIDs [\ref{ref:wuppertal}].} An einem supraleitendem Ring mit zwei Josephson-Kontakten wird ein Wechselstrom angelegt. 
+Dieser induziert ein Magnetfeld durch den Ring. 
+Ist das Magnetfeld zu stark, bricht die Supraleitfähigkeit zusammen.
+Diese Änderung im Widerstand kann mit Resonanzkreis genau gemessen werden.}
 \label{fig:squid_wuppertal}
 \end{figure}
 
-\subsubsection{Aufbau}
+Verwendet wird ein rf-SQUID, der wie in Abbildung \ref{fig:jsq}. 
+Dieser besitzt nur eine Schwachstelle in Form von gezielt eingebrachte Korngrenzen.
+Die Dimensionierung des Bauteils erfolgte so, dass nur ein Flussquant passieren kann.
+Bei nur wenigen Milliampère werden Stromdichten durch die Schwachstelle mit einer Größenordnung von \SI{e5}{A \per  \centi \square \meter}.
+Bei einem rf-SQUID reicht eine einzelne induktiv gekoppelte Schwachstelle aus.
 
-\subsubsection{Verhalten}
+\begin{figure}[tb!]
+\centering
+\includegraphics[width=0.7\textwidth]{abbildungen/squid_rf.png}
+\caption[Versuchsplatz]{\textbf{Schema des rf-SQUIDs mit Kennlinien [\ref{ref:jsq}].} Das rf-SQUID wird mit einem Tank-Schwingkreis gekoppelt. Links unten ist die Abhängigkeit der gemessenen Spannung an dem Tankschwingkreis über den Pumpstrom aufgetragen. Rechts unten ist die Fluss zu Spannungs-Transferfunktion abgebildet.}
+\label{fig:jsq}
+\end{figure}
+
+
+
+Angelegt wird eine hochfrequente Spannung von einigen \SI{100}{MHz}. 
+Ein Tank-Schwingkreis ist induktiv mit der SQUID-Schleife gekoppelt und regt diese zur Schwingung an.
+Es gilt für den magnetischen Fluss 
+
+\begin{equation}
+\Phi_{\mathrm{rf}} = M_\mathrm{G} \cdot Q \cdot I_{\mathrm{rf}} \cdot \sin(\omega_\mathrm{0} t) ~.
+\end{equation}
+
+$Q$ bezeichnet die Güte des Systems
+\begin{equation}
+Q = \frac{R_\mathrm{T}}{\omega_\mathrm{0} \cdot L_\mathrm{T}} ~.
+\end{equation}
+Die Gegeninduktivität ist mit den Induktivitäten $L_{\mathrm{SQ}}$ und $L_{\mathrm{T}}$ für SQUID-, bzw. Tankschwingkreis,
+\begin{equation}
+M_\mathrm{G} = k \cdot \sqrt{L_{\mathrm{SQ}} \cdot L_\mathrm{T}} ~.
+\end{equation}
+$k$ ist eine Koppelkonstante, $\omega_\mathrm{0}$ die Resonanzfrequenz und $R_\mathrm{T}$ der Widerstand des Tankkreises.
+
+Gemessen wird die Amplitude der Erregerspannung $\Updelta U_{\mathrm{mess}}$.
+Diese steigt mit $I_{\mathrm{rf}}$ linear an, solange der kritische Strom $I_\mathrm{C}$ von dem Suprastrom durch den SQUID $I_mathrm{S}$ nicht überschritten wird.
+Wird der krtische Strom erreicht nd damit der kritische Fluss $\Phi_\mathrm{C}$, besitzt die Spannung einen kritischen Wert 
+\begin{equation}
+U_{\mathrm{C}} = \frac{\omega_\mathrm{0} \cdot L_\mathrm{T}}{M} ~.
+\end{equation}
+
+Der Supraleiter wird lokal normalleitend und der Schwingkreis verliert Energie an die Umgebung. Der Verlust beträgt etwa
+\begin{equation}
+\Delta E = I_\mathrm{C} \cdot \Phi_\mathrm{0} ~.
+\end{equation}
+Die Amplitude sinkt drastisch ab und der Vorgang beginnt erneut.
+
 
 \subsection{Versuchsplatz}
 
@@ -145,7 +195,9 @@ Eine
 \section{Quellen}
 \begin{enumerate}
 \item Vorbereitungsmappe.\label{ref:mappe}
-\item \url{http://hydrogen.physik.uni-wuppertal.de/hyperphysics/hyperphysics/hbase/solids/squid.html} ( 18.1.2015).\label{ref:wuppertal}
+\item \url{http://hydrogen.physik.uni-wuppertal.de/hyperphysics/hyperphysics/hbase/solids/squid.html} (18.1.2015).\label{ref:wuppertal}
+\item \url{http://jsq.apps-1and1.net/category/information/what-is-a-squid/} (18.1.2015).
+\label{ref:jsq}
 \end{enumerate}
 
 
