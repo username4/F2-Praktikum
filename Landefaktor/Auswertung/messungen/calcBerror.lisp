@@ -3,7 +3,7 @@
 ;; but for portability I implemented them myself here.
 (defun mean (numbers)
   "Returns arithmetic mean of a list of real numbers"
-  (/ (sum-list numbers) (length numbers)))
+  (/ (apply #'+ numbers) (length numbers)))
 (defun sqr-list-elem (numbers)
   "Squares each element of input list and returns new list."
   (mapcar (lambda (x) (* x x)) numbers))
@@ -33,27 +33,20 @@ Using formula: std(x) = sqrt(<x^2> - <x>^2)"
       (setf liststring (concatenate 'string liststring (format nil ")")))
       )
     (close in)
-    (read-from-string liststring)
-    )
-  )
+    (read-from-string liststring)))
 
+			       
+(defvar l '((1 2 3) (4 5 6)))
+(apply #'concatenate 'list l)
 (defun  calcBerror ()
   (let* ((csvpath "~/f2praktikum/Landefaktor/Auswertung/messungen/FieldInhomogenities.txt")
 	 (csvlist (csvfile-to-list csvpath)) ;; list of lists with distances and voltages
-	 (voltages (mapcar 'cdr csvlist)) ;; list of lists with voltages
-	 (errors nil) ;; relative errors for different distances
-	 (meanBerr nil)) ;; mean of relative errors
-
-    (setf errors (mapcar (lambda (line) (/ (std line) (mean line))) voltages))
-    
-    (format t "Errors dU/U at different distances~%")
-    (loop for error in errors do (format t "~f~%" error))
-    
-    (setf meanBerr (mean errors))
-    (format t "Mean of relative errors:~%~A~%" meanBerr)
-    meanBerr
-    )
-  )
+	 (voltages (mapcar #'cdr csvlist)) ;; list of lists with voltages
+	 (onedimlist (apply #'concatenate 'list voltages))
+	 (relerror (/ (std onedimlist) (mean onedimlist))))
+    (print relerror)))
+ 
 
 ;; main
 (calcBerror)
+

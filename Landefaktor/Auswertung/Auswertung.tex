@@ -81,11 +81,13 @@ Das Magnetfeld wurde mit einer Hallsonde bestimmt. Aus den Daten der Kalibrierun
 B \mathrm{/G} = -1,68946 + 0,30472 \cdot U_{\mathrm{VW}} \mathrm{/mV}
 \end{equation}
 
-verwendet. In der Spule ist das Magnetfeld inhomogen. Der Fehler für die Inhomogenität wurden aus der übernommenen Messreihe in Tabelle \ref{tab:fieldinhomogenities} ermittelt. Es sind die Spannungen an der Hallsonde aufgelistet. Diese stehen in einem linearen Verhältnis zu der Magnetfeldstärke, daher können die relativen Fehler übernommen werden. Der relative Fehler für jeweils vier Werte, also für jeden Punkt entlang der Spule, wurde bestimmt. Über diese wurde gemittelt, um den mittleren relativen Fehler zu bestimmen. Dieser war
+
+verwendet. In der Spule ist das Magnetfeld inhomogen. Der Fehler für die Inhomogenität wurden aus der übernommenen Messreihe in Tabelle \ref{tab:fieldinhomogenities} ermittelt. Es sind die Spannungen an der Hallsonde aufgelistet. Diese stehen in einem linearen Verhältnis zu der Magnetfeldstärke, daher können die relativen Fehler übernommen werden. 
+Der relative Fehler wurde über die Standwardabweichung aller Messwerte, geteilt durch deren Mittelwert, bestimmt, wobei die Randbereiche aus der Messung rausgenommen wurden. Damit erhielten wir
 
 \begin{equation}
 \label{eqn:inhomogen_fehler}
-\sigma_{\mathrm{B}} = 0,02 = 2 \% ~.
+\sigma_{\rm B} = 0,067 \approx 7\% ~.
 \end{equation}
 
 Die Spannung am Vorwiderstand betrug
@@ -94,11 +96,12 @@ Die Spannung am Vorwiderstand betrug
 U_{\mathrm{VW}} = \SI{123,6}{\milli \volt} ~.
 \end{equation}
 
-Hieraus ergab Formel \eqref{eqn:B-gauss}, mit dem Fehler für die Inhomogenität aus Gleichung \eqref{eqn:inhomogen_fehler},
+Hieraus ergab Formel \eqref{eqn:B-gauss}, mit dem Fehler für die Inhomogenität aus Gleichung \eqref{eqn:inhomogen_fehler}
 \begin{equation}
 \label{eq:B}
 B = \SI[separate-uncertainty=true]{36.0 \pm 0.7 }{G} ~.
 \end{equation}
+%(- (* 0.30472 123.6) 1.68946)
 
 \begin{table}[tb!]
 \centering
@@ -180,7 +183,9 @@ berechnet und erhielten
   \omega_{\rm LIT} = \frac{g \mu_{B}}{\hbar B} \approx \SI{6.3e8}{\per\second}~.
 \end{equation}
 
-Als Startparameter für die Phase wurde $\delta = 0$ gewählt. 
+Als Startparameter für die Phase wurde $\delta = 0$ gewählt und den
+Startparameter für die Amplitude der Modulation haben wir per Auge
+abgeschätzt und auf 5 Ereignisse gesetzt.
 Für den Fit wurden nur die Einträge in den Kanälen 7 bist 500
 verwendet, da erst ab Kanal 7 die Binhöhen anfangen zu sinken und nach
 Kanal 500 alle Einträge bei 0 oder 1 liegen. Es wurde die Fit-Methode
@@ -201,7 +206,7 @@ beziehungsweise mit der Zeitkalibrierung aus Gleichung~\ref{eqn:Zeitkalibrierung
 
 \begin{figure}[tbh!]
   \centering
-  \includegraphics[width=\textwidth]{abbildungen/histogramm.pdf}
+  \includegraphics[width=1.1\textwidth]{abbildungen/histogramm.pdf}
   \caption{\textbf{Histogramm der Myon-Zerfallszeiten}
   Eingetragen sind die Zeiten zwischen den Triggersignalen des oberen Szintillators und den
   Signalen aus dem Positron des \APmuon-Zefalls. Die Zeit ist dabei in Kanälen
@@ -242,19 +247,22 @@ Gleichung~\ref{eqn:Zeitkalibrierung}
 
 \begin{equation}
 \label{eq:omega}
-% (mapcar (lambda (x) (* x  29.9783924)) '(1.70217e-02   3.56301e-04  ))
-\omega = \SI{0.510 +-  0.011}{\per\nano\second}
+\omega = \SI{0.671 +-  0.021}{\per\nano\second}
 \end{equation}
+% (mapcar (lambda (x) (* x  29.9783924)) '(2.23718e-02   6.94896e-4))
+% (0.67067059909432 0.0208318649651904)
+
 beträgt. Daraus erhält man den Landéfaktor
 
 % (setq mub 9.27401e-24)
 % (setq hbar 1.05457173e-34)
 % (setf B 36e-4)
-% (setf omega 0.51e9)
-% (* (/ hbar mub) (/ omega B)
+% (/ (* 2 mub B) (* hbar 29.978e9))
+% (/ (* hbar 29.978e9 2.24718e-2) (* mub B))2.1278772951876963
+
 
 \begin{equation}
-g = \frac{\hbar \omega}{\mu_B B} = \SI{1.611}{}~.
+g = \frac{\hbar \omega}{\mu_B B} = \SI{2.128}{}~.
 \end{equation}
 
 Es fehlt noch die Fehlerabschätzung. Da sich der Fehler auf die
@@ -264,19 +272,21 @@ Gleichungen \ref{eqn:inhomogen_fehler} und \ref{eq:omega} erhalten wir
 
 \begin{equation}
   \begin{split}
-    \sigma_B &= 2\%\\
-    \sigma_{\omega} &= \frac{\SI{0,011}{}}{\SI{0,51}{}} = 2\%~.\\
+    \sigma_B &= 7\%\\
+    \sigma_{\omega} &= \frac{\SI{0,021}{}}{\SI{0,671}{}} = 3\%~.\\
   \end{split}
 \end{equation}
 
-%(* 0.02 1.611) 0.03222
-Damit haben der statistische Fehler aus dem Fit der Präzessionsfrequenz
-$\sigma_{\omega}$ und der systematische Fehler $\sigma_B$ aus dem
-Magnetfeld den selben absoluten Wert 0,03 und wir erhalten somit
+%(* 0.03 2.128) 0.06384
+%(* 0.07 2.128) 0.14896001
+
+Damit haben einen absoluten statistischen Fehler aus dem Fit der Präzessionsfrequenz von \SI{0,06}{} und 
+vom systematische Fehler $\sigma_B$ aus dem Magnetfeld einen absoluten Fehler von \SI{0,14}{}. 
+Wir erhalten also
 
 \begin{equation}
   \label{eq:g}
-    g = \SI{1.61}{} \pm \SI{0.03}{} \pm \SI{0.03}{}~.
+    g = \SI{2.1}{} \pm \SI{0.1}{} \pm \SI{0.1}{}~.
 \end{equation}
 
 
@@ -285,7 +295,7 @@ Magnetfeld den selben absoluten Wert 0,03 und wir erhalten somit
 \section{Diskussion der Ergebnisse}
 Unser Ergebnis für die Lebensdauer von Myonen von 
 $\tau_{\rm eff} = \SI{2.08 +- 0.02}{\micro\second}$\eqref{eq:tau}
-ist sehr zufriedenstellend. Sie liegt damit zwar unter dem
+ist zufriedenstellend. Sie liegt damit zwar unter dem
 Literaturwert für die Lebensdauer von freien Myonen, der bei 
 \SI{2.197}{\micro\second} liegt [\ref{ref:pdg14}], was jedoch daran
 liegt, dass wir die effektive Lebensdauer in einem Material gemessen
@@ -296,16 +306,10 @@ Zerfallskanals im Kern eine deutlich niedrigere Zeitkonstante hat,
 aber womöglich haben selbst positive Myonen im Material eine etwas
 niedrigere Lebensdauer als im Vakuum.\\
 
-Der gemessene Landéfaktor von $g = \SI{1.61}{} \pm \SI{0.03}{} \pm
-\SI{0.03}{}$~\eqref{eq:g} unterscheidet sich deutlich von dem
-theoretisch erwartenen Landéfaktor für Myonen von $g = 2$ und die
-Differenz liegt auch deutlich außerhalb unserer Fehlergrenzen. Eine
-möglicher Grund ist ein systematischer Feler auf das Magnetfeld, der
-größer ist, als unsere Fehlerrechnung es ergeben hat. Ein anderen
-Grund könnte ein Fehler in der Modulation $\omega$ sein, da deren
-Amplitude sehr gering ist. Womöglich treten aber auch hier Störeffekte
-auf, da der Landéfaktor in einem Matierial gemessen wurde.
-
+Der gemessene Landéfaktor von $g = \SI{2.1}{} \pm \SI{0.1}{} \pm \SI{0.1}{}$
+ist ebenfalls sehr gut mit dem theoretisch erwarteten Literaturwert von 2
+[\ref{ref:pdg14}] vereinbar. Er ist etwas höher, jedoch liegt die
+Abweichung innerhalb der statistischen und systematischen Fehlergrenzen.
 
 
 

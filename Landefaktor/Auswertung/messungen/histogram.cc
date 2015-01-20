@@ -64,7 +64,7 @@ void histogram(const char* f1name, const char* f2name, const int time_per_channe
   histT->Draw();
   histT->GetXaxis()->SetTitle("channel");
   histT->GetYaxis()->SetTitle("counts");
-  histT->SetStats(0); // disable stats box with mean and numb entries
+  //  histT->SetStats(111111); // disable stats box with mean and numb entries
   
   // define fitfunctions
   const int fitmin = 7, fitmax = 500; // only use relevant data, cut beginning and end
@@ -91,9 +91,22 @@ void histogram(const char* f1name, const char* f2name, const int time_per_channe
   // g = 2.002
   // B = 35.973932 Gaus = 35.973932e-4 Tesla, mu_B = 9.27401e-24 J/T
   // => omega = mu_b * B * g / hbar = 6.333494403783369e8 s^{-1}
-  // Zeitkalibrierung: (0.029978 +- 4e-10) ns/Kanal
-  // ====> omega in Kanaleinheiten = omega*Zeitkalibrierung = 0.018986549523661782 Kanal^{-1}
-  double omegaLit = 0.0189;
+  // Zeitkalibrierung: (29.978 +- 4e-10) Kanal/ns
+  // => omega = 0.0211 / Kanal (Berechnet mit Lisp Code unten)
+
+  // emacs lisp code zum ausrechnen des startwertes fuer omega
+  // (setq mub 9.27401e-24)
+  // (setq hbar 1.05457173e-34)
+  // (setq B 36e-4)
+  // (/ (* 2 mub B) (* hbar 29.978e9))0.021121330680881956
+
+  double omegaLit = 0.02;
+  fullfit->SetParameter(0, expfit_K);
+  fullfit->SetParameter(1, expfit_tau);
+  fullfit->SetParameter(2, expfit_underground);
+  fullfit->SetParameter(3, 5.); // amplitude of modulation as it seems to be "by eye"
+  fullfit->SetParameter(5, 0.);
+  fullfit->SetParameters(4, omegaLit);
   fullfit->SetParameters(expfit_K, expfit_tau, expfit_underground, 5., omegaLit, 0);
   histT->Fit("fullfit", "REM");
   fullfit->Draw("Same");
