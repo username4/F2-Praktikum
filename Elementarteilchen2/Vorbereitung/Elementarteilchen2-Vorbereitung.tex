@@ -15,10 +15,17 @@
 \usepackage{units,siunitx} % Write units with correct spacing
 \usepackage{upgreek} % provide non-italic greek letters
 \usepackage{url}
+\usepackage{hepnames} % hier gibt es symbole fuer unterschiedliche elementarteilchen, aber dieses paket gibts nicht im poolraum
+
 %\usepackage{subfig}
 
 % Formatting of table & figure captions
 \captionsetup{font={sf,footnotesize},labelfont=bf,textfont=sl,skip=6pt}
+
+\sisetup{locale = DE, % use "," as decimal point instead of "."
+  exponent-product={\cdot},% used \cdot in front of 10^x
+  separate-uncertainty} % give out uncertainty with \pm instead of in brackets
+
 \setlength{\abovecaptionskip}{6pt}
 \setlength{\belowcaptionskip}{0pt}
 
@@ -34,17 +41,22 @@
 
 \section{Einleitung}
 
-\section{Theoretische Grundlagen}
+\section{Das DELPHI Experiment am LEP}
+\label{sec:delphi}
 
 
-\section{Versuchsaufbau}
+\section{Mögliche Zerfälle und Bestimmung der Zerfallsbreiten und Kopplungskonstanten}
+\label{sec:zerfaelle}
 
-\section{Versuchsdurchführung}
 
+\section{Das Scannen von Ereignissen mit "`Fireworks"' und Beispielzerfälle}
+\label{sec:scannen}
 
 \section{Quellen}
 \begin{enumerate}
 \item Vorbereitungsmappe 
+% Quelle fuer PDG-Angaben: (noch nicht genutzt, daher auskommentiert)
+% \item K.A. Olive et al. (Particle Data Group), Chin. Phys. C, 38, 090001 (2014). \label{ref:pdg14}
 \end{enumerate}
 
 
