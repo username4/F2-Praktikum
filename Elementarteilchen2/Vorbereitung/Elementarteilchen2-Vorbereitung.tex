@@ -103,18 +103,27 @@ Dann spricht man von 2-Jets.
 Oft gibt es auch drei Jets, sogenannte 3-Jets, wobei der dritte Jet durch Gluonabstrahlung entsteht,
 welches wie die Quarks eine Farbladung hat und damit der starken Wechselwirkung unterliegt und folglich ebenfalls Jets erzeugt.
 Die Entstehung eines 3-Jets aus dem Zerfall eines in einer \Pelectron-\APelectron-Kollision entstandenen \PZzero-Bosons ist 
-in dem Feynmandiagramm in Abbildung ... gezeigt.
-Da das Gluon mit der starken Kraft an das Quark koppelt, ist die Wahrscheinlichkeit eines 3-Jets durch die 
-Kopplungskonstante der starken Kernkraft gegeben.
-
+in dem Feynmandiagramm in Abbildung~\ref{fig:3jet} gezeigt.
+Da das Gluon mit der starken Kraft an das Quark koppelt, ist die
+Wahrscheinlichkeit eines 3-Jets proportional zur
+Kopplungskonstante der starken Kernkraft.\\
 \begin{figure}[tbh!]
   \centering
   \includegraphics[width=0.7\textwidth]{abbildungen/3jet_feyn.png}
-  \caption{Entstehung eines 3-Jets im LEP.\\ Bei der Kollision von Positron und Elektron bildet sich ein virtuelles \PZzero, welches in ein Quark-Antiquark-Paar zerfällt, die beide einen Jet erzeugen. Durch die Abspaltung eines Gluons, deren Wahrscheinlichkeit durch die Kopplungsstärke der starken Kernkraft gegeben ist, bildet sich ein dritter Jet.}
+  \caption{Entstehung eines 3-Jets im LEP.\\ Bei der Kollision von Positron und Elektron bildet sich ein virtuelles \PZzero, welches in ein Quark-Antiquark-Paar zerfällt, die beide einen Jet erzeugen. Durch die Abspaltung eines Gluons bildet sich ein dritter Jet.}
   \label{fig:3jet}
 \end{figure}
 
-
+Der dritte Jet bei einem 3-Jet-Ereignis zeigt in eine ähnliche Richtung wie der Jet, von dem das Gluon abgestrahlt wurde
+und lässt sich daher nicht immer auflösen.
+Als Bedingung für die Auflösung von zwei Jets definiert man, dass deren invariante Masse $M_{ij}$, 
+die von den Jetenergien $E_i$ und $E_j$ und dem Winkel zwischen den Jets $\theta_{ij}$ abhängt,
+normiert mit der Schwerpunktsenergie des Ereignisses $\sqrt s$, 
+im Quadrat über einem bestimmten Wert liegen muss, den man als Jetauflösungsparameter $y_{\rm cut}$ bezeichnet.
+Zwei Jets können also aufgelöst werden, wenn gilt:
+\begin{equation}
+  \frac{M_{ij}^2}{s} = \frac{2 E_i E_j (1-\cos \theta_{ij})}{s} > y_{\rm cut}~.
+\end{equation}
 
 
 
@@ -129,7 +138,8 @@ Kopplungskonstante der starken Kernkraft gegeben.
 \section{Quellen}
 \begin{enumerate}
 \item Blaues Buch \label{ref:BB}
-\item \url{http://home.web.cern.ch/about/accelerators/large-electron-positron-collider} (\today) \label{ref:cernlep}
+\item \url{http://home.web.cern.ch/about/accelerators/large-electron-positron-collider}
+ (\today) \label{ref:cernlep}
 % Quelle fuer PDG-Angaben: (noch nicht genutzt, daher auskommentiert)
 % \item K.A. Olive et al. (Particle Data Group), Chin. Phys. C, 38, 090001 (2014). \label{ref:pdg14}
 \item \url{http://hands-on-cern.physto.se/hoc_v21en/index.html} (\today)\label{ref:hands-on}
