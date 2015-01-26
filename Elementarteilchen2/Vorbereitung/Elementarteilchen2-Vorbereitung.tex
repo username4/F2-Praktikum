@@ -48,10 +48,35 @@ Die andere Gruppe sind die Bosonen mit einem Spin von $1$.
 
 Fermionen sind weiterhin gegliedert in Leptonen und Quarks.
 Des weiteren sind sie in 3 Generationen unterteilt aus jeweils zwei Quarks und zwei Leptonen. 
-Eine Übersicht 
+Eine Übersicht der Fermionen ist in Abbildung \ref{fig:fermionen} gezeigt.
 Up- und Down-Quarks bilden mit Elektronen die Grundlage für gewöhnliche Materie.
-Diese Teilchen lassen sich in einem Teilchenbeschleuniger erzeugen und untersuchen.
+\begin{figure}[tbh!]
+\centering
+\includegraphics[width=0.5\textwidth]{abbildungen/fermionen.png}
+\caption{\textbf{Eigenschaften der Fermionen [\ref{ref:BB}].} 
+}
+\label{fig:fermionen}
+\end{figure}
 
+Zwischen Teilchen gibt es Wechselwirkungen.
+Im SM werden die Kräfte mit einem Austausch von Teilchen, den Austausch- oder Eichbosonen erklärt.
+Das Photon ist das masselose Eichboson der elektromagnetischen Wechselwirkung.
+Die schwache Wechselwirkung besitzt die massiven Vektorbosonen \PWpm , sowie \PZzero als Eichbosonen.
+Gluonen gehören zur starken Wechselwirkung.
+Das postulierte Graviton für die Gravitationskraft konnte noch nicht nachgewiesen werden.
+Eine Übersicht der Bosonen mit ihren Wechselwirkungen befindet sich in Abbildung \ref{fig:bosonen}.
+Als Erweiterung des SM gibt es den Higgs-Mechanismus.
+Das vorausgesagte Higgs-Boson wurde durch den Nachfolger des LEPs, dem LHC, gefunden.
+
+\begin{figure}[tbh!]
+\centering
+\includegraphics[width=0.5\textwidth]{abbildungen/bosonen.png}
+\caption{\textbf{Eigenschaften der Bosonen und der zugehörigen Wechselwirkung~[\ref{ref:BB}].} 
+}
+\label{fig:bosonen}
+\end{figure}
+
+Diese Teilchen lassen sich in einem Teilchenbeschleuniger erzeugen und untersuchen.
 In diesem Versuch werden die Eigenschaften einiger Teilchen untersucht anhand der Daten des DELPHI. 
 Auch die Wechselwirkung zwischen Elementarteilchen wird untersucht.
 Die Funktionsweise eines Detektors, sowie die Auswertung der entstandenen Daten soll mit diesem Experiment verständlich gemacht werden.
@@ -62,17 +87,17 @@ Die Funktionsweise eines Detektors, sowie die Auswertung der entstandenen Daten 
 \label{sec:delphi}
 
 Der LEP (Large Electron Positron) Collider war ein Teilchenbeschleuniger des CERN.
-Er befand sich nahe Genf \SI{100}{\metre} unter der Erde und war \SI{27}{\kilo \metre} lang. 
-Mittlerweile ist er vom Large Hadron Collider (LHC) ersetzt wurden.
+Er befand sich nahe Genf \SI{100}{\metre} unter der Erde und war \SI{27}{\kilo \metre} lang [\ref{ref:hands-on}]. 
+Mittlerweile ist er vom Large Hadron Collider (LHC) ersetzt worden.
 
-An vier Stufen wurden Elektronen und Positronen in entgegengesetzte Richtung auf Energien bis zu \SI{100}{GeV} beschleunigt.
-Die Strahlen treffen an vier Orten zusammen.
-Dort befinden sich Detektoren, um die Kollisionen zu analysieren, darunter der DELPHI (Detector with Lepton, Photon and Hadron Identification), der schematisch in Abbildung \ref{fig:delphi_big} gezeigt ist.
+An vier Stufen wurden Elektronen und Positronen in entgegengesetzte Richtung auf Energien bis zu \SI{100}{GeV}~[\ref{ref:hands-on}] beschleunigt.
+Die Strahlen treffen an vier Orten mit einer Schwerpunktenergie von über 200\,Gev zusammen.
+Dort befinden sich Detektoren, um die Kollisionen zu analysieren, darunter der DELPHI (Detector with Lepton, Photon and Hadron Identification), der schematisch in Abbildung~\ref{fig:delphi_big} gezeigt ist.
 
-\begin{figure}[tb!]
+\begin{figure}[tbh!]
 \centering
 \includegraphics[width=\textwidth]{abbildungen/delphi_big.png}
-\caption{\textbf{Aufbau des DELPHI-Detektors mit einer sichtbaren Endkappe [\ref{ref:hands-on}].} 
+\caption{\textbf{Aufbau des DELPHI-Detektors mit einer sichtbaren Endkappe~[\ref{ref:hands-on}].} 
 Die Bestandteile des Detektors sind farblich gekennzeichnet und benannt.
 Links ist eine der beiden Endkappen zu sehen, die andere wurde zur Übersichtlichkeit ausgeblendet.
 Rechts im Bild ist der zylindrische zentrale Teil mit Strahlengang gezeigt. 
@@ -80,17 +105,30 @@ Rechts im Bild ist der zylindrische zentrale Teil mit Strahlengang gezeigt.
 \label{fig:delphi_big}
 \end{figure}
 
-In dem Speicherring werden Elekt
+Der Detektor ist in Schichten aufgebaut, wie in Abbildung~\ref{fig:delphi_schichten} dargestellt ist.
+Ein Magnetfeld durchströmt den gesamten Detektor und lenkt geladene Teilchen auf ihrem Weg ab, wodurch sie sich identifizieren lassen.
+Die Schichten sind verschiedene Subdetektoren. 
+Als innerste Schicht wird eine Spurkammer verwendet.
+Einige Teilchen sind in dieser sichtbar, wie Myonen, Elektronen, oder Pionen.
+Photonen und Neutronen sind aufgrund ihrer geringen Wechselwirkung hier nicht sichbar.
 
+Als zweite Schicht wird ein Elektromagnetisches Kalorimeter (\textbf{ECAL}) verwendet.
+Teilchen mit elektromagnetischer Wechselwirkung, wie Elektronen, oder Photonen werden in diesem sichtbar.
+In dem ECAL entsteht eine Kaskadenschauer beim Eintritt der Elektronen und Photonen, an der diese Teilchen die gesamte Energie verlieren. 
+Die schwereren Myonen passieren jedoch nahezu ungehindert.
 
+Hadronen werden im Hadronkalorimeter (\textbf{HCAL}) abgebremst und bilden dort eine Kaskadenschauer.
+Myonen passieren auch ungehindert und gelangen in die Myonkammern, wo sie detektiert werden.
 
+Produkte der Kollision kann man anhand dieses Schemas erkennen. 
+Wenn ein Jet beispielsweise nicht in der Spurkammer sichtbar ist, aber im ECAL seine Energie verliert und eine Kaskade auslöst,
+so handelt es sich dabei höchstwahrscheinlich um ein Photon.
+Damit lässt sich anhand geeigneter Darstellungsmethoden und Software, wie in Kapitel~\ref{sec:scannen} beschrieben ist, die Ergebnisse aus den Detektoren analysieren.
 
-
-
-\begin{figure}[tb!]
+\begin{figure}[tbh!]
 \centering
 \includegraphics[width=0.7\textwidth]{abbildungen/delphi_schichten.png}
-\caption{\textbf{Übersicht der Signaturen nachweisbarer Teilchen in den Subdetektoren [\ref{ref:BB}].} 
+\caption{\textbf{Übersicht der Signaturen nachweisbarer Teilchen in den Subdetektoren~[\ref{ref:BB}].} 
 Photonen durchqueren die Spurkammer und werden erst im ECAL detektiert.
 Elektronen und Positronen bilden Spuren in der Spurkammer und verlieren ihre Energie im ECAL.
 Myonen bilden Spuren bis in die Myonkammer.
