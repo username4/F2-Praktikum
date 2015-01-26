@@ -144,6 +144,8 @@ Protonen und geladene Pionen hingegen sind in der Spurkammer, sowie im ECAL sich
 \section{Theoretische Betrachtung unterschiedlicher Zerfälle}
 \label{sec:zerfaelle}
 
+\subsection{Unterschiedliche Zerfälle am LEP}
+\label{sec:zerfaelle}
 Wie bereits in Kapitel~\ref{sec:delphi} angesprochen, wurden im LEP \Pelectron-\APelectron-Paare zur Kollision gebracht, wobei gegen Ende Schwerpunktsenergien von über 200\,Gev~\ref{ref:cernlep} erreicht wurden,
 womit neue Teilchen erzeugt werden konnten.
 Dabei konnten neue Teilchen entstehen, 
@@ -157,11 +159,14 @@ welches eine Ruhemasse von 91\,GeV~\ref{ref:BB} besitzt.
 Beides sind virtuelle Teilchen, die schnell in weitere Teilchen zerfallen,
 weshalb aufgrund der Unschärferelation die Masse des virtuellen
 Teilchens die Energieerhaltung auch verletzen kann.
-Wir werden in diesem Versuch die Zerfälle des \PZzero-Bosons betrachten.\\
-
+Wir werden in diesem Versuch die Zerfälle des \PZzero-Bosons betrachten.
 Die virtuellen Eichbosonen können in Leptonen-Antileptonen- oder auch 
 Quark-Antiquark-Paare unterschiedlicher Teilchenfamilien zerfallen. 
-Die Teilchen der schwereren Teilchenfamilien sind instabil und zerfallen weiter in leichtere Teilchen.
+Die Teilchen der schwereren Teilchenfamilien sind instabil und
+zerfallen weiter in leichtere Teilchen.\\
+
+\subsection{Entstehung von Jets}
+\label{sec:jets}
 Bei Quarks ist zu beachten, dass diese nicht frei existieren können,
 da die starke Kernkraft bei zunehmendem Abstand zunimmt.
 Durch die große potentielle Energie bilden sich neue Quark-Antiquark-Paare,
@@ -197,9 +202,65 @@ Zwei Jets können also aufgelöst werden, wenn gilt:
   \frac{M_{ij}^2}{s} = \frac{2 E_i E_j (1-\cos \theta_{ij})}{s} > y_{\rm cut}~.
 \end{equation}
 
+\subsection{Wahrscheinlichkeiten, Zerfallsbreiten, Wirkungsquerschnitte und Kopplungskonstanten}
+\label{sec:zerfallsbreiten}
+Die Wahrscheinlichkeit, mit der ein Zerfall stattfindet, 
+ist proportional zu der Kopplungskonstante der daran beteiligten Kraft und der Anzahl der Vertices im
+dazugehörigen Feynmandiagramm, wobei an jedem Vertice die entsprechende Kopplungskonstante "`dranmultipliziert"' wird.
+Die Abstrahlung eines Photons ist zum Beispiel proportional zur Kopplungskonstante $\alpha = \frac{e^2}{4 \pi\hbar c} \approx \frac{1}{137}$.
+Die Kopplungskonstante der starken Kernkraft $\alpha_s$, mit der Teilchen mit Farbladung an Gluonen Koppeln, ist abstandsabhängig und liegt bei großen Abständen in der nähe von 1, weshalb dann eine störungstheoretischen Betrachtung unmöglich wird.\\
 
+Der Wirkungsquerschnitte $\sigma$ ist die Größe, die an einem Experiment tatsächlich gemessen wird.
+Er hat die Einheit einer Fläche, die oft in "`Barn"' angegeben wird, wobei gilt
+\begin{equation}
+  \SI{1}{\barn} = \SI{1e-28}{\meter\squared}.
+\end{equation}
 
+Der Wirkungsquerschnitte gibt an, wie oft Ereignisse vorkommen, ist also auch ein Maß für die Wahrscheinlichkeit.
+Bei einer Integrierten Luminosität $L$, die die Anzahl der eingelaufenen Teilchen pro Fläche angibt,
+ist die Anzahl $N$ der tatsächlich stattgefunden Ereignisse, die zu einem bestimmten Zerfall gehören, gegeben durch
+\begin{equation}
+  N = \sigma \cdot L~.
+\end{equation}
 
+Eine sehr wichtige Größe, die in diesem Versuch für unterschiedliche Zerfälle bestimmt wird, ist die Zerfallsbreite $\Gamma$.
+Je wahrscheinlicher ein Zerfall ist, also je größer die entsprechende Kopplungskonstante ist, 
+desto früher findet er in der Regel statt, was durch die Zeitkonstante $\lambda = 1/\tau$ gegeben ist.
+Aus der Energie-Zeit-Unschärferelation folgt, dass je kleiner das Zeitintervall eines Ereignisses ist,
+desto größer die entsprechende Energieunschärfe ist, also
+\begin{equation}
+  \Delta E \cdot \Delta t \leq \frac{\hbar}{2}~.
+\end{equation}
+
+Daher lässt sich die Lebensdauer $\tau$ eines Teilchens bis zu einem bestimmten Zerfall aus der Breite des Energiepeaks bestimmen,
+die man als Zerfallsbreite $\Gamma$ definiert über
+\begin{equation}
+  \Gamma = \hbar \cdot \lambda = \frac{\hbar}{\tau}~.
+\end{equation}
+
+Wir werden in unseren Versuchen immer die Verhältnisse von Zerfallsbreiten bestimmen, 
+die proportional sind zu dem Verhältnis der Häufigkeiten sind, mit der die Zerfälle vorkommen.
+
+Das Verhätlnis von hadronischen zu leptonischen Zerfällen definieren wir als
+
+\begin{equation}
+  R = \frac{\Gamma_{\rm had}}{\Gamma_{l\bar{l}}}~.
+\end{equation}
+
+Da das \PZzero eine ausreichende Masse hat, um Leptonen aller drei Teilchenfamilien zu erzeugen,
+nehmen wir an, dass die dazugehörigen Zerfallsbreiten gleich sind, womit gilt
+ \begin{equation}
+   \Gamma_{l\bar{l}} = \frac{\Gamma_{e\bar{e}} + \Gamma_{\mu\bar{\mu}} + \Gamma_{\tau\bar{\tau}}}{3}~.
+ \end{equation}
+
+Da bei hadronischen Zerfällen Zerfälle in alle Farbladungen mit gleicher Wahrscheinlichkeit vorkommen,
+ist die hadronische Zerfallsbreite proportional zur Anzahl der Farbladungen $N_C$. Es gilt:
+\begin{equation}
+  \Gamma_{\rm had} = N_C \cdot \left(N_u \Gamma_{u\bar u} + N_d \Gamma_{d\bar d} \right)~.
+\end{equation}
+
+Hierbei haben wir nur die beiden leichtesten Quarks betrachtet, 
+da die schwereren Quarks aufgrund ihrer zu hohen Masse vernachlässigbar sind.
 
 
 
