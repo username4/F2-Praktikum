@@ -202,7 +202,8 @@ Zwei Jets können also aufgelöst werden, wenn gilt:
   \frac{M_{ij}^2}{s} = \frac{2 E_i E_j (1-\cos \theta_{ij})}{s} > y_{\rm cut}~.
 \end{equation}
 
-\subsection{Wahrscheinlichkeiten, Zerfallsbreiten, Wirkungsquerschnitte und Kopplungskonstanten}
+
+\subsection{Wahrscheinlichkeiten, Zerfallsbreiten, Wirkungsquerschnitte, Kopplungskonstanten und deren Bestimmung}
 \label{sec:zerfallsbreiten}
 Die Wahrscheinlichkeit, mit der ein Zerfall stattfindet, 
 ist proportional zu der Kopplungskonstante der daran beteiligten Kraft und der Anzahl der Vertices im
@@ -263,15 +264,69 @@ Hierbei haben wir nur die beiden leichtesten Quarks betrachtet,
 da die schwereren Quarks aufgrund ihrer zu hohen Masse vernachlässigbar sind.
 Im Standardmodell (SM) der Teilchenphysik sind die Zerfallsbreiten
 $\Gamma_{u\bar u} = \SI{98,88}{\mega\electronvolt}$ und 
-$\Gamma_{d\bar d} = \SI{127,48}{\mega\electronvolt}$~\ref{ref:BB}~.
+$\Gamma_{d\bar d} = \SI{127,48}{\mega\electronvolt}$~\ref{ref:BB}~.\\
+
+Wie in~\ref{sec:jets} angesprochen, ist die Wahrscheinlichkeit von 3-Jets proportional zur Kopplungskonstante 
+$\alpha_s$ der starken Kernkraft und lässt sich aus dem Verhältnis der Anzahl $N_3$ der auflösbaren 3-Jets zur Gesamtzahl
+der hadronischen Ereignisse $N_{\rm had}$ bestimmen, wobei eine Konstante $C$ eingeführt wird, die die nicht auflösbaren 
+3-Jets berücksichtigt:
+
+\begin{equation}
+  \frac{N_3(y > y_{\rm cut})}{C(y > y_{\rm cut})\cdot N_{\rm had}} = \frac{R_3}{C(y > y_{\rm cut})} \approx \alpha_s~.
+\end{equation}
+
+Bei DELPHI ergibt sich bei einem angenommenen $y_{\rm cut} = \SI{0.02}{}$ eine Konstante $C = \SI{2,72}{}$.\\
+
+Außerdem lässt sich noch die Anzahl der Neutrino-Familie $N_\nu$ bestimmen.
+Diese ergibt sich aus dem Verhältnis der gemessenen unsichtbaren Breite der Neutrinozerfälle 
+$\Gamma_{\rm inv}$ zu der theoretisch vorhergesagten Zerfallsbreite für Neutrinos
+$\Gamma_{\mu_e\mu_e}^{SM} = \SI{166,1}{\mega\electronvolt}$~\ref{ref:BB} durch
+
+\begin{equation}
+  N_\mu = \frac{\Gamma_{\rm inv}}{\Gamma_{\mu_e\mu_e}^{SM}}~.
+\end{equation}
+
+Die gemessene Breite ergibt sich aus der totalen Breite der \PZzero-Resonanz $\Gamma_{\rm tot}$ über
+
+\begin{equation}
+  \Gamma_{\rm tot} = \Gamma_{\rm had} + 3\cdot \Gamma_{l\bar l} + N_\mu\Gamma_{\mu \bar \mu}~.
+\end{equation}
 
 
 
 
-
-
-\section{Das Scannen von Ereignissen mit "`Fireworks"' und Beispielzerfälle}
+\section{Das Scannen und Unterscheiden von Ereignissen mit "`Fireworks"'}
 \label{sec:scannen}
+In diesem Versuch werden wir reale Ereignisse ("`Events"') aus dem DELPHI-Experiment betrachten,
+bei denen ein \PZzero-Zerfall stattgefunden hat.
+Diese Ereignisse werden mit dem Event-Display-Programm "`Fireworks"' betrachtet.
+Darin werden die einzelnen Ereignisse visualisiert. Man sieht für jedes Ereignisse die gemessenen Teilchenspuren
+aus dem Spurdetektor (Tracker) und an den Kalorimetern sieht man die gemessenen Energie, die durch Balken dargestellt wird.
+Je länger ein Balken, desto größer die daran gemessene Energie.
+
+
+Wir wollen mithilfe der Darstellungen aus dem Event-Display die Zerfälle, die bei dem Ereignis stattgefunden haben, identifizieren.
+Dazu ist zuerst eine Kenntnis des Detektors, der in~\ref{sec:delphi} beschrieben wird, sowie ein wissen über die Wechselwirkung von
+Teilchen mit Materie. Außerdem ist zu beachten, dass aufgrund der Impulserhaltung Teilchen immer in entgegengesetzte Richtungen emittiert werden.
+
+
+Geladene Teilchen können über Ionisation und Bremmstrahlung wechselwirken. 
+Bei Ionisation verlieren sie entlang ihrer Teilchenbahn nur einen Teil ihrer Energie und werden in ihrer Teilchenbahn kaum beeinflusst.
+Sie wird im Spurdetektor benutzt, um die Teilchenbahn zu messen.
+Bei der Bremmstrahlung entstehen durch die Emission von Gammaquanten, die durch Paarbildung wiederum Elektron-Positron-Paare erzeugen,
+Teilchenschauer, bei denen die Teilchen ihre gesamte Energie verlieren können, welche proportional zur Anzahl der darin erzeugten Teilchen ist.
+Bremmstrahlung ist antiproportional zur vierten Potenz der Teilchenmasse, weshalb vor allem die leichten Elektronen sehr schnell aufschauern. 
+Sie sind daher im Event-Display daran zu erkennen, dass sie bereits im ECAL vollständig absorbiert werden. 
+Myonen hingen sind nur schwach ionisierenden Teilchen und aufgrund ihrer 200 Mal höheren Masse gehen sie durch den ECAL und HCAL hindurch und werden erst im äußeren Myonen-Detektor detektiert.
+
+
+Hadronen ionisieren im Tracker auch, aber schauern meist erst im äußeren HCAL auf, wo sie durch hadronische Wechselwirkungen hadronische Schauer bilden. Da sie in Jets vorkommen, sie man im Tracker bei hadronischen Ereignissen viele Spuren nebeneinander.
+
+Schwer zu erkennen sind Ereignisse, bei denen \Ptauon-\APtauon-Paare erzeugt werden, da diese eine sehr kurze Lebensdauer haben und zerfallen,
+bevor sie detektiert werden können. Diese Ereignisse müssen daher an ihren Zerfallsprodukten erkannt werden.
+Aufgrund der Leptonenzahlerhaltung entstehen dabei immer Tau-Neutrinos, sodass es viel fehlende Energie in der Messung gibt, sodass selbst bei hadronischen Zerfällen nur wenige Spuren gemessen werden können.
+
+
 
 \section{Quellen}
 \begin{enumerate}
