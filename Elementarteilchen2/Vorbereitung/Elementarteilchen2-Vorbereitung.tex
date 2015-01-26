@@ -66,10 +66,10 @@ Er befand sich nahe Genf \SI{100}{\metre} unter der Erde und war \SI{27}{\kilo \
 Mittlerweile ist er vom Large Hadron Collider (LHC) ersetzt wurden.
 
 An vier Stufen wurden Elektronen und Positronen in entgegengesetzte Richtung auf Energien bis zu \SI{100}{GeV} beschleunigt.
-Die Strahlen treffen an vier Orten zusammen.
+Die Strahlen treffen an vier Orten mit einer Schwerpunktenergie von über 200\,Gev zusammen.
 Dort befinden sich Detektoren, um die Kollisionen zu analysieren, darunter der DELPHI (Detector with Lepton, Photon and Hadron Identification), der schematisch in Abbildung \ref{fig:delphi_big} gezeigt ist.
 
-\begin{figure}[tb!]
+\begin{figure}[tbh!]
 \centering
 \includegraphics[width=\textwidth]{abbildungen/delphi_big.png}
 \caption{\textbf{Aufbau des DELPHI-Detektors mit einer sichtbaren Endkappe [\ref{ref:hands-on}].} 
@@ -80,14 +80,27 @@ Rechts im Bild ist der zylindrische zentrale Teil mit Strahlengang gezeigt.
 \label{fig:delphi_big}
 \end{figure}
 
-In dem Speicherring werden Elekt
+Der Detektor ist in Schichten aufgebaut, wie in Abbildung \ref{fig:delphi_schichten} dargestellt ist.
+Ein Magnetfeld durchströmt den gesamten Detektor und lenkt geladene Teilchen auf ihrem Weg ab, wodurch sie sich identifizieren lassen.
+Die Schichten sind verschiedene Subdetektoren. 
+Als innerste Schicht wird eine Spurkammer verwendet.
+Einige Teilchen sind in dieser sichtbar, wie Myonen, Elektronen, oder Pionen.
+Photonen und Neutronen sind aufgrund ihrer geringen Wechselwirkung hier nicht sichbar.
 
+Als zweite Schicht wird ein Elektromagnetisches Kalorimeter (\textbf{ECAL}) verwendet.
+Teilchen mit elektromagnetischer Wechselwirkung, wie Elektronen, oder Photonen werden in diesem sichtbar.
+In dem ECAL entsteht eine Kaskadenschauer beim Eintritt der Elektronen und Photonen, an der diese Teilchen die gesamte Energie verlieren. 
+Die schwereren Myonen passieren jedoch nahezu ungehindert.
 
+Hadronen werden im Hadronkalorimeter (\textbf{HCAL}) abgebremst und bilden dort eine Kaskadenschauer.
+Myonen passieren auch ungehindert und gelangen in die Myonkammern, wo sie detektiert werden.
 
+Produkte der Kollision kann man anhand dieses Schemas erkennen. 
+Wenn ein Jet beispielsweise nicht in der Spurkammer sichtbar ist, aber im ECAL seine Energie verliert und eine Kaskade auslöst,
+so handelt es sich dabei höchstwahrscheinlich um ein Photon.
+Damit lässt sich anhand geeigneter Darstellungsmethoden und Software, wie in Kapitel \ref{sec:scannen} beschrieben ist, die Ergebnisse aus den Detektoren analysieren.
 
-
-
-\begin{figure}[tb!]
+\begin{figure}[tbh!]
 \centering
 \includegraphics[width=0.7\textwidth]{abbildungen/delphi_schichten.png}
 \caption{\textbf{Übersicht der Signaturen nachweisbarer Teilchen in den Subdetektoren [\ref{ref:BB}].} 
