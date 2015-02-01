@@ -29,7 +29,8 @@
 \sisetup{separate-uncertainty=true}
 
 \title{Landéfaktor}
-\date{\today}
+\subtitle{Versuch vom 15. Dezember 2014}
+\date{Letzte Änderung: \today}
 \author{Michel Rausch, Michael Eliachevitch}
 
 \begin{document}
@@ -391,26 +392,31 @@ Das Startsignal des zweiten Myons wird ignoriert, denn der TAC benötigt einige 
 
 \subsection{Zeitkalibrierung}
 
-Ein Funktionsgenerator wurde an den Starteingang des TAC geschlossen, sowie über Verzögerungsglieder an den Stoppeingang. Diese wurden zugeschaltet, um die Zeitverzögerung in bekannten Schritten von \SI{1}{\micro\second} zu erhöhen. Die zugehörigen Peaks waren scharf gegenüber dem Abstand, sodass die Messungen sich in einer einzelnen Grafik, Abb. \ref{fig:zeitkalibrierung_hist}, auswerten ließen. Die Nummer des Kanals steigt mit der zugehörigen Verzögerung. 
+Ein Funktionsgenerator wurde an den Starteingang des TAC geschlossen, sowie über Verzögerungsglieder an den Stoppeingang. Diese wurden zugeschaltet, um die Zeitverzögerung in bekannten Schritten von \SI{1}{\micro\second} zu erhöhen. Die Breite der zugehörigen Peaks war klein gegenüber deren Abstand, sodass die Messungen sich in einer einzelnen Grafik, Abb. \ref{fig:zeitkalibrierung_hist}, auswerten ließen. Die Nummer des Kanals steigt mit der zugehörigen Verzögerung. 
 
 \begin{figure}[tb!]
 \centering
 \includegraphics[width=0.7\textwidth]{abbildungen/zeitkalibrierung_hist.pdf}
-\caption[Daten zur Zeitkalibrierung]{\textbf{Daten zur Zeitkalibrierung.} Die gezeigten Peaks gehören zu unterschiedlichen Verzögerungen. Die zugehörigen Peaks waren scharf gegenüber dem Abstand, sodass die Messungen in einer einzelnen Grafik auswerten ließen. Die Verzögerung wird von dem Peak am weitesten links nach rechts schrittweise um \SI{1}{\micro\second} größer.}
+\caption[Daten zur Zeitkalibrierung]{\textbf{Daten zur Zeitkalibrierung.} Die gezeigten Peaks gehören zu Signalen, die durch Einstellen von unterschiedlichen Verzögerungszeiten am Funktionsgenerator entstanden sind.
+Die Breite der Peaks war groß gegenüber dem Abstand und lag im Bereich einer Kanalbreite, sodass sich die Messungen in einer einzelnen Grafik auswerten ließen.
+Die Kanäle entsprechen der Zeit, die nach rechts hin zunimmt.
+Die Peaks sind äquidistant und sollten durch die eingestellten Zeitverzögerungen einen Abstand von \SI{1}{\micro\second} haben, sodass sich damit eine Zeitkalibrierung der Kanäle durchführen lässt.}
 \label{fig:zeitkalibrierung_hist}
 \end{figure}
 
 
-Mittels des Python-Moduls \emph{numpy} wurde eine lineare Regression durchgeführt. Mit der resultierenden Geradengleichung wurden die Kanäle jeweils einer Zeit zugewiesen. Die Regression ist in Abbildung \ref{fig:zeitkalibrierung} gezeigt, das Ergebnis lautet
+Mittels des Python-Moduls \emph{numpy} wurde ein linearer Fit durchgeführt. Aus der der daraus resultierenden Geradensteigung erhält man eine Zuordnung von Zeit zu Kanal. Die Regression ist in Abbildung \ref{fig:zeitkalibrierung} gezeigt, das Ergebnis lautet
 
 \begin{equation}
 \label{eqn:Zeitkalibrierung}
-\frac{\mathrm{Zeit}}{\mathrm{Kanal}} = \SI{29.9783924  +-  0.0000004 }{\nano\second} ~.
+\mathrm{Zeit(\#Kanal)} = \mathrm{\#Kanal} \cdot \SI{29.9783924  +-  0.0000004 }{\nano\second}
++ \SI{489.41+-0.04}{\nano\second}~.
 \end{equation}
 
-Der Fehler der Zeitkalibrierung ist im Vergleich zu den anderen
+Der Fehler der in der Steigung der Zeitkalibrierung ist im Vergleich zu den anderen
 Fehlern vernachlässigbar klein und wird im folgenden daher nicht
-weiter fortgepflanzt.
+weiter fortgepflanzt, während der Fehler im y-Achsenabschnitt von \SI{0.04}{\nano\second}
+beibehalten wird.
 
 \begin{figure}[tb!]
 \centering
@@ -421,19 +427,20 @@ weiter fortgepflanzt.
 
 
 
-
-
 \subsection{Magnetfeld}
 
-Das Magnetfeld wurde mit einer Hallsonde bestimmt. Aus den Daten der Kalibrierung, die übernommen wurde, konnte die gemessene Spannung am Vorwiderstand $U_{\mathrm{VW}}$ in die Magnetfeldstärke umgerechnet werden. Zur Umrechnung wurde 
-
+Zur Bestimmung des Magnetfeldes im Inneren in der Spule wurde eine Hallsonde verwendet.
+Die darin entstehende Hallspannung wurde einem Vorwiderstand gemessen,
+weshalb wir sie $U_{\mathrm{VW}}$ nennen.
+Die Kalibrierung von gemessener Spannung zu magnetischem Fluss $B$ war bereits vorher durchgeführt worden,
+weshalb das Magnetfeld über folgende Formel berechnet werden kann:
 \begin{equation}
 \label{eqn:B-gauss}
-B \mathrm{/G} = -1,68946 + 0,30472 \cdot U_{\mathrm{VW}} \mathrm{/mV}
+B \mathrm{/G} = -1,68946 + 0,30472 \cdot U_{\mathrm{VW}} \mathrm{/mV}~.
 \end{equation}
 
 
-verwendet. In der Spule ist das Magnetfeld inhomogen. Der Fehler für die Inhomogenität wurden aus der übernommenen Messreihe in Tabelle \ref{tab:fieldinhomogenities} ermittelt. Es sind die Spannungen an der Hallsonde aufgelistet. Diese stehen in einem linearen Verhältnis zu der Magnetfeldstärke, daher können die relativen Fehler übernommen werden. 
+In der Spule ist das Magnetfeld inhomogen. Der Fehler für die Inhomogenität wurden aus der übernommenen Messreihe in Tabelle \ref{tab:fieldinhomogenities} ermittelt. Es sind die Spannungen an der Hallsonde aufgelistet. Diese stehen in einem linearen Verhältnis zu der Magnetfeldstärke, daher können die relativen Fehler übernommen werden. 
 Der relative Fehler wurde über die Standwardabweichung aller Messwerte, geteilt durch deren Mittelwert, bestimmt, wobei die Randbereiche aus der Messung rausgenommen wurden. Damit erhielten wir
 
 \begin{equation}
@@ -441,22 +448,31 @@ Der relative Fehler wurde über die Standwardabweichung aller Messwerte, geteilt
 \sigma_{\rm B} = 0,067 \approx 7\% ~.
 \end{equation}
 
-Die Spannung am Vorwiderstand betrug
-
+Die Spannung am Vorwiderstand betrug, mit einem relativen Fehler von $\sigma_{\rm VW} = 3\%$
+%(* 123.6 0.03)3.7079999999999997
 \begin{equation}
-U_{\mathrm{VW}} = \SI{123,6}{\milli \volt} ~.
+U_{\mathrm{VW}} = \SI{123,6+-3.7}{\milli \volt} \approx \SI{123+-4}{\milli \volt} ~.
 \end{equation}
 
-Hieraus ergab Formel \eqref{eqn:B-gauss}, mit dem Fehler für die Inhomogenität aus Gleichung \eqref{eqn:inhomogen_fehler}
+Hieraus ergab Formel \eqref{eqn:B-gauss}, mit dem Fehler der Inhomogenität aus Gleichung \eqref{eqn:inhomogen_fehler}
+und dem Fehler der Spannung im Vorwiderstand $\sigma_{\rm VW} = 3\%$
 \begin{equation}
 \label{eq:B}
-B = \SI[separate-uncertainty=true]{36.0 \pm 0.7 }{G} ~.
+B = \SI{36+-3}{G} ~.
 \end{equation}
 %(- (* 0.30472 123.6) 1.68946)
+%(* 36.0 0.067)2.412
+%(* 36.0 0.03)
 
 \begin{table}[tb!]
 \centering
-\caption[Inhomogenität des Magnetfelds der Spule]{\textbf{Inhomogenität des Magnetfelds der Spule} Um den relativen Fehler zum Magnetfeld zu finden wurde auf vorliegende Messungen einer Hallsonde zurückgegriffen. Über verschiedene Punkte an der Länge $l$ der Spule wurde die Spannung an der Hallsonde gemessen. Für jeden dieser Punkte wurden vier Messwerte für verschiedene Positionen innerhalb des Spulenquerschnitts aufgenommen. Die mit "'*"' markierten Werte für $l = \SI{0.00}{m}$ und $l = \SI{1.00}{m}$ wischen stark von den anderen Werten ab, wurden daher nicht in die Berechnung des Fehlers aufgenommen.}
+\caption[Inhomogenität des Magnetfelds der Spule]{\textbf{Inhomogenität des Magnetfelds der Spule.} 
+Um den relativen Fehler des Magnetfeldes im inneren der Spule zu bestimmen, wurde auf vorliegende Messungen einer Hallsonde zurückgegriffen.
+Bei verschiedenen Stellen entlang der Längsachse der Spule bei einem Abstand von $l$ zum Anfang der der Spule 
+wurde die Spannung an der Hallsonde gemessen.
+Für jeden dieser Punkte wurden vier Messwerte für verschiedene radiale Abstände von der Längsachse der Spule aufgenommen.
+Die mit "'*"' markierten Werte für $l = \SI{0.00}{m}$ und $l = \SI{1.00}{m}$ wichen stark von den anderen Werten ab,
+wurden daher nicht in die Berechnung des Fehlers aufgenommen.}
 \begin{tabular}{ccccc}
 \toprule 
 $l$/m	&	$U_{\mathrm{Hall}} (0 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}} (0,28 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}}(- 0,28 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}} (0 \mathrm{m})$/mV	\\
@@ -493,28 +509,30 @@ $l$/m	&	$U_{\mathrm{Hall}} (0 \mathrm{m})$/mV	&	$U_{\mathrm{Hall}} (0,28 \mathrm
 
 Gemäß dem in der Vorbereitung in Abschnitt~3 besprochenen und in
 Abbildung~2 gezeigtem Versuchsaufbau wurde die Lebensdauer der Myonen
-gemessen. Gemessen wurde die Zeit zwischen dem Triggersignal obersten
-Szintillator und dem Signal aus dem Myonzerfall, welches durch dabei
+gemessen. Gemessen wurde die Zeit zwischen dem Triggersignal im
+Szintillator~1 (siehe Abb.~\ref{fig:aufbau_skizze}) und dem Signal aus dem Myonzerfall, welches durch dabei
 emittierte Positron ausgelöst wurde. Es wurden nur solche Ereignisse
 selektiert, bei denen das Positron nach oben emittiert wurde, sodass
 wir mit dem angelegten Magnetfeld eine Modulation erhalten, die der
 Präzession des Myons im Magnetfeld entspricht.
 
 Um eine für die Auswertung ausreichende Statistik zu erreichen, ist
-bei der in unserem Aufbau verwendeten sensitiven Detektionsfläche von
-$\approx \SI{1}{\square\meter}$ und dem kleinen Phasenraum der Messung eine
+bei der in unserem Aufbau verwendeten sensitiven Detektionsfläche von ungefähr
+\SI{1}{\square\meter} und dem kleinen Phasenraum der Messung eine
 lange Messzeit von mehreren Tagen oder Wochen notwendig, um eine
 ausreichende Statistik zu erhalten. Daher haben wir bereits vorhandene
 Messwerte verwendet.
 
-Diese wurden mit dem Analyse-Framework ROOT histogrammiert, wie in
-Abbildung~\ref{fig:zerfallszeiten} zu sehen ist. Diese wurden dann mit
+Die waren bereits als Histogramm gegeben, 
+das heißt es war für jeden Kanal die Anzahl der Zerfälle in diesem Zeitintervall angegeben.
+Dies  wurde mit dem Analyse-Framework ROOT geplottet, wie in
+Abbildung~\ref{fig:zerfallszeiten} zu sehen ist. Das Histogramm  wurde dann mit
 Gleichung~21 aus der Vorbereitung gefittet. Zur Erinnerung ist sie
 hier noch einmal aufgeführt.
 
 \begin{equation}
 \label{eq:fitfkt}
-N(t) = K \cdot \exp(- \frac{t}{\tau}) \cdot \left[ 1 + \overline{A} \cdot \cos(\omega t + \delta) \right] .
+N(t) = K \cdot \mathrm{e}^{- \frac{t}{\tau}} \cdot \left[ 1 + \overline{A} \cdot \cos(\omega t + \delta) \right] + const.~.
 \end{equation}
 
 
@@ -522,16 +540,17 @@ N(t) = K \cdot \exp(- \frac{t}{\tau}) \cdot \left[ 1 + \overline{A} \cdot \cos(\
 Zur ermittlung der Startwerte wurde mit ROOT zuerst ein exponentieller
 Fit ohne Modulation mit der Gleichung 
 \begin{equation}
-N(t) = K \cdot \exp(- \frac{t}{\tau})   
+N(t) = K \cdot \mathrm{e}^{- \frac{t}{\tau}} + const.
 \end{equation}
 durchgeführt und die Ergebnisse davon wurden als Startparameter für
 den vollständtigen Fit mit Gleichung~\ref{eq:fitfkt} verwendet. Den
 Startparameter für die Präzessionsfrequenz $\omega$ haben wir aus
 einem aus der Quantenmechanik angenommenen Landéfaktor von $g = 2$
-berechnet und erhielten
+und unserem gemessen magnetischen Fluss von \SI{36+-2}{G}~\eqref{eq:B} 
+berechnet und erhielten somit den Startparameter
 
 \begin{equation}
-  \omega_{\rm LIT} = \frac{g \mu_{B}}{\hbar B} \approx \SI{6.3e8}{\per\second}~.
+  \omega_{\rm start} = \frac{g \mu_{B}}{\hbar B} \approx \SI{6.3e8}{\per\second}~.
 \end{equation}
 
 Als Startparameter für die Phase wurde $\delta = 0$ gewählt und den
@@ -553,13 +572,13 @@ beziehungsweise mit der Zeitkalibrierung aus Gleichung~\ref{eqn:Zeitkalibrierung
 \tau_{\rm eff} = \SI{2.08 +- 0.02}{\micro\second}~.
 \end{equation}
 
-% (mapcar (lambda (x) (* x  29.9783924)) '(6.93071e+01 6.09872e-01))
+%\mathrm{Zeit(\#Kanal)} = \mathrm{\#Kanal} \cdot \SI{29.9783924  +-  0.0000004 }{\nano\second} + \SI{489.41+-0.04}{\nano\second}~.
 
 \begin{figure}[tbh!]
   \centering
   \includegraphics[width=1.1\textwidth]{abbildungen/histogramm.pdf}
-  \caption{\textbf{Histogramm der Myon-Zerfallszeiten}
-  Eingetragen sind die Zeiten zwischen den Triggersignalen des oberen Szintillators und den
+  \caption{\textbf{Verteilung der Myon-Zerfallszeiten}
+  Eingetragen sind die Zeiten zwischen den Triggersignalen des Szintillators~1 und den
   Signalen aus dem Positron des \APmuon-Zefalls. Die Zeit ist dabei in Kanälen
   aufgetragen und kann nach Gleichung~\ref{eqn:Zeitkalibrierung} in
   Sekunden umgerechnet werden. Zu sehen ist ein exponentieller
@@ -618,46 +637,48 @@ g = \frac{\hbar \omega}{\mu_B B} = \SI{2.128}{}~.
 
 Es fehlt noch die Fehlerabschätzung. Da sich der Fehler auf die
 Präzessionsfrequenz und auf das Magnetfeld nur multiplikativ auf das
-Endergebnis auswirken, bleiben die relativen Fehler erhalten. Aus den
+Endergebnis auswirken, bleiben die relativen Fehler erhalten. Mit den
 Gleichungen \ref{eqn:inhomogen_fehler} und \ref{eq:omega} erhalten wir
 
 \begin{equation}
   \begin{split}
     \sigma_B &= 7\%\\
+    \sigma_{\rm VW} &= 3\%\\
     \sigma_{\omega} &= \frac{\SI{0,021}{}}{\SI{0,671}{}} = 3\%~.\\
   \end{split}
 \end{equation}
 
 %(* 0.03 2.128) 0.06384
-%(* 0.07 2.128) 0.14896001
+%(* 0.1 2.128) 0.14896001
 
 Damit haben einen absoluten statistischen Fehler aus dem Fit der Präzessionsfrequenz von \SI{0,06}{} und 
-vom systematische Fehler $\sigma_B$ aus dem Magnetfeld einen absoluten Fehler von \SI{0,14}{}. 
-Wir erhalten also
+von den systematischen Fehler $\sigma_B$ aus dem Magnetfeld und dem Messfehler des Vorwiderstandes 
+durch Fehlerfortpflanzung einen absoluten systematischen Fehler von \SI{0,21}{}. 
+Wir erhalten also, nach Rundung auf signifikante Stellen
+
+\begin{equation}
+    g = \SI{2.1}{} \pm \SI{0.1}{} \pm \SI{0.2}{}~,
+\end{equation}
+
+oder wenn man die systematischen und statistischen Fehler als einen Fehler angibt
 
 \begin{equation}
   \label{eq:g}
-    g = \SI{2.1}{} \pm \SI{0.1}{} \pm \SI{0.1}{}~.
+    g = \SI{2.1+-0.3}{}~.
 \end{equation}
-
 
 \clearpage
 
 \subsection{Diskussion der Ergebnisse}
 Unser Ergebnis für die Lebensdauer von Myonen von 
 $\tau_{\rm eff} = \SI{2.08 +- 0.02}{\micro\second}$\eqref{eq:tau}
-ist zufriedenstellend. Sie liegt damit zwar unter dem
-Literaturwert für die Lebensdauer von freien Myonen, der bei 
-\SI{2.197}{\micro\second} liegt [\ref{ref:pdg14}], was jedoch daran
-liegt, dass wir die effektive Lebensdauer in einem Material gemessen
-haben, welche etwas niedriger ist. Bei Zeiten unter
-\SI{1}{\micro\second} spielt noch der Zerfall von negativen Myonen in
-Elektronen eine Rolle, welcher aufgrund eines zusätzlichen
-Zerfallskanals im Kern eine deutlich niedrigere Zeitkonstante hat,
-aber womöglich haben selbst positive Myonen im Material eine etwas
-niedrigere Lebensdauer als im Vakuum.\\
+ist zufriedenstellend. Sie ist damit etwas also niedriger als der in der
+Literatur angegebene Wert für die Lebensdauer von freien Myonen, der bei  \SI{2.197}{\micro\second} liegt [\ref{ref:pdg14}], was zum Teil daran liegen könnte, dass wir die effektive Lebensdauer in beinem Material gemessen haben, wo es es im Anfangsbereich bei unter \SI{1}{\micro\second} eine Faltung mit den Elektronen aus dem Zerfall negativer Myonen geben könnte, die eine deutlich geringere Lebensdauer haben. 
+Jedoch liegt die Differenz innerhalb der Fehlergrenzen, weshalb das durchaus auch einfach ein durch statistische Unsicherheiten
+und systematische Fehler bedingter Effekt sein könte.
 
-Der gemessene Landéfaktor von $g = \SI{2.1}{} \pm \SI{0.1}{} \pm \SI{0.1}{}$
+
+Der gemessene Landéfaktor von $g = \SI{2.1+-0.3}{}$
 ist ebenfalls sehr gut mit dem theoretisch erwarteten Literaturwert von 2
 [\ref{ref:pdg14}] vereinbar. Er ist etwas höher, jedoch liegt die
 Abweichung innerhalb der statistischen und systematischen Fehlergrenzen.
