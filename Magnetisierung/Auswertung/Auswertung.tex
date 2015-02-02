@@ -21,6 +21,11 @@
 
 % Formatting of table & figure captions
 \captionsetup{font={sf,footnotesize},labelfont=bf,textfont=sl,skip=6pt}
+
+%locale for units to german
+\sisetup{locale = DE}
+\sisetup{separate-uncertainty=true}
+
 \setlength{\abovecaptionskip}{6pt}
 \setlength{\belowcaptionskip}{0pt}
 
@@ -190,7 +195,7 @@ Temperatur $T_\mathrm{C} = \SI{93}{K}$ basiert.
 
 \subsubsection*{Mit der Kalibrierungsspule}
 
-Ein Kupferzylinder ($\rm{Durchmesser} = \SI{0.7}{\centi \meter}$,  Höhe $ = \SI{0.7}{\centi \meter}$) mit mit der Spule wurde auf den Probenhalter geschraubt. 
+Ein Kupferzylinder ($\rm{Durchmesser} = \SI{0.7}{\centi \meter}$,  Höhe $ = \SI{0.7}{\centi \meter}$) mit der Spule wurde auf den Probenhalter geschraubt. 
 Der Halter wurde so im Magnetfeld platziert, dass die Spule nach oben gerichtet war.
 Damit wurde sichergestellt, dass die Proben später in einer möglichst gleichen und somit vergleichbaren Position befanden.
 Zehn Messwerte wurden genommen, für unterschiedliche Spulenströme. 
@@ -198,11 +203,13 @@ Diese sind in Tabelle \ref{tab:Kalibrierung-Magnetfeld} aufgelistet.
 Das Magnetfeld des SQUIDs wurde nach dem Biot-Savartschem Gesetz [\ref{ref:mappe}] berechnet mit
 
 \begin{equation}
-B_{\mathrm{Spule}} = \mu_{\rm{0}} \cdot \frac{R^2}{2 x^3} ~.
+B_{\mathrm{Spule}} = \mu_{\rm{0}} \cdot \frac{R^2}{2 x^3} ~,
 \end{equation}
 
-Mit der absoluten magnetischen Permeabilität $\mu_{\rm{0}}$, dem Abstand der Spule zum SQUID $d = \SI{1.4}{\centi \meter}$ und dem Radius der Spule $R = \SI{0.35}{\centi \meter} $.
-Der Abstand der Spule zum SQUID schien beim tatsächlichem Aufbau signifikant größer zu sein, als bei der Versuchsbeschreibung angegeben,
+mit  der absoluten magnetischen Permeabilität $\mu_{\rm{0}}$, dem Abstand der Spule zum SQUID $d = \SI{1.4}{\centi \meter}$ und dem Radius der Spule $R = \SI{0.35}{\centi \meter} $.
+Der Abstand der Spule zum SQUID schien beim tatsächlichem Aufbau
+deutlich größer zu sein, als in der Versuchsbeschreibung
+angegeben,
 dennoch wurde mit dem Wert aus der Mappe gerechnet.
 
 
@@ -228,7 +235,9 @@ Spulenstrom	in mA &	SQUID-Spannung in mV	\\
 \label{tab:Kalibrierung-Magnetfeld}
 \end{table}
 
-In Abbildung \ref{fig:Kalibrierung-Magnetfeld} ist die Messreihe mit zugehörigem linearem Fit mit Python dargestellt.
+In Abbildung \ref{fig:Kalibrierung-Magnetfeld} ist die Messreihe mit
+zugehörigem linearen Fit dargestellt, der mit dem Python-Modul
+\emph{scipy} erstellt wurde.
 Man erkennt, dass sehr geringe Magnetfeldstärken in der Größenordnung eines Mikroteslas gemessen wurden.
 Das SQUID ist also ein äußerst empfindliches Messgerät.
 Die lineare Regression ergab
@@ -325,7 +334,8 @@ und für den parallelen
 
 In beiden Fällen ist das magnetische Moment, und somit die Magnetisierung, geringer als die maximal mögliche.
 Dies ist mit der Stärke des Magnetfeldes zu erklären.
-Das vorhandene Netzteil und die Spule konnten nur Magnetfeldstärken liefern die nicht zur Sättigung genügten.
+Das vorhandene Netzteil und die Spule konnten nur Magnetfeldstärken
+liefern, die nicht zur Sättigung genügten.
 Da die Probe nicht vollständig aufmagnetisiert wurde, kann von einem linearem Verhältnis der Magnetisierung zur Magnetfeldstärke ausgegangen werden.
 
 Aus Gleichungen \eqref{eq:B(U_SQUID)} und \eqref{eq:mu(B))} zusammen folgt der Zusammenhang zwischen Magnetisierung und Spannung am SQUID
@@ -334,7 +344,7 @@ Aus Gleichungen \eqref{eq:B(U_SQUID)} und \eqref{eq:mu(B))} zusammen folgt der Z
 \mu(U_{\mathrm{SQUID}}) = \frac{2 \uppi  x^3 }{\mu_{\rm{0}}} \cdot  \left( \SI{18+-3}{\micro \tesla \per \mV}  \cdot U_{\mathrm{SQUID}} - \SI{0.3+-0.1}{\micro \tesla} \right) ~.
 \end{equation}
 
-Die Kalibrierung der Spule war ungenau, daher war ein hoher statistische Fehler zu erwarten.
+Die Kalibrierung der Spule war ungenau, daher war ein hoher statistischer Fehler zu erwarten.
 Zudem war der Abstand der Probe zum SQUID wahrscheinlich größer als angegeben.
 Das Verhalten der Probe unter einem Magnetfeld entspricht jedoch den Erwartungen. 
 
@@ -347,7 +357,7 @@ Das Verhalten der Probe unter einem Magnetfeld entspricht jedoch den Erwartungen
 Die Probe wurde in die Spule montiert und abgekühlt.
 Es wurde kein Magnetfeld angelegt.
 Die Messung begann, als die Temperatur unter \SI{80}{K} gesunken war.
-Die Probe wurde bei das SQUID eingebaut und die Kühlung wurde unterbrochen.
+Die Probe wurde in das SQUID eingebaut und die Kühlung wurde unterbrochen.
 Um den Aufwärmvorgang zu beschleunigen wurde Pressluft eingeleitet.
 Die vorhandene Software protokollierte die Spannungen am SQUID und die zugehörige Temperatur.
 In Abbildung \ref{fig:Tb_sr_0} ist die Messreihe gezeigt.
@@ -361,8 +371,8 @@ In Abbildung \ref{fig:Tb_sr_0} ist die Messreihe gezeigt.
 \end{figure}
 
 Über einen Anteil von 10~\% wurde eine lokale Regression (LOWESS) durchgeführt, wie in Abbildung \ref{fig:Tb_sr_0_glatt} gezeigt ist.
-Um die Curietemperatur zu bestimmen wurde mit den  der Gradient gebildet.
-Das sichtbare Minimum befindet sich an der Temperatur
+Um die Curietemperatur zu bestimmen, wurde davon der Gradient gebildet.
+Das sichtbare Minimum befindet sich an der Tempemit den ratur
 
 \begin{equation}
 T_{\rm{C}} = \SI{244}{\K} ~.
@@ -372,7 +382,11 @@ T_{\rm{C}} = \SI{244}{\K} ~.
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{abbildungen/Tb_sr_0_glatt.png}
-\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, geglättet mit LOWESS.} Die Spannung am SQUID ist über die Temperatur aufgetragen, wie in Abb. \ref{fig:Tb_sr_0}. Mit der Python-Funktion LOWESS wurde eine lokale Regression über 10~\% der Daten durchgeführt.}
+\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe bei
+    senkrechtem Magnetfeld im Nullfeld gekühlt, geglättet mit LOWESS.}
+  Die Spannung am SQUID ist über die Temperatur aufgetragen, wie in
+  Abb. \ref{fig:Tb_sr_0} zu sehen ist. Mit der Python-Funktion LOWESS
+  aus dem Python-Moduls \emph{statsmodels} wurde eine lokale Regression über 10~\% der Daten durchgeführt.}
 \label{fig:Tb_sr_0_glatt}
 \end{figure}
 
@@ -380,7 +394,8 @@ T_{\rm{C}} = \SI{244}{\K} ~.
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_0_grad.png}
-\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, geglättet und Gradient gebildet.} Die Spannung am SQUID ist über die Temperatur aufgetragen. Ein Minimum ist an der Curietemperatur zu erkennen.}
+\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe
+    senkrechtem Magnetfeld im Nullfeld gekühlt, geglättet und Gradient gebildet.} Die Spannung am SQUID ist über die Temperatur aufgetragen. Ein Minimum ist an der Curietemperatur zu erkennen.}
 \label{fig:Tb_sr_0_grad}
 \end{figure}
 
@@ -388,7 +403,7 @@ T_{\rm{C}} = \SI{244}{\K} ~.
 
 Die Probe wurde nach dem Erwärmen wieder gekühlt auf unter \SI{80}{K}.
 Dabei wurde kein Magnetfeld angelegt.
-Erst als die Probe abgekühlt war, wurde die Spule aktiviert, sodass ein Magnetfeld mit \SI{15}{mT} vorhanden war.
+Erst als die Probe abgekühlt war, wurde an die Spule ein Strom angelegt, sodass ein Magnetfeld mit \SI{15}{mT} vorhanden war.
 Der Strom durch die Spule betrug dabei etwa \SI{150}{\mA}.
 Die Umrechnung vom Spulenstrom auf das Magnetfeld konnte mit 
 \begin{equation}
@@ -461,7 +476,7 @@ Die Sprünge gestalteten die Auswertung dieses Minimums schwierig.}
 
 \subsubsection{Terbiumprobe bei parallelem Einbau}
 
-Die Terbiumprobe wurde mit paralleler Ausrichtung auf den Probenhalter geschraubt. 
+Die Terbiumprobe wurde mit zum Magnetfeld paralleler Ausrichtung auf den Probenhalter geschraubt. 
 Ein Magnetfeld mit der vorgegebenen Feldstärke wurde angelegt und die Probe gekühlt.
 War die Probe ausgekühlt, so wurde sie in den SQUID geführt.
 
@@ -526,8 +541,8 @@ Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.}
 
 \subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{15}{mT}}
 
-Der erwartete Verlauf ist in Abbildung \ref{fig:Tb_p_5} widergespiegelt.
-Ein Minimum ist in der Steigung (Abb. ) eindeutig erkennbar und befindet sich an der Temperatur
+Der erwartete Verlauf ist in Abbildung \ref{fig:Tb_p_5} dargestellt.
+Ein Minimum ist in der Steigung (Abb. ) eindeutig erkennbar und befindet sich bei der Temperatur
 
 \begin{equation}
 T_{\mathrm{C}} = \SI{227}{\K} ~.
