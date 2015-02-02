@@ -15,6 +15,7 @@
 \usepackage{units,siunitx} % Write units with correct spacing
 \usepackage{upgreek} % provide non-italic greek letters
 \usepackage{url}
+\usepackage{booktabs}
 %\usepackage{subfig}
 
 % Formatting of table & figure captions
@@ -32,41 +33,206 @@
 \tableofcontents
 \newpage
 
-\section{Kalibrierung des SQUIDs}
-
-\subsection*{Mit der Kalibrierungsspule}
-
-\subsection*{Mit der Nickelprobe}
+\section{Versuchsvorbereitung}
 
 
 
-\section{Magnetisierungsmessungen}
 
 
-\subsection{Terbiumprobe bei senkrechtem Einbau}
+
+
+
+\section{Versuchsauswertung}
+
+
+
+\subsection{Kalibrierung des SQUIDs}
+
+
+\subsubsection*{Mit der Kalibrierungsspule}
+
+Ein Kupferzylinder ($\rm{Durchmesser} = \SI{0.7}{\centi \meter}$,  Höhe $ = \SI{0.7}{\centi \meter}$) mit mit der Spule wurde auf den Probenhalter geschraubt. 
+Der Halter wurde so im Magnetfeld platziert, dass die Spule nach oben gerichtet war.
+Damit wurde sichergestellt, dass die Proben später in einer möglichst gleichen und somit vergleichbaren Position befanden.
+Zehn Messwerte wurden genommen, für unterschiedliche Spulenströme. 
+Diese sind in Tabelle \ref{tab:Kalibrierung-Magnetfeld} aufgelistet.
+Das Magnetfeld des SQUIDs wurde nach dem Biot-Savartschem Gesetz [\ref{ref:mappe}] berechnet mit
+
+\begin{equation}
+B_{\mathrm{Spule}} = \mu_{\rm{0}} \cdot \frac{R^2}{2 x^3} ~.
+\end{equation}
+
+Mit der absoluten magnetischen Permeabilität $\mu_{\rm{0}}$, dem Abstand der Spule zum SQUID $d = \SI{1.4}{\centi \meter}$ und dem Radius der Spule $R = \SI{0.35}{\centi \meter} $.
+Der Abstand der Spule zum SQUID schien beim tatsächlichem Aufbau signifikant größer zu sein, als bei der Versuchsbeschreibung angegeben,
+dennoch wurde mit dem Wert aus der Mappe gerechnet.
+
+
+\begin{table}[tb!]
+\centering
+\caption[Kalibrierung]{\textbf{Messwerte zur Kalibrierung des SQUIDs}}
+\begin{tabular}{ccc}
+\toprule
+Spulenstrom	in mA &	SQUID-Spannung in mV	\\
+\midrule
+0	&	19	\\
+40	&	27	\\
+80	&	29	\\
+119	&	42	\\
+147	&	42	\\
+180	&	52	\\
+209	&	40	\\
+235	&	65	\\
+315	&	58	\\
+360	&	66	\\
+\bottomrule
+\end{tabular}
+\label{tab:Kalibrierung-Magnetfeld}
+\end{table}
+
+In Abbildung \ref{fig:Kalibrierung-Magnetfeld} ist die Messreihe mit zugehörigem linearem Fit mit Python dargestellt.
+Man erkennt, dass sehr geringe Magnetfeldstärken in der Größenordnung eines Mikroteslas gemessen wurden.
+Das SQUID ist also ein äußerst empfindliches Messgerät.
+Die lineare Regression ergab
+
+\begin{equation}
+\label{eq:B(U_SQUID)}
+B = \SI{18+-3}{\micro \tesla \per \mV} \cdot U_{\mathrm{SQUID}} - \SI{0.3+-0.1}{\micro \tesla} ~.
+\end{equation}
+
+%U_{\mathrm{SQUID}} = \SI{46+-7}{\mV \per \micro \tesla} \cdot B + \SI{22+-4}{\mV} ~.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{abbildungen/kalibrierung_spule.png}
+\caption[Kalibrierung des SQUIDs mit Spule]{\textbf{Kalibrierung des SQUIDs mit Spule.}}
+\label{fig:Kalibrierung-Magnetfeld}
+\end{figure}
+
+
+
+
+\subsubsection*{Mit der Nickelprobe}
+
+Eine Nickelprobe mit dem Ausmaßen $\SI{5}{\mm} \times \SI{5}{\mm} \times \SI{0.1}{\mm}$ wurde auf den Probenhalter geschraubt.
+Aus ihrem Volumen und der spezifischen Magnetisierung von Nickel [\ref{ref:mappe}]
+\begin{equation}
+\sigma = \SI{55.09}{\ampere \square \meter \per \kg} ~,
+\end{equation}
+sowie der Masse der Probe 
+\begin{equation}
+m = \SI{0.0202}{\gram} ~,
+\end{equation}
+wurde das maximale magnetische Moment der Nickelprobe 
+
+\begin{equation}
+\mu_{\mathrm{Ni}} = \SI{1.11}{\mA \square \meter}
+\end{equation}
+
+bestimmt. Die Probe wurde magnetisiert, bei einem maximalem Strom durch die Magnetspulen von
+\begin{equation}
+I_{\mathrm{Spule}} = \SI{1.168}{\ampere} ~.
+\end{equation}
+
+Einmal wurde die Probe senkrecht zum Magnetfeld orientiert, das andere Mal parallel.
+Bei einer senkrechten Orientierung betrug die Spannung am SQUID ohne Probe 
+\begin{equation}
+U_{\mathrm{ohne Probe},\perp} = \SI{83}{mV} ~.
+\end{equation}
+Mit der Probe stieg die Spannung auf
+\begin{equation}
+U_{\mathrm{mit Probe},\perp} = \SI{970}{mV} ~.
+\end{equation}
+
+Die Spannungsdifferenz wird durch die Probe verursacht und wird in 
+Gleichung \eqref{eq:B(U_SQUID)} als Argument verwendet, um das Magnetfeld zu bestimmen. 
+
+\begin{equation}
+B_{\mathrm{mit Probe},\perp} = \SI{16+-3}{mT} ~.
+\end{equation}
+
+
+Als die Probe parallel zum Magnetfeld war ergaben sich analog
+\begin{equation}
+U_{\mathrm{ohne Probe},\parallel} = \SI{70}{mV} ~,
+\end{equation}
+\begin{equation}
+U_{\mathrm{mit Probe},\parallel} = \SI{1620}{mV} ~,
+\end{equation}
+\begin{equation}
+B_{\parallel} = \SI{28+-5}{mT} ~.
+\end{equation}
+
+Im Vergleich sieht man, dass die Nickelprobe bei parallelem Einbau stärker magnetisiert worden ist.
+Für das Magnetfeld gilt mit dem Abstand der probe zum SQUID [\ref{ref:mappe}]
+\begin{equation}
+B = \frac{\mu_{\rm{0}} \mu }{2 \uppi x^3} ~.
+\end{equation}
+
+Daraus folgt
+\begin{equation}
+\label{eq:mu(B))}
+\mu = \frac{2 \uppi B x^3 }{\mu_{\rm{0}}} ~.
+\end{equation}
+
+Die Magnetischen Momente sind dann für den senkrechten Einbau
+\begin{equation}
+\mu_{\perp} = \SI{0.22+-0.04}{\mA \square \meter} ~,
+\end{equation}
+
+und für den parallelen
+\begin{equation}
+\mu_{\parallel} = \SI{0.38+-0.07}{\mA \square \meter} ~.
+\end{equation}
+
+In beiden Fällen ist das magnetische Moment, und somit die Magnetisierung, geringer als die maximal mögliche.
+Dies ist mit der Stärke des Magnetfeldes zu erklären.
+Das vorhandene Netzteil und die Spule konnten nur Magnetfeldstärken liefern die nicht zur Sättigung genügten.
+Da die Probe nicht vollständig aufmagnetisiert wurde, kann von einem linearem Verhältnis der Magnetisierung zur Magnetfeldstärke ausgegangen werden.
+
+Aus Gleichungen \eqref{eq:B(U_SQUID)} und \eqref{eq:mu(B))} zusammen folgt der Zusammenhang zwischen Magnetisierung und Spannung am SQUID
+
+\begin{equation}
+\mu(U_{\mathrm{SQUID}}) = \frac{2 \uppi  x^3 }{\mu_{\rm{0}}} \cdot  \left( \SI{18+-3}{\micro \tesla \per \mV}  \cdot U_{\mathrm{SQUID}} - \SI{0.3+-0.1}{\micro \tesla} \right) ~.
+\end{equation}
+
+Die Kalibrierung der Spule war ungenau, daher war ein hoher statistische Fehler zu erwarten.
+Zudem war der Abstand der Probe zum SQUID wahrscheinlich größer als angegeben.
+Das Verhalten der Probe unter einem Magnetfeld entspricht jedoch den Erwartungen. 
+
+\subsection{Magnetisierungsmessungen}
+
+
+\subsubsection{Terbiumprobe bei senkrechtem Einbau}
 
 \subsubsection*{Messung mit im Nullfeld gekühlter Probe ohne Magnetisierung}
 
-\subsubsection*{Messung mit im Nullfeld gekühlter Probe mit Magnetisierung bei tiefer Temperatur und einem magnetfeld mit \SI{150}{G}}
-
-\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{150}{G}}
+Die Probe wurde in die Spule
 
 
+\subsubsection*{Messung mit im Nullfeld gekühlter Probe mit Magnetisierung bei tiefer Temperatur und einem magnetfeld mit \SI{15}{mT}}
 
-
-\subsection{Terbiumprobe bei parallelem Einbau}
-
-\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{50}{G}}
-
-\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{100}{G}}
-
-\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{150}{G}}
+\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{15}{mT}}
 
 
 
-\subsection{Gadoliniumprobe}
 
-\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{1000}{G}}
+\subsubsection{Terbiumprobe bei parallelem Einbau}
+
+\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{5}{mT}}
+
+\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{10}{mT}}
+
+\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{15}{mT}}
+
+
+
+\subsubsection{Gadoliniumprobe}
+
+\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{100}{mT}}
+
+
+
+
 
 
 
