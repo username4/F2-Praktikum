@@ -17,14 +17,14 @@ plt.plot(channels, times, "bo",
          label="Messwerte")
 plt.plot(channels, linfunc(channels, popt[0], popt[1]), "r-",
          label="linear fit: time / channel = ({0} $\pm$ {1}) ns\ntime(#channel=0) = ({2} $\pm$ {3}) ns".format(
-                np.round(popt[0]*1e3,6),np.round(pcov[0,0]*1e3,10),
-                np.round(popt[1]*1e3,6), np.round(pcov[1,1]*1e3,10)))
+                np.round(popt[0]*1e3,3),np.round(np.sqrt(pcov[0,0])*1e3,3),
+                np.round(popt[1]*1e3,3), np.round(np.sqrt(pcov[1,1])*1e3,3)))
 plt.xlabel("channel #")
 plt.ylabel("time (ns)")
 plt.legend(loc="best")
 plt.savefig("zeitkalibrierung.pdf")
 
-print "m: {0}, merr: {1}".format(popt[0], pcov[0,0])
-print "b: {0}, berr: {1}".format(popt[1], pcov[1,1])
+print "m: {0}, merr: {1}".format(popt[0], np.sqrt(pcov[0,0]))
+print "b: {0}, berr: {1}".format(popt[1], np.sqrt(pcov[1,1]))
 
 plt.show()
