@@ -50,8 +50,8 @@
 Mit einem supraleitendem Quanteninterferometer, einem sogenanntem
 "`superconducting quantum interference device"' (SQUID), soll
 die Magnetisierung der Seltenen-Erde-Metalle Terbium (Tb) und
-Gadolinium (SQUID) über einen Temperaturbereich von $T=
-\SI{77}{\kelvin} < T < \SI{300}{\kelvin}$ bestimmt werden.
+Gadolinium (SQUID) über einen Temperaturbereich von 
+$\SI{77}{\kelvin} < T < \SI{300}{\kelvin}$ bestimmt werden.
 Das SQUID wird mit flüssigem Stickstoff gekühlt und befindet sich
 daher in einem Dewar. In diesem Versuch werden die Grundlagen der
 Supraleitfähigkeit und Magnetisierung vertieft und in einer Messung
@@ -341,6 +341,7 @@ Da die Probe nicht vollständig aufmagnetisiert wurde, kann von einem linearem V
 Aus Gleichungen \eqref{eq:B(U_SQUID)} und \eqref{eq:mu(B))} zusammen folgt der Zusammenhang zwischen Magnetisierung und Spannung am SQUID
 
 \begin{equation}
+\label{eq:kalib}
 \mu(U_{\mathrm{SQUID}}) = \frac{2 \uppi  x^3 }{\mu_{\rm{0}}} \cdot  \left( \SI{18+-3}{\micro \tesla \per \mV}  \cdot U_{\mathrm{SQUID}} - \SI{0.3+-0.1}{\micro \tesla} \right) ~.
 \end{equation}
 
@@ -565,9 +566,8 @@ Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.}
 \label{fig:Tb_p_15_grad}
 \end{figure}
 
-\subsection{Neukurve}
 
-
+\clearpage
 \subsubsection{Gadoliniumprobe}
 
 \subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{100}{mT}}
@@ -625,9 +625,37 @@ Gd, \SI{1000}{mT} 	&	292\\
 \label{tab:vergleich}
 \end{table}
 
+\clearpage
+\subsection{Neukurve}
+Es sollte außerdem die Neukurve von Terbium (Tb) bei parallelem
+Einbau bei einer festen, nicht zu hohen Temperatur, bestimmt werden.
+Wir entschieden uns für eine Temperatur von $T = \SI{120}{\kelvin}$.
+Zum Erstellen der Kurve haben wir die Magnetisierungen bei dieser
+Temperatur aus den Magnetisierungskurven von parallel eingebautem
+Terbium bei \SI{5}{\milli\tesla}, \SI{10}{\milli\tesla} und 
+\SI{15}{\milli\tesla} ausgelesen, sowieo den Punkt (0|0) verwendet. 
+Durch Auftragen der zur Magnetisierung verwendeten Magnetfelder gegen die durch Magnetisierung
+induzierte SQUID-Spannung erhielt man die in
+Abbildung~\ref{fig:neukurve} zu sehene Neukurve.
 
+\begin{figure}[tbh!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{abbildungen/neukurve.pdf}
+  \caption{\textbf{Neukurve von Tb bei 120 Kelvin.} Zu sehen sind die
+    in rot die Messpunkte und in blau von uns gewählte
+    Verbingungslinien zur Veranschaulichung.}
+  \label{fig:neukurve}
+\end{figure}
 
-
+Da wir mit dem Urpsrung nur 4 Messpunkte haben, daher lassen sich
+damit schwer aussagen treffen.
+Die roten Punkte stellen die Messwerte da, in blau sind nach Augenmaß
+gewählte Verbingungslinien zu sehen. 
+Offensichtlich ist auf jeden Fall, dass die Magnetisierung von Tb
+keineswegs linear mit der Temperatur ist und es bei den Messungen wohl
+zu Hysterese-Effekten gekommen ist.
+ 
+\clearpage
 \section{Quellen}
 \begin{enumerate}
 \item Vorbereitungsmappe.\label{ref:mappe}
