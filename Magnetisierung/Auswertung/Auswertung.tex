@@ -550,13 +550,45 @@ Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.}
 \label{fig:Tb_p_15_grad}
 \end{figure}
 
+\subsection{Neukurve}
 
+
+\subsubsection{Gadoliniumprobe}
+
+\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{100}{mT}}
+
+Die Gadoliniumprobe wurde eingebaut und bei angelegtem Feld mit eriner Feldstärke von \SI{100}{mT} gekühlt.
+Es wurde wieder während der Erwärmungsphase gemessen.
+In Abbildung \ref{fig:Gandolinium} ist dies abhebildet.
+Die Curietemperatur von \SI{292}{\K} ist zu erkennen.
+Dies ist mit dem Literaturwert \SI{292.5}{\K} [\ref{ref:wiki},\ref{ref:mappe}] konsistent.
+Eine weitere kritische Temperatur scheint bei \SI{231}{\K} zu sein.
+Da Gadolinium selbst nicht supraleitent ist [\ref{ref:wiki}], ist eine Sprungtemperatur eher unwahrscheinlich.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{abbildungen/gadolinium.png}
+\caption[Gandolinium]{\textbf{Gandoliniumprobe parallel im Feld ($B = \SI{100}{mT}$) gekühlt.} 
+Für sehr geringe Temperaturen zeigt sich ein flacher Verlauf auf Nullniveau.
+Bei einer Temperatur von etwa \SI{231}{\K} steigt die Magnetisierung stark an und verweilt auf einem Plateau.
+Wird die Curietemperatur von $T_{\mathrm{C}} = \SI{292}{\K}$ erreicht, fällt die Magnetisierung wieder auf Null ab.
+} 
+\label{fig:Gandolinium}
+\end{figure}
 
 
 
 \subsubsection{Vergleich}
 
-
+Alle Curietemperaturen sind in Tabelle \ref{tab:vergleich} aufgelistet.
+Die Werte für den parallelen Einbau sind konsistent.
+Auch für den senkrechten Einbau weichen die Messungen ohne Magnetfeld und der im Feld gekühlten Messreihe nicht stark ab.
+Für das Nullfeld mit Magnetisierung bei tiefer Temperatur ist jedoch keine Curietemperatur erkennbar gewesen.
+Gemittelt über alle Werte ergab sich die Curietemperatur von Terbium als
+\begin{equation}
+T_{\mathrm{C} }= \SI{232+-7}{\K} ~.
+\end{equation}
+Die Curietemperatur von \SI{230}{\K} [\ref{ref:wikitb}] liegt im Bereich der Messungenauigkeit.
 
 
 \begin{table}[tb!]
@@ -564,24 +596,19 @@ Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.}
 \caption[Vergleich]{\textbf{Vergleich der Messergebnisse .} }
 \begin{tabular}{cc}
 \toprule
-Probe	&	$T_{\mathrm{C}}$	\\
+Probe	&	$T_{\mathrm{C}}$ in K	\\
 \midrule
-
+Tb, senkrecht ohne Magnetfeld &	244 \\
+Tb, senkrecht, Nullfeld mit Magnetisierung 	&	- \\
+Tb, senkrecht, \SI{15}{mT}	&	235 \\
+Tb, parallel, \SI{5}{mT}	&	227\\
+Tb, parallel, \SI{10}{mT}	&	228\\
+Tb, parallel, \SI{15}{mT}	&	227\\
+Gd, \SI{1000}{mT} 	&	292\\
 \bottomrule
 \end{tabular}
-\label{teb:vergleich}
+\label{tab:vergleich}
 \end{table}
-
-
-
-
-
-
-
-\subsubsection{Gadoliniumprobe}
-
-\subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{100}{mT}}
-
 
 
 
@@ -591,6 +618,8 @@ Probe	&	$T_{\mathrm{C}}$	\\
 \item Vorbereitungsmappe.\label{ref:mappe}
 \item \url{http://hydrogen.physik.uni-wuppertal.de/hyperphysics/hyperphysics/hbase/solids/squid.html} (18.1.2015).\label{ref:wuppertal}
 \item \url{http://jsq.apps-1and1.net/category/information/what-is-a-squid/} (18.1.2015).
+\item \url{http://de.wikipedia.org/wiki/Gadolinium} (\today)\label{ref:wiki}
+\item \url{http://en.wikipedia.org/wiki/Terbium} (\today)\label{ref:wikitb}
 \label{ref:jsq}
 \end{enumerate}
 
