@@ -35,12 +35,150 @@
 
 \section{Versuchsvorbereitung}
 
+\subsection{Einleitung}
+
+%Versuchsbeschreibung:
+%Es wird die Magnetisierung von Selten-Erd-Metallen (Tb, Gd)im Temperaturbereich T = 77 - 300 K bestimmt. 
+%Dazu wird ein supraleitendes Quanteninterferometer (Superconducting Quantum-Interference Device, SQUID) aus einem Hochtemperatursupraleiter verwendet, das sich in einem Flüssigkstickstoff-gekühlten Dewar befindet.
+
+Mit einem supraleitendem Quanteninterferometer, einem sogenanntem
+"`superconducting quantum interference device"' (SQUID), soll
+die Magnetisierung der Seltenen-Erde-MJetalle Terbium (Tb) und
+Gadolinium (SQUID) über einen Temperaturbereich von $T=
+\SI{77}{\kelvin} < T < \SI{300}{\kelvin}$ bestimmt werden.
+Das SQUID wird mit flüssigem Stickstoff gekühlt und befindet sich
+daher in einem Dewar. In diesem Versuch werden die Grundlagen der
+Supraleitfähigkeit und Magnetisierung vertieft und in einer Messung
+angewandt.
 
 
+\subsection{Theoretische Grundlagen}
+
+\subsubsection{Supraleitung}
+
+Supraleitung bezeichnet den Effekt, das einige Materialien,
+insbesondere Metalle, bei Unterschreitung einer Grenztemperatur
+$T_{\mathrm{C}}$, die bei metallischen Supraleitern meist im Bereich
+weniger Kelvin liegt, ihren elektrischen Widerstand verlieren.
+Dies wird durch die Bildung von sogenannten Cooper-Paaren erklärt,
+wobei jeweils zwei Elektronen Zustände mit ganzzahligem
+Spin bilden, die durch ein Pseudoteilchen beschrieben werden können,
+bei dem es sich um ein Boson handelt.
 
 
+Sogenannte Hochtemperatursupraleiter, die meist aus Keramiken
+bestehen, werden bereits bei Temperaturen von flüssigem Stickstoff
+supraleitend.
+Jedoch können sie nicht mit Hilfe von Cooperpaaren erklärt werden.  
 
 
+\paragraph{Supraleiter in Magnetfeldern:
+}
+Im supraleitenden Zustand wird das Material diamagnetisch und
+Magnetfelder können nicht, oder nur gequantelt, in den Supraleiter
+dringen. 
+Bei Supraleitern 1. Art werden vorhandene Magnetfelder verdrängt im
+supraleitenden Zustand vollständig verdrängt, was durch Abschirmströme
+geschieht. 
+Das passiert sowohl wenn der supraleitende Zustand im vorhanden
+Magnetfeld erreicht wird als auch, wenn ein Supraleiter in ein
+Magnetfeld gebracht wird. Das bezeichnet man als
+Meißner-Ochsenfeld-Effekt.
+Sobald der Magnetische Fluss eine kritische Größe überschreitet,
+also $B > B_C$, bricht die Supraleitung zusammen.
+
+Supraleiter 2. Art verhalten sich bei in einem Bereich $B < B_{C1}$
+wie Supraleiter 1. Art und verdrängen alle Magnetfelder durch
+Abschirmströme. 
+In einem Bereich $B_{C1} < B < B_{C2}$ jedoch lassen sie jedoch selbst
+im supraleitenden Zustand einen magnetischen Fluss durch $\Phi$, wobei
+dieser nur gequantelt auftritt,
+da es sich um ein quantenmechanisches System mit Randbedingungen
+handelt. Die Quantisierung ist dabei gegeben durch den elementaren
+magnetischen Flussquant
+
+\begin{equation}
+  \label{eq:phi0}
+  \Phi_0 = \frac{h}{2 e} = \SI{2e-15}{\volt\second}~.
+\end{equation},
+
+Anschaulich vorstellen lässt sich das so, 
+dass der magnetische Fluss die
+supraleitende Schlaufe in kleinen "`Tunneln"' dieser Größe durchquert.
+
+
+Bei Flussdichten $B > B_{C2}$ bricht auch bei Supraleitern 2. Art die
+Supraleitung zusammen.
+
+
+\paragraph{Josephson-Effekt:} Unter den Josephson-Effekten fasst man
+zwei weitere nur quantenmechanisch erklärbare, makroskopische
+Eigenschaften von Supraleitern zusammen. 
+Sie treten auf, wenn man zwei Supraleiter durch eine dünne
+isolierende (\emph{SIS}) oder normalleitende
+Schicht (\emph{SNS}) voneinander trennt,
+die man oft als \emph{Schwachstelle} bezeichnet. 
+Dennoch kann, ohne dass die Supraleitung zusammenbricht, Strom durch die Grenzschlicht fließen, da es zu einem
+quantenmechanischen Tunneln von Cooper-Paaren durch die Grenzschicht kommt.
+
+
+% ...
+
+% \begin{figure}[tb!]
+% \centering
+% \includegraphics[width=0.7\textwidth]{abbildungen/typ2_supraleiter.png}
+% \caption[Versuchsplatz]{\textbf{Flussfadengitter in einem Typ II-Supraleiter [\ref{ref:mappe}].} Magnetfelder treten durch Kanäle in den Supraleiter ein. Die Flüsse sind quantisiert und verlaufen entlang der Magnetfeldrichtung.}
+% \label{fig:typII}
+% \end{figure}
+
+
+% \subsubsection{YBCO}
+
+% Der Supraleiter Yttrium-Barium-Kupferoxid $\mathrm{YBa}_2 \mathrm{Cu}_3 \mathrm{O}_{7-x}$ (\textbf{YBCO}) ist ein Hochtemperatursupraleiter.
+% Die kritische Temperatur beträgt 
+% \begin{equation}
+% T_\mathrm{C} = \SI{93}{K} ~.
+% \end{equation}
+% Es ist ein harter Supraleiter zweiter Art, der Flussfäden fest einfriert.
+% Die Kristallstruktur ist Perowskitartig und abhängig von einer wohlgeordneten Struktur.
+
+\FloatBarrier
+\subsubsection{Funktionsweise eins RF-SQUIDs}
+Ein sogenanntes SQUID (\emph{superconducting quantum interference device}) 
+ist ein Gerät zur Detektion von kleinsten Änderungen in
+magnetischen Feldern. 
+Hier werden wir ein  in diesem Versuch verwendetes, sogenanntes RF-SQUID beschreiben, 
+das mit einem Wechselstrom betrieben wird.
+Es besteht aus einem supraleitenden Ring, der eine dünne, nicht-supraleitende Schwachstelle besitzt. 
+Gerät das SQUID nun in ein externes Magnetfeld,
+so wird in dem Ring ein Kompensationsstrom induziert,
+der den magnetischen Fluss durch den Ring auf ein ganzzahliges 
+Vielfaches des Flussquants $\Phi_0$ reduziert oder erhöht.
+
+Bei Änderungen des äußeren Magnetfeldes um mehr als ein Flussquant übersteigt der Kompensationsstrom beim SQUID eine kritische Stromdichte und die Supraleitung bricht zusammen, 
+sodass der Strom wieder durch Elektronen getragen wird und es zu 
+Energieverlusten kommt.
+
+Ein RF-SQUID ist induktiv an ein Wechselfeld gekoppelt, 
+meist mit einer Frequenz von einigen 100\,MHz,
+mit welchem durch Wechselfelder in Resonanz ein externer Wechselstrom in dem SQUID induziert wird, welcher den Kompensationsstrom überlagert, sodass es periodisch zwischen dem supraleitenden Zustand und dem normalleitenden Zustand, bei dem Energie verbraucht wird, 
+hin und her wechselt. 
+Die verbrauchte Energie wird dabei dem Schwingkreis entnommen,
+der dadurch gedämpft wird, sodass an ihm die Spannungsamplitude abnimmt. 
+Aus dieser Spannungsänderung kann dann die Änderung des Magnetfeldes bestimmt werden.
+Da man in der Praxis meist mit Magnetfeldern arbeitet, 
+die deutlich größer sind als ein Flussquant, 
+muss das SQUID als Nulldetektor betrieben werden,
+indem man externe Feldänderungen mit einer Spule ausgleicht,
+die mit einem Gegenkopplungs-Gleichstrom betrieben wird. 
+Dieser ist propotional zu externen Feldänderungen, welche damit nun in einem großen Bereich bestimmt werden können.
+
+
+In unserem Versuch wird ein 
+SQUID der Firma \emph{Jülicher SQUID GmbH} verwendet,
+das auf dem Hochtemperatursupraleiter
+Yttrium-Barium-Kupferoxid (\emph{YBCO}) mit einer kritischen
+Temperatur $T_\mathrm{C} = \SI{93}{K}$ basiert.
 
 \section{Versuchsauswertung}
 
