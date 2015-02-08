@@ -50,6 +50,13 @@
 \section{Verzweigungsverhältnisse beim \PZzero-Zerfall und Anzahl der Farbladungen}
 \label{sec:verzweigungen}
 
+Es wurden Ereignisse am LEP aus der Onlinequelle \ref{ref:hands-on} mithilfe des webbasiertem Programms analysiert.
+Die Daten Lagen in Messreihen von 100 Ereignissen vor.
+Aufgeteilt wurde nach \Pelectron\APelectron ,	\Ptauon\APtauon	,	\Pmuon\APmuon , hadronischen 2-Jet-Ereignissen, sowie hadronischen 3-und Mehr-Jet-Ereignissen.
+Bis auf dem Ereignis 197 konnten alle Ereignisse identifiziert werden.
+Für jede Messreihe ist die Anzahl der unterschiedlichen Ereignisse in Tabelle~\ref{tab:count} aufgelistet.
+
+
 \begin{table}
 \centering
 \caption{\textbf{Anzahl der Ereignisse.}}
@@ -71,16 +78,11 @@ Anteil				&5,0\%	&1,8\%  &3,0\%	&35,1\%	&55,1\%	\\
 \label{tab:count}
 \end{table}
 
-Es wurden Ereignisse am LEP aus der Onlinequelle \ref{ref:hands-on} mithilfe des webbasiertem Programms analysiert.
-Die Daten Lagen in Messreihen von 100 Ereignissen vor.
-Aufgeteilt wurde nach \Pelectron\APelectron ,	\Ptauon\APtauon	,	\Pmuon\APmuon , hadronischen 2-Jet-Ereignissen, sowie hadronischen 3-und Mehr-Jet-Ereignissen.
-Bis auf dem Ereignis 197 konnten alle Ereignisse identifiziert werden.
-Für jede Messreihe ist die Anzahl der unterschiedlichen Ereignisse in Tabelle~\ref{tab:count} aufgelistet.
 
 Das Verhältnis von hadronischen zu leptonischen Zerfällen $R$ wurde aus Gleichung~(6) bestimmt.
 Mit der ersten Messreihe wurde abgeschätzt, wie viele Ereignisse untersucht werden mussten.
 In der ersten Reihe wurden 16 leptonische und 84 hadronische Ereignisse gezählt.
-Wird die Zahl der leptonischen Ereignisse $n$ extrapoliert mit einem Faktor $m$, ist der zu erwartende relative Fehler auf 
+Wird die Zahl der leptonischen Ereignisse $n$ extrapoliert mit einem Faktor $m$, ist der zu erwartende relative Fehler auf die Anzahl der gezählten leptonischen Ereignisse $n \cdot m$
 \begin{equation}
 \sqrt{\frac{1}{n \cdot m}} ~.
 \end{equation}
@@ -89,40 +91,50 @@ Die Zahl der hadronischen Ereignisse ist $100 - n $, daher ist $R$ nur von $n$ a
 Damit der relative Fehler unter 15~\% ist, muss $m$ größer als $2,78$ sein.
 Es mussten also mindestens 3 Messreihen aufgenommen werden.
 
-Unter der Annahme von Leptonuniversalität angenommen, d.h. es gilt für die Zerfallsbreiten
+Es wurde Leptonuniversalität angenommen, d.h. es galt für die Zerfallsbreiten
 \begin{equation}
-\Gamma_{l\bar{l}} = \frac{\Gamma_{e\bar{e}} + \Gamma_{\mu\bar{\mu}} + \Gamma_{\tau\bar{\tau}}}{3}~.
+\label{eq:leptonuniversal}
+\Gamma_{l\bar{l}} = \frac{\Gamma_{e\bar{e}} + \Gamma_{\mu\bar{\mu}} + \Gamma_{\tau\bar{\tau}}}{3} ~.
 \end{equation}
 
-Damit ist das Verzweigungsverhältnis
+Die Anzahl der Elektronen-, Myonen- und Tauonenzerfälle betrugen 25, 15 und 9.
+Im Mittel sind es 
 \begin{equation}
-R = \frac{\Gamma_{\mathrm{had}}}{\frac{\Gamma_{e\bar{e}} + \Gamma_{\mu\bar{\mu}} + \Gamma_{\tau\bar{\tau}}}{3}} ~.
+\Gamma_{l\bar{l}} = \SI{16+-7}{}
 \end{equation}
-Da die Zerfallsbreite proportional zu der Ereigniszahl ist, konnte für das Verhältnis die Zahl der Ereignisse verwenden werden.
+Diese weichen stark voneinander ab, mit einer Standartabweichung von 40~\%.
+Durch die Annahme von Leptonuniversalität wurde dieser Fehler nicht fortgepflanzt.
+
+Das Verzweigungsverhältnis ist mit Gl.~\eqref{eq:leptonuniversal}
+\begin{equation}
+R = \frac{3 \cdot \Gamma_{\mathrm{had}}}{\Gamma_{e\bar{e}} + \Gamma_{\mu\bar{\mu}} + \Gamma_{\tau\bar{\tau}}} ~.
+\end{equation}
+Da die Zerfallsbreite proportional zu der Ereigniszahl ist, konnten diese verwenden werden, ohne die Zerfallsbreiten zu bestimmen.
 Das Verhältnis war damit
 \begin{equation}
 R = \SI{28+-4}{} ~.
 \end{equation}
-Der Fehler ergab sich damit aus dem Fehler für die Anzahl leptonischen Endzustände. Dieser liegt bei 14~\%, also unter den angestrebten 15~\%.
+Der Fehler ergab sich aus dem Fehler für die Anzahl leptonischen Endzustände. 
+Dieser lag bei 14~\%, also unter den angestrebten 15~\%.
 
-Mit Gleichung~(8) aus der Vorbereitung ließ sich die Farbzahl $N_{\mathrm{C}}$ bestimmen mit
+Aus Gleichung~(8) der Vorbereitung ließ sich die Farbzahl $N_{\mathrm{C}}$ bestimmen mit
 \begin{equation}
 N_{\mathrm{C}} = \frac{\Gamma_{\mathrm{had}}^{\mathrm{SM}}}{N_u \Gamma_{u \bar{u}}^{\mathrm{SM}} + N_d \Gamma_{d \bar{d}}^{\mathrm{SM}}} ~.
 \end{equation}
-$N_u = 2$ ist die Anzahl der beobachtbaren "'UP"'-artigen Quarks, $N_d$ die der "'Down"'-artigen.
+
+$N_u = 2$ ist die Anzahl der beobachtbaren "'Up"'-artigen Quarks, $N_d$ die der "'Down"'-artigen.
 Die Zerfallsbreite für Hadronen wurde aus $\Gamma_{\mathrm{had}} = R \cdot \Gamma_{l \bar{l}}^{\mathrm{SM}}$ berechnet.
-Aus dem Blauen Buch \ref{ref:BB} wurden die partiellen Zerfallsbreiten $\Gamma_{l \bar{l}}^{\mathrm{SM}} = \SI{83.83}{\MeV}$, $\Gamma_{u \bar{u}}^{\mathrm{SM}} = \SI{98.88}{\MeV}$ und $\Gamma_{d \bar{d}}^{\mathrm{SM}} = \SI{137.48}{\MeV}$ entnommen.
+Aus dem Blauen Buch [\ref{ref:BB}] wurden die partiellen Zerfallsbreiten $\Gamma_{l \bar{l}}^{\mathrm{SM}} = \SI{83.83}{\MeV}$, $\Gamma_{u \bar{u}}^{\mathrm{SM}} = \SI{98.88}{\MeV}$ und $\Gamma_{d \bar{d}}^{\mathrm{SM}} = \SI{137.48}{\MeV}$ entnommen.
 Der Fehler wurde linear aus dem Verzweigungsverhältnis fortgepflanzt.
 Die Farbzahl wurde errechnet mit
 \begin{equation}
-N_{\mathrm{C}} = \SU{4.0+-0.6}{} ~.
+N_{\mathrm{C}} = \SI{4.0+-0.6}{} ~.
 \end{equation}
 
-Dies widerspricht den Erwartungen einer Farbzahl von 3. 
-Da die relative Abweichung aufgrund der geringen Ereigniszahl hoch ist, könnte es sich um einen statistischen Fehler handeln. 
+Dies widerspricht der Erwartung einer Farbzahl von 3. 
+Weil die relative Abweichung aufgrund der geringen Ereigniszahl hoch war, könnte es sich um einen statistischen Fehler gehandelt haben. 
 Die Annahme der Leptonuniversalität konnte auch nicht bestätigt werden.
-Die Anzahl der Elektronen
-
+Da diese sich auch auf die Farbzahl auswirkt, war der tatsächliche Fehler größer.
 
 \clearpage
 
