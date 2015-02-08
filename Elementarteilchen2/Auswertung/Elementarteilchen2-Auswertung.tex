@@ -141,8 +141,23 @@ womit die Gleichung~(9) folgendes ergibt:
   \frac{N_3(y > y_{\rm cut})}{C(y > y_{\rm cut})\cdot N_{\rm had}} = \frac{175}{2{,}72 \cdot 450} = 0,14 \approx \alpha_s~.
 \end{equation}
 
+Der Fehler hierfür folgt über aus dem ausschließlich relativen Fehler von $N_3$, da $N_2$ über $N_2 = N_h - N_3$ 
+vollständig mit $N_3$ korreliert ist, wenn man $N_h$ als fest annimmt. 
+Damit erhalten wir einen Fehler 
+
+(/ 0.143 (+ (sqrt 175) 0))
+\begin{equation}
+  \Delta \alpha_s = \frac{\alpha_s}{\sqrt{N_3}} = 0,01~.
+\end{equation}
+
+Somit erhalten wir die Kopplungskonstante der starken Kernkraft
+
+\begin{equation}
+  \alpha_s = \SI{0,14 +- 0,01}{}~.
+\end{equation}
+
 Die starke Kopplungskonstante ist energieabhängig.
-Sie sinkt mit dem logarithmus der Schwerpunktsenergie $\sqrt{s}$ und lässt sich über
+Sie sinkt mit dem Logarithmus der Schwerpunktsenergie $\sqrt{s}$ und lässt sich über
 folgende empirische Formel aus der Literatur~\ref{ref:hyperphysics} berechnen:
 \begin{equation}
   \alpha_s = \frac{12 \pi}{33 - 2 \cdot (N_u + N_f) \cdot \log\left(\frac{s}{\Lambda^2}\right)}~,
@@ -157,6 +172,8 @@ erhalten wir eine berechnete Kopplungskonstante
     \end{split}
 \end{equation}
 
+Die Abweichung von unserer gemessenen Kopplungskonstante liegt dabei unter einer Standardabweichung,
+was unser Ergebnis glaubwürdig erscheinen lässt.
 \section{Bestimmung der Anzahl der Neutrinogenerationen}
 \label{sec:neutrinogenerationen}
 
