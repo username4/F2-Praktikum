@@ -104,6 +104,34 @@ R = \frac{\Gamma_{\mathrm{had}}}{\frac{\Gamma_{e\bar{e}} + \Gamma_{\mu\bar{\mu}}
 \section{Bestimmung der Kopplungskonstanten der starken Wechselwirkung}
 \label{sec:kopplungskonstante}
 
+Die Kopplungskonstante $\alpha_s$ der starken Wechselwirkung kann
+mithilfe von Gleichung~(9) aus der Versuchsvorbereitung bestimmt
+werden. Wir haben $N_3(y > y_{\rm cut}) = 175$ 3-Jets gemessen, von
+$N_{\rm had} = 450$ Jet-Ereignissen insgesamt, und verwenden eine für
+DELPHI bestimmte Konstante $C(y > y_{\rm cut} = 2{,}72$~\ref{ref:BB},
+womit die Gleichung~(9) folgendes ergibt:
+
+% (/ 175 (* 450 2.72)) 0.14297385620915032
+\begin{equation}
+  \frac{N_3(y > y_{\rm cut})}{C(y > y_{\rm cut})\cdot N_{\rm had}} = \frac{175}{2{,}72 \cdot 450} = 0,14 \approx \alpha_s~.
+\end{equation}
+
+Die starke Kopplungskonstante ist energieabhängig.
+Sie sinkt mit dem logarithmus der Schwerpunktsenergie $\sqrt{s}$ und lässt sich über
+folgende empirische Formel aus der Literatur~\ref{ref:hyperphysics} berechnen:
+\begin{equation}
+  \alpha_s = \frac{12 \pi}{33 - 2 \cdot (N_u + N_f) \cdot \log\left(\frac{s}{\Lambda^2}\right)}~,
+\end{equation}
+wobei der empirische Parameter $\Lambda = \SI{0.2}{\giga\electronvolt}$ ist. 
+Da die Schwerpunktsenergie unserer Ereignisse $\sqrt{s} = \SI{91}{GeV}$ betrug, 
+erhalten wir eine berechnete Kopplungskonstante
+\begin{equation}
+  \begin{split}
+  \alpha_{s, \rm theo} &= \frac{12 \pi}{33 - 2 \cdot 5 \cdot \log\left(\frac{\SI{91}{GeV}^2}{\SI{0,2}{GeV}^2}\right)}\\
+  &= \SI{0,133}{}~.
+    \end{split}
+\end{equation}
+
 \section{Bestimmung der Anzahl der Neutrinogenerationen}
 \label{sec:neutrinogenerationen}
 
@@ -119,6 +147,7 @@ R = \frac{\Gamma_{\mathrm{had}}}{\frac{\Gamma_{e\bar{e}} + \Gamma_{\mu\bar{\mu}}
 % Quelle fuer PDG-Angaben: (noch nicht genutzt, daher auskommentiert)
 % \item K.A. Olive et al. (Particle Data Group), Chin. Phys. C, 38, 090001 (2014). \label{ref:pdg14}
 \item \url{http://hands-on-cern.physto.se/hoc_v21en/index.html} (\today)\label{ref:hands-on}
+\item \url{http://hyperphysics.phy-astr.gsu.edu/hbase/forces/couple.html} (\today) \label{ref:hyperphysics}
 \end{enumerate}
 
 
