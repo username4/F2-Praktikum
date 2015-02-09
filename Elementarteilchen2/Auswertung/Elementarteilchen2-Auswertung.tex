@@ -53,13 +53,20 @@
 Es wurden Ereignisse am LEP aus der Onlinequelle \ref{ref:hands-on} mithilfe des webbasiertem Programms analysiert.
 Die Daten Lagen in Messreihen von 100 Ereignissen vor.
 Aufgeteilt wurde nach \Pelectron\APelectron ,	\Ptauon\APtauon	,	\Pmuon\APmuon , hadronischen 2-Jet-Ereignissen, sowie hadronischen 3-und Mehr-Jet-Ereignissen.
+Es wurden 5 Messreihen aufgenommen. 
 Bis auf dem Ereignis 197 konnten alle Ereignisse identifiziert werden.
+Insgesamt wurden also 499 Ereignisse gezählt.
 Für jede Messreihe ist die Anzahl der unterschiedlichen Ereignisse in Tabelle~\ref{tab:count} aufgelistet.
-
+Die 
 
 \begin{table}
 \centering
-\caption{\textbf{Anzahl der Ereignisse.}}
+\caption{\textbf{Anzahl der Ereignisse.} 
+Gezeigt sind die Häufigkeiten der jeweiligen Zerfallsarten für jede Messreihe mit je 100 Ereignissen. 
+Insgesamt wurden 499 Ereignisse identifiziert.
+Ein Ereignis (197) konnte nicht zugeordnet werden.
+Zusätzlich ist der Anteil und die Gesamtzahl der Zerfallsarten aufgelistet.
+}
 \begin{tabular}{cccccc}
 \toprule
 Messreihe			&	\Pelectron\APelectron	&	\Ptauon\APtauon	&	\Pmuon\APmuon	&	3-Jet	&	2-Jet	\\
@@ -162,7 +169,7 @@ Der Fehler hierfür folgt über aus dem ausschließlich relativen Fehler von $N_
 vollständig mit $N_3$ korreliert ist, wenn man $N_h$ als fest annimmt. 
 Damit erhalten wir einen Fehler 
 
-(/ 0.143 (+ (sqrt 175) 0))
+%(/ 0.143 (+ (sqrt 175) 0))
 \begin{equation}
   \Delta \alpha_s = \frac{\alpha_s}{\sqrt{N_3}} = 0,01~.
 \end{equation}
@@ -207,12 +214,49 @@ vorhergesagte Zerfalls für Neutrinos unter Annahme einer Neutrinofamilie,
 
 Sie lässt sich mit Gleichung~11 aus der Versuchsvorbereitung bestimmen über
 \begin{equation}
+\label{eq:gamma_inv}
 \Gamma_{\rm inv} = \Gamma_{\rm tot} - \Gamma_{\rm had} - 3 \Gamma_{l\bar{l}}~,
 \end{equation}
 
 wobei $\Gamma_{\rm tot}$ die aus der Literatur entnommene gesamte Zerfallsbreite des $\PZzero$ ist.
 
+Der Wirkungsquerschnitt für den Zerfall in ein Quarkpaar auf der Z-Resonanz, ist
+\begin{equation}
+\sigma_{\mathrm{had}} = \frac{12 \uppi \cdot \Gamma_{l \bar{l}} \cdot \Gamma_{\mathrm{had}}}{m_{\mathrm{Z}}^2 \cdot \Gamma_{\mathrm{tot}} } ~.
+\end{equation}
+Dies lässt sich auf die gesamte Zerfallsbreite Umstellen zu
+\begin{equation}
+\Gamma_{\mathrm{tot}} = \sqrt{\frac{12 \uppi \cdot \Gamma_{l \bar{l}} \cdot \Gamma_{\mathrm{had}}}{m_{\mathrm{Z}}^2 \cdot \sigma_{\mathrm{had}} }} ~.
+\end{equation}
 
+Der Wert für $\Gamma_{\mathrm{had}}=\SI{2.3+-0.3}{\MeV}$ wurde Aufgabe 1 entnommen.
+$\Gamma_{l \bar{l}} = \SI{83.83}{\MeV}$ und $m_{\mathrm{Z}} = \SI{91.187}{\GeV}$ wurden im Blauen Buch [\ref{ref:BB}] angegeben.
+Der Wirkungsquerschnitt ist $\sigma_{\mathrm{had}} = \frac{N_{\mathrm{had}}}{L}$, mit der Luminosität $L = \SI{28.48}{nb^{-1}}$.
+Um barn in MeV umzurechnen wurde $\SI{1}{b}= \SI{0.00257}{ \MeV^{-2}}$ verwendet.
+Die Zahl der hadronischen Zerfälle $N_{\mathrm{had}} = 450$ über alle 499 betrachteten Ereignisse wurde auf 1000 extrapoliert, 
+da die Luminosität auch für 1000 Ereignisse gegeben war.
+Mit einem Python-Skript und dem Paket Numpy wurde die Zerfallsbreite errechnet als
+
+\begin{equation}
+\Gamma_{\mathrm{tot}} = \SI{3.9+-0.5}{\GeV} ~.
+\end{equation}
+
+Der Fehler aus Aufgabe~1 pflanzte sich hier auch wieder fort.
+Der Literaturwert liegt bei $\SI{2.5}{\GeV}$ [\ref{ref:pdg14}], ist also um 36~\% kleiner.
+Gründe für die Abweichung sind in Aufgabe 1 erklärt.
+
+Um die Anzahl der Neutrinofamilien zu bestimmen wurde mit Gleichung~\eqref{eq:gamma_inv} die Breite der unsichtbaren Neutrinozerfälle bestimmt mit
+\begin{equation}
+\Gamma_{\rm inv} = \SI{1.3+-0.2}{\GeV} ~.
+\end{equation}
+
+Das Verhältnis mit $\Gamma_{\nu_e\nu_e}^{SM} = \SI{166.1}{\MeV} $ ist ergab die Anzahl der Neutrinofamilien
+\begin{equation}
+ N_\nu = \SI{7.6+-1}{} ~.
+\end{equation}
+
+Dies weicht auch von den erwarteten 3 Familien ab.
+Gründe für die Abweichung sind in Aufgabe~1 erläutert.
 
 
 \section{Quellen}
@@ -221,7 +265,7 @@ wobei $\Gamma_{\rm tot}$ die aus der Literatur entnommene gesamte Zerfallsbreite
 \item \url{http://home.web.cern.ch/about/accelerators/large-electron-positron-collider}
  (\today) \label{ref:cernlep}
 % Quelle fuer PDG-Angaben: (noch nicht genutzt, daher auskommentiert)
-% \item K.A. Olive et al. (Particle Data Group), Chin. Phys. C, 38, 090001 (2014). \label{ref:pdg14}
+\item K.A. Olive et al. (Particle Data Group), Chin. Phys. C, 38, 090001 (2014). \label{ref:pdg14}
 \item \url{http://hands-on-cern.physto.se/hoc_v21en/index.html} (\today)\label{ref:hands-on}
 \item \url{http://hyperphysics.phy-astr.gsu.edu/hbase/forces/couple.html} (\today) \label{ref:hyperphysics}
 \end{enumerate}
