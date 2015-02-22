@@ -240,13 +240,15 @@ zugehörigem linearen Fit dargestellt, der mit dem Python-Modul
 \emph{scipy} erstellt wurde.
 Man erkennt, dass sehr geringe Magnetfeldstärken in der Größenordnung eines Mikroteslas gemessen wurden.
 Das SQUID ist also ein äußerst empfindliches Messgerät.
-Die lineare Regression ergab
+Die lineare Regression unter Annahme einer Ursprungsgerade ergab
 
 \begin{equation}
 \label{eq:B(U_SQUID)}
-B = \SI{18+-3}{\micro \tesla \per \mV} \cdot U_{\mathrm{SQUID}} - \SI{0.3+-0.1}{\micro \tesla} ~.
+B = \SI{12+-1}{\micro \tesla \per \mV} \cdot U_{\mathrm{SQUID}}  ~.
 \end{equation}
 
+%vor Korrektur auf einen Parameter:
+%B = \SI{18+-3}{\micro \tesla \per \mV} \cdot U_{\mathrm{SQUID}} - \SI{0.3+-0.1}{\micro \tesla}
 %U_{\mathrm{SQUID}} = \SI{46+-7}{\mV \per \micro \tesla} \cdot B + \SI{22+-4}{\mV} ~.
 
 \begin{figure}
@@ -311,7 +313,7 @@ B_{\parallel} = \SI{28+-5}{mT} ~.
 \end{equation}
 
 Im Vergleich sieht man, dass die Nickelprobe bei parallelem Einbau stärker magnetisiert worden ist.
-Für das Magnetfeld gilt mit dem Abstand der probe zum SQUID [\ref{ref:mappe}]
+Für das Magnetfeld gilt mit dem Abstand der Probe zum SQUID [\ref{ref:mappe}]
 \begin{equation}
 B = \frac{\mu_{\rm{0}} \mu }{2 \uppi x^3} ~.
 \end{equation}
@@ -361,31 +363,34 @@ Die Messung begann, als die Temperatur unter \SI{80}{K} gesunken war.
 Die Probe wurde in das SQUID eingebaut und die Kühlung wurde unterbrochen.
 Um den Aufwärmvorgang zu beschleunigen wurde Pressluft eingeleitet.
 Die vorhandene Software protokollierte die Spannungen am SQUID und die zugehörige Temperatur.
+Da Sprünge auftreten, mussten die Messwerte korrigiert werden. 
+Das Spannungsmessgerät konnte Spannungen mit einem Betrag unter \SI{12}{\V} auflösen. 
+Werte mit höherem Betrag wurden in der Auswertung korrigiert.
+Wurden während des Versuchs diese Messwerte beobachten, wurde mittels der Software eine schnelle Kallibration durchgeführt.
+Zudem wurde die Höhe der Sprünge kompensiert, sodass sich nach Augenmaß die Messwerte auf einer stetigen Linie befanden.
+Sinnvollerweise mussten die Werte für das Magnetfeld für hohe Temperaturen auf Null konvergieren, da die Curietemperatur überschritten wurde.
+Mit dem Ergebnis aus Gleichung \ref{eq:kalib} wurden die Spannungen in das zugehörige Magnetfeld umgerechnet.
 In Abbildung \ref{fig:Tb_sr_0} ist die Messreihe gezeigt.
 
 
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_0.png}
-\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, Rohdaten.} Die Spannung am SQUID ist über die Temperatur aufgetragen.}
+\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, Rohdaten.} Die, aus der Spannung am SQUID resultierende, Magnetfeldstärke ist über die Temperatur aufgetragen.}
 \label{fig:Tb_sr_0}
 \end{figure}
 
 Über einen Anteil von 10~\% wurde eine lokale Regression (LOWESS) durchgeführt, wie in Abbildung \ref{fig:Tb_sr_0_glatt} gezeigt ist.
 Um die Curietemperatur zu bestimmen, wurde davon der Gradient gebildet.
-Das sichtbare Minimum befindet sich an der Tempemit den ratur
-
-\begin{equation}
-T_{\rm{C}} = \SI{244}{\K} ~.
-\end{equation}
-
+Ein Minimum der Steigung lag an der Temperatur $T = \SI{241}{\K}$~.
+Dieses war jedoch zu klein, als dass es als kritische Temperatur werten ließ.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{abbildungen/Tb_sr_0_glatt.png}
 \caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe bei
     senkrechtem Magnetfeld im Nullfeld gekühlt, geglättet mit LOWESS.}
-  Die Spannung am SQUID ist über die Temperatur aufgetragen, wie in
+   Die, aus der Spannung am SQUID resultierende, Magnetfeldstärke ist über die Temperatur aufgetragen, wie in
   Abb. \ref{fig:Tb_sr_0} zu sehen ist. Mit der Python-Funktion LOWESS
   aus dem Python-Moduls \emph{statsmodels} wurde eine lokale Regression über 10~\% der Daten durchgeführt.}
 \label{fig:Tb_sr_0_glatt}
@@ -396,7 +401,8 @@ T_{\rm{C}} = \SI{244}{\K} ~.
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_0_grad.png}
 \caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe
-    senkrechtem Magnetfeld im Nullfeld gekühlt, geglättet und Gradient gebildet.} Die Spannung am SQUID ist über die Temperatur aufgetragen. Ein Minimum ist an der Curietemperatur zu erkennen.}
+    senkrechtem Magnetfeld im Nullfeld gekühlt, geglättet und Gradient gebildet.} 
+    Die Steigung des Magnetfelds mit der Temperatur ist über die Temperatur aufgetragen. Ein Minimum ist an der Curietemperatur zu erkennen.}
 \label{fig:Tb_sr_0_grad}
 \end{figure}
 
@@ -417,7 +423,7 @@ Die Umrechnung war genauer gegeben, aber da sich der Strom nicht genau einstelle
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_0_mit.png}
-\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, Rohdaten.} Die Spannung am SQUID ist über die Temperatur aufgetragen.}
+\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, Rohdaten.} Die, aus der Spannung am SQUID resultierende, Magnetfeldstärke ist über die Temperatur aufgetragen.}
 \label{fig:Tb_sr_0_mit}
 \end{figure}
 
@@ -429,7 +435,7 @@ Es ist kein ausgewiesenes Minimum zu erkennen, daher konnte keine Curietemperatu
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_0_grad_mit.png}
-\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, geglättet und Gradient gebildet} Die Spannung am SQUID ist über die Temperatur aufgetragen. Es wurden über über 25~\% der Daten mittels LOWESS geglättet. Es ist kein Minimum zu erkennen und somit keine Curietemperatur ermittelbar.}
+\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, geglättet und Gradient gebildet} Die Steigung des Magnetfelds mit der Temperatur ist über die Temperatur aufgetragen. Es wurden über über 25~\% der Daten mittels LOWESS geglättet. Es ist kein Minimum zu erkennen und somit keine Curietemperatur ermittelbar.}
 \label{fig:Tb_sr_0_grad_mit}
 \end{figure}
 
@@ -439,7 +445,7 @@ Es ist kein ausgewiesenes Minimum zu erkennen, daher konnte keine Curietemperatu
 
 
 Das Magnetfeld wurde angestellt, bevor die Kühlung begann. 
-Die Probe wurde bei aktivem Magnetfeld gekühlt. 
+Die Probe wurde bei angelegtem Magnetfeld gekühlt. 
 Gemessen wurde wie vorhin beim Erwärmen.
 Hier traten einige Sprünge auf, wie in Abbildung \ref{fig:Tb_sr_15} zu sehen ist. 
 Die Sprünge wurden nach Augenmaß korrigiert, aber da viele Unstetigkeiten im interessanten Bereich um die Curietemperatur auftraten,
@@ -455,7 +461,7 @@ T_{\rm{C}} = \SI{235}{\K} ~.
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_150.png}
 \caption[Terbiumprobe senkrecht bei 15mT]{\textbf{Terbiumprobe senkrecht im Feld ($B = \SI{15}{mT}$) gekühlt, Rohdaten.} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Die, aus der Spannung am SQUID resultierende, Magnetfeldstärke ist über die Temperatur aufgetragen. 
 Da die Messwerte stark sprangen mussten die Unstetigkeiten nach Augenmaß korrigiert werden.
 Insbesondere an der interessanten Stelle um die Curietemperatur traten viele Sprünge auf.}
 \label{fig:Tb_sr_15}
@@ -468,7 +474,7 @@ Insbesondere an der interessanten Stelle um die Curietemperatur traten viele Spr
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_150_grad.png}
 \caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht im Feld ($B = \SI{15}{mT}$) gekühlt, geglättet und Gradient gebildet} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Die Steigung des Magnetfelds mit der Temperatur ist über die Temperatur aufgetragen. 
 Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.
 Die Sprünge gestalteten die Auswertung dieses Minimums schwierig.}
 \label{fig:Tb_sr_15_grad}
@@ -479,7 +485,7 @@ Die Sprünge gestalteten die Auswertung dieses Minimums schwierig.}
 
 Die Terbiumprobe wurde mit zum Magnetfeld paralleler Ausrichtung auf den Probenhalter geschraubt. 
 Ein Magnetfeld mit der vorgegebenen Feldstärke wurde angelegt und die Probe gekühlt.
-War die Probe ausgekühlt, so wurde sie in den SQUID geführt.
+War die Probe unter eine Temperatur von \SI{80}{\K} abgekühlt, wurde sie in den SQUID geführt.
 
 
 \subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{5}{mT}}
@@ -505,7 +511,7 @@ Die Spannung am SQUID ist über die Temperatur aufgetragen. }
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_5_grad.png}
 \caption[Terbiumprobe parallel bei 5mT]{\textbf{Terbiumprobe senkrecht im Feld ($B = \SI{5}{mT}$) gekühlt, geglättet und Gradient gebildet} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Die Steigung des Magnetfelds mit der Temperatur ist über die Temperatur aufgetragen. 
 Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.
 Alle Messwerte über $T =\SI{90}{K}$ wurden ausgeblendet.}
 \label{fig:Tb_p_5_grad}
@@ -526,7 +532,7 @@ T_{\mathrm{C}} = \SI{228}{\K} ~.
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_10.png}
 \caption[Terbiumprobe parallel bei 10mT]{\textbf{Terbiumprobe parallel im Feld ($B = \SI{10}{mT}$) gekühlt, Rohdaten.} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. }
+Die, aus der Spannung am SQUID resultierende, Magnetfeldstärke ist über die Temperatur aufgetragen. }
 \label{fig:Tb_p_10}
 \end{figure}
 
@@ -534,7 +540,7 @@ Die Spannung am SQUID ist über die Temperatur aufgetragen. }
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_10_grad.png}
 \caption[Terbiumprobe parallel bei 10mT]{\textbf{Terbiumprobe parallel im Feld ($B = \SI{10}{mT}$) gekühlt, geglättet und Gradient gebildet} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Die Steigung des Magnetfelds mit der Temperatur ist über die Temperatur aufgetragen. 
 Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.}
 \label{fig:Tb_p_10_grad}
 \end{figure}
@@ -553,7 +559,7 @@ T_{\mathrm{C}} = \SI{227}{\K} ~.
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_15.png}
 \caption[Terbiumprobe parallel bei 15mT]{\textbf{Terbiumprobe parallel im Feld ($B = \SI{15}{mT}$) gekühlt, Rohdaten.} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. }
+Die, aus der Spannung am SQUID resultierende, Magnetfeldstärke ist über die Temperatur aufgetragen. }
 \label{fig:Tb_p_15}
 \end{figure}
 
@@ -561,7 +567,7 @@ Die Spannung am SQUID ist über die Temperatur aufgetragen. }
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_15_grad.png}
 \caption[Terbiumprobe parallel bei 15mT]{\textbf{Terbiumprobe parallel im Feld ($B = \SI{15}{mT}$) gekühlt, geglättet und Gradient gebildet} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Die Steigung des Magnetfelds mit der Temperatur ist über die Temperatur aufgetragen. 
 Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.}
 \label{fig:Tb_p_15_grad}
 \end{figure}
@@ -572,18 +578,18 @@ Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.}
 
 \subsubsection*{Messung mit im Feld gekühlter Probe bei \SI{100}{mT}}
 
-Die Gadoliniumprobe wurde eingebaut und bei angelegtem Feld mit eriner Feldstärke von \SI{100}{mT} gekühlt.
+Die Gadoliniumprobe wurde eingebaut und bei angelegtem Feld mit einer Feldstärke von \SI{100}{mT} gekühlt.
 Es wurde wieder während der Erwärmungsphase gemessen.
-In Abbildung \ref{fig:Gandolinium} ist dies abhebildet.
-Die Curietemperatur von \SI{292}{\K} ist zu erkennen.
+Um höhere Temperaturen zu erreichen wurde die Luft, die in den Probenhalter geleitet wurde zuvor erwärmt.
+In Abbildung \ref{fig:Gandolinium} ist dies abgebildet.
+Die Curietemperatur, an der das Magnetfeld auf Null sinkt, war bei \SI{292}{\K}.
 Dies ist mit dem Literaturwert \SI{292.5}{\K} [\ref{ref:wiki},\ref{ref:mappe}] konsistent.
-Eine weitere kritische Temperatur scheint bei \SI{231}{\K} zu sein.
-Da Gadolinium selbst nicht supraleitent ist [\ref{ref:wiki}], ist eine Sprungtemperatur eher unwahrscheinlich.
+
 
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/gadolinium.png}
-\caption[Gandolinium]{\textbf{Gandoliniumprobe parallel im Feld ($B = \SI{100}{mT}$) gekühlt.} 
+\caption[Gadolinium]{\textbf{Gadoliniumprobe parallel im Feld ($B = \SI{100}{mT}$) gekühlt.} 
 Für sehr geringe Temperaturen zeigt sich ein flacher Verlauf auf Nullniveau.
 Bei einer Temperatur von etwa \SI{231}{\K} steigt die Magnetisierung stark an und verweilt auf einem Plateau.
 Wird die Curietemperatur von $T_{\mathrm{C}} = \SI{292}{\K}$ erreicht, fällt die Magnetisierung wieder auf Null ab.
@@ -601,7 +607,7 @@ Auch für den senkrechten Einbau weichen die Messungen ohne Magnetfeld und der i
 Für das Nullfeld mit Magnetisierung bei tiefer Temperatur ist jedoch keine Curietemperatur erkennbar gewesen.
 Gemittelt über alle Werte ergab sich die Curietemperatur von Terbium als
 \begin{equation}
-T_{\mathrm{C} }= \SI{232+-7}{\K} ~.
+T_{\mathrm{C} }= \SI{229+-4}{\K} ~.
 \end{equation}
 Die Curietemperatur von \SI{230}{\K} [\ref{ref:wikitb}] liegt im Bereich der Messungenauigkeit.
 
@@ -613,11 +619,11 @@ Die Curietemperatur von \SI{230}{\K} [\ref{ref:wikitb}] liegt im Bereich der Mes
 \toprule
 Probe	&	$T_{\mathrm{C}}$ in K	\\
 \midrule
-Tb, senkrecht ohne Magnetfeld &	244 \\
-Tb, senkrecht, Nullfeld mit Magnetisierung 	&	- \\
+Tb, senkrecht, Nullfeld, ohne Magnetisierung	&	- \\
+Tb, senkrecht, Nullfeld, mit Magnetisierung 	&	- \\
 Tb, senkrecht, \SI{15}{mT}	&	235 \\
 Tb, parallel, \SI{5}{mT}	&	227\\
-Tb, parallel, \SI{10}{mT}	&	228\\
+Tb, parallel, \SI{10}{mT}	&	227\\
 Tb, parallel, \SI{15}{mT}	&	227\\
 Gd, \SI{1000}{mT} 	&	292\\
 \bottomrule
@@ -659,8 +665,8 @@ zu Hysterese-Effekten gekommen ist.
 \section{Quellen}
 \begin{enumerate}
 \item Vorbereitungsmappe.\label{ref:mappe}
-\item \url{http://hydrogen.physik.uni-wuppertal.de/hyperphysics/hyperphysics/hbase/solids/squid.html} (18.1.2015).\label{ref:wuppertal}
-\item \url{http://jsq.apps-1and1.net/category/information/what-is-a-squid/} (18.1.2015).
+\item \url{http://hydrogen.physik.uni-wuppertal.de/hyperphysics/hyperphysics/hbase/solids/squid.html} (\today).\label{ref:wuppertal}
+\item \url{http://jsq.apps-1and1.net/category/information/what-is-a-squid/} (\today).
 \item \url{http://de.wikipedia.org/wiki/Gadolinium} (\today)\label{ref:wiki}
 \item \url{http://en.wikipedia.org/wiki/Terbium} (\today)\label{ref:wikitb}
 \label{ref:jsq}
