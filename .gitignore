@@ -124,3 +124,13 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
+/Landefaktor/Auswertung/messungen/histogramm.C
+/Landefaktor/Auswertung/messungen/histogram
+/Landefaktor/Auswertung/messungen/*eshell*
+/BLM/Auswertung/Messungen/.ipynb_checkpoints/
+/Landefaktor/Vorbereitung/_region_.tex
+/Magnetisierung/Auswertung/messungen/Untitled0.ipynb
+/Magnetisierung/Auswertung/messungen/Untitled1.ipynb
+/Quantenradierer/Auswertung/fotos/.directory
+/Magnetisierung/Auswertung/messungen/.ipynb_checkpoints/
+/Quantenradierer/Auswertung/protokoll.txt
