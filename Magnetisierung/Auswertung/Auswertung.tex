@@ -342,7 +342,7 @@ Aus Gleichungen \eqref{eq:B(U_SQUID)} und \eqref{eq:mu(B))} zusammen folgt der Z
 
 \begin{equation}
 \label{eq:kalib}
-\mu(U_{\mathrm{SQUID}}) = \frac{2 \uppi  x^3 }{\mu_{\rm{0}}} \cdot  \left( \SI{18+-3}{\micro \tesla \per \mV}  \cdot U_{\mathrm{SQUID}}~.
+\mu(U_{\mathrm{SQUID}}) = \frac{2 \uppi  x^3 }{\mu_{\rm{0}}} \cdot  \left( \SI{18+-3}{\micro \tesla \per \mV}  \cdot U_{\mathrm{SQUID}} - \SI{0.3+-0.1}{\micro \tesla} \right) ~.
 \end{equation}
 
 Die Kalibrierung der Spule war ungenau, daher war ein hoher statistischer Fehler zu erwarten.
@@ -367,7 +367,7 @@ In Abbildung \ref{fig:Tb_sr_0} ist die Messreihe gezeigt.
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_0.png}
-\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, Rohdaten.} Die Spannung am SQUID ist über die Temperatur aufgetragen.}
+\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, Rohdaten.} Das Magnetfeld am SQUID ist über die Temperatur aufgetragen.}
 \label{fig:Tb_sr_0}
 \end{figure}
 
@@ -385,7 +385,7 @@ T_{\rm{C}} = \SI{244}{\K} ~.
 \includegraphics[width=0.5\textwidth]{abbildungen/Tb_sr_0_glatt.png}
 \caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe bei
     senkrechtem Magnetfeld im Nullfeld gekühlt, geglättet mit LOWESS.}
-  Die Spannung am SQUID ist über die Temperatur aufgetragen, wie in
+  Das Magnetfeld am SQUID ist über die Temperatur aufgetragen, wie in
   Abb. \ref{fig:Tb_sr_0} zu sehen ist. Mit der Python-Funktion LOWESS
   aus dem Python-Moduls \emph{statsmodels} wurde eine lokale Regression über 10~\% der Daten durchgeführt.}
 \label{fig:Tb_sr_0_glatt}
@@ -396,7 +396,7 @@ T_{\rm{C}} = \SI{244}{\K} ~.
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_0_grad.png}
 \caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe
-    senkrechtem Magnetfeld im Nullfeld gekühlt, geglättet und Gradient gebildet.} Die Spannung am SQUID ist über die Temperatur aufgetragen. Ein Minimum ist an der Curietemperatur zu erkennen.}
+    senkrechtem Magnetfeld im Nullfeld gekühlt, geglättet und Gradient gebildet.} Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. Ein Minimum ist an der Curietemperatur zu erkennen.}
 \label{fig:Tb_sr_0_grad}
 \end{figure}
 
@@ -417,7 +417,7 @@ Die Umrechnung war genauer gegeben, aber da sich der Strom nicht genau einstelle
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_0_mit.png}
-\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, Rohdaten.} Die Spannung am SQUID ist über die Temperatur aufgetragen.}
+\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, Rohdaten.} Das Magnetfeld am SQUID ist über die Temperatur aufgetragen.}
 \label{fig:Tb_sr_0_mit}
 \end{figure}
 
@@ -429,7 +429,7 @@ Es ist kein ausgewiesenes Minimum zu erkennen, daher konnte keine Curietemperatu
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_0_grad_mit.png}
-\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, geglättet und Gradient gebildet} Die Spannung am SQUID ist über die Temperatur aufgetragen. Es wurden über über 25~\% der Daten mittels LOWESS geglättet. Es ist kein Minimum zu erkennen und somit keine Curietemperatur ermittelbar.}
+\caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht bei Nullfeld gekühlt, geglättet und Gradient gebildet} Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. Es wurden über über 25~\% der Daten mittels LOWESS geglättet. Es ist kein Minimum zu erkennen und somit keine Curietemperatur ermittelbar.}
 \label{fig:Tb_sr_0_grad_mit}
 \end{figure}
 
@@ -455,7 +455,7 @@ T_{\rm{C}} = \SI{235}{\K} ~.
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_150.png}
 \caption[Terbiumprobe senkrecht bei 15mT]{\textbf{Terbiumprobe senkrecht im Feld ($B = \SI{15}{mT}$) gekühlt, Rohdaten.} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. 
 Da die Messwerte stark sprangen mussten die Unstetigkeiten nach Augenmaß korrigiert werden.
 Insbesondere an der interessanten Stelle um die Curietemperatur traten viele Sprünge auf.}
 \label{fig:Tb_sr_15}
@@ -468,7 +468,7 @@ Insbesondere an der interessanten Stelle um die Curietemperatur traten viele Spr
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_sr_150_grad.png}
 \caption[Terbiumprobe senkrecht bei Nullfeld]{\textbf{Terbiumprobe senkrecht im Feld ($B = \SI{15}{mT}$) gekühlt, geglättet und Gradient gebildet} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. 
 Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.
 Die Sprünge gestalteten die Auswertung dieses Minimums schwierig.}
 \label{fig:Tb_sr_15_grad}
@@ -498,7 +498,7 @@ T_{\mathrm{C}} = \SI{227}{\K} ~.
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_5.png}
 \caption[Terbiumprobe parallel bei 5mT]{\textbf{Terbiumprobe senkrecht im Feld ($B = \SI{5}{mT}$) gekühlt, Rohdaten.} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. }
+Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. }
 \label{fig:Tb_p_5}
 \end{figure}
 
@@ -506,7 +506,7 @@ Die Spannung am SQUID ist über die Temperatur aufgetragen. }
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_5_grad.png}
 \caption[Terbiumprobe parallel bei 5mT]{\textbf{Terbiumprobe senkrecht im Feld ($B = \SI{5}{mT}$) gekühlt, geglättet und Gradient gebildet} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. 
 Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.
 Alle Messwerte über $T =\SI{90}{K}$ wurden ausgeblendet.}
 \label{fig:Tb_p_5_grad}
@@ -527,7 +527,7 @@ T_{\mathrm{C}} = \SI{228}{\K} ~.
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_10.png}
 \caption[Terbiumprobe parallel bei 10mT]{\textbf{Terbiumprobe parallel im Feld ($B = \SI{10}{mT}$) gekühlt, Rohdaten.} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. }
+Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. }
 \label{fig:Tb_p_10}
 \end{figure}
 
@@ -535,7 +535,7 @@ Die Spannung am SQUID ist über die Temperatur aufgetragen. }
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_10_grad.png}
 \caption[Terbiumprobe parallel bei 10mT]{\textbf{Terbiumprobe parallel im Feld ($B = \SI{10}{mT}$) gekühlt, geglättet und Gradient gebildet} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. 
 Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.}
 \label{fig:Tb_p_10_grad}
 \end{figure}
@@ -554,7 +554,7 @@ T_{\mathrm{C}} = \SI{227}{\K} ~.
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_15.png}
 \caption[Terbiumprobe parallel bei 15mT]{\textbf{Terbiumprobe parallel im Feld ($B = \SI{15}{mT}$) gekühlt, Rohdaten.} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. }
+Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. }
 \label{fig:Tb_p_15}
 \end{figure}
 
@@ -562,7 +562,7 @@ Die Spannung am SQUID ist über die Temperatur aufgetragen. }
 \centering
 \includegraphics[width=0.6\textwidth]{abbildungen/Tb_p_15_grad.png}
 \caption[Terbiumprobe parallel bei 15mT]{\textbf{Terbiumprobe parallel im Feld ($B = \SI{15}{mT}$) gekühlt, geglättet und Gradient gebildet} 
-Die Spannung am SQUID ist über die Temperatur aufgetragen. 
+Das Magnetfeld am SQUID ist über die Temperatur aufgetragen. 
 Es ist ein Minimum zu erkennen und somit eine Curietemperatur ermittelbar.}
 \label{fig:Tb_p_15_grad}
 \end{figure}
@@ -632,31 +632,38 @@ Gd, \SI{1000}{mT} 	&	292\\
 \subsection{Neukurve}
 Es sollte außerdem die Neukurve von Terbium (Tb) bei parallelem
 Einbau bei einer festen, nicht zu hohen Temperatur, bestimmt werden.
-Wir entschieden uns für eine Temperatur von $T = \SI{120}{\kelvin}$.
-Zum Erstellen der Kurve haben wir die Magnetisierungen bei dieser
-Temperatur aus den Magnetisierungskurven von parallel eingebautem
+Wir entschieden uns für eine Temperatur von $T = \SI{120}{\kelvin}$ und
+zum Vergleich $T = \SI{180}{\kelvin}$.
+Zum Erstellen der Kurve haben wir die Magnetisierungen bei diesen
+Temperaturen aus den Magnetisierungskurven von parallel eingebautem
 Terbium bei \SI{5}{\milli\tesla}, \SI{10}{\milli\tesla} und 
 \SI{15}{\milli\tesla} ausgelesen, sowieo den Punkt (0|0) verwendet. 
-Durch Auftragen der zur Magnetisierung verwendeten Magnetfelder gegen die durch Magnetisierung
-induzierte SQUID-Spannung erhielt man die in
-Abbildung~\ref{fig:neukurve} zu sehende Neukurve.
+Durch Auftragen der zur Magnetisierung verwendeten externen magnetischen Flussdichten 
+gegen die durch Magnetisierung induzierte magnetische Flussdichte, die am SQUID gemessen wurde, 
+erhielten wir die in Abbildung~\ref{fig:neukurve} zu sehenden Neukurvem.
 
 \begin{figure}[tbh!]
   \centering
   \includegraphics[width=0.6\textwidth]{abbildungen/neukurve.pdf}
   \caption{\textbf{Neukurve von Tb bei 120 Kelvin.} Zu sehen sind die
-    in die Messpunkte und von uns gewählte
-    Verbingungslinien zur Veranschaulichung.}
+    die Messwerte als Punkte und Verbingungslinien zur besseren Veranschaulichung.}
   \label{fig:neukurve}
 \end{figure}
 
-Da wir mit dem Urpsrung nur 4 Messpunkte haben, daher lassen sich
-damit schwer aussagen treffen.
-Die Punkte stellen die Messwerte da, außerdem sind nach Augenmaß
-gewählte Verbingungslinien zu sehen. 
-Offensichtlich ist, dass die Magnetisierung von Tb
-keineswegs linear mit der Temperatur ist und es bei den Messungen wohl
-zu Hysterese-Effekten gekommen ist.
+Da wir mit dem Ursprung nur vier Messpunkte haben, daher lassen sich
+damit nur ungefähre Aussagen treffen.
+Es ist zu sehen, dass sich mit steigendem externen Magnetfeld auch die Magnetisierung in
+der Probe entsprechend erhöht, was an einem steigenden gemessenen Magnetfeld am SQUID zu sehen ist.
+Bei höheren externen Magnetfeldern $B_{\rm extern} > \SI{5}{\milli\tesla}$ wird die Erhöhung der Magnetisierung mit steigenden externen
+Magnetfeld kleiner, was man auf Sättigungseffekte zurückführen könnte. 
+Es wäre dabei jedoch ein Absinken der Steigung nach $B_{\rm extern} = \SI{10}{\milli\tesla}$ zu erwarten, was hier nicht der Fall ist.
+Stattdessen bleibt die Steigung annähernd konstant. 
+Eventuell könnte das an Ungenauigkeiten in der Messung liegen.
+Jedoch haben wir zu wenige und zu ungenaue Messpunkte, um das genau sehen zu können. 
+Vor allem wärem mehr Messpunkte bei noch höheren externen Magnetfeldern interessant, 
+um genau sehen zu können, ob Sättigungseffekte eintreten.
+
+
  
 \clearpage
 \section{Quellen}
